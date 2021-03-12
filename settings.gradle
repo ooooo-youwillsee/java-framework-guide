@@ -1,0 +1,6 @@
+rootProject.name = 'java-framework-guide'
+
+include 'spring-simple-listener'
+include 'spring-mvc-requestmapping'
+include 'spring-bugs-report'
+include 'component-scan'

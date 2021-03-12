@@ -1,0 +1,52 @@
+import org.springframework.boot.gradle.plugin.SpringBootPlugin
+
+plugins {
+    id 'io.spring.dependency-management' version '1.0.9.RELEASE' apply false
+    id 'org.springframework.boot' version '2.3.2.RELEASE' apply false
+    id 'idea'
+    id 'eclipse'
+}
+
+
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'java-library'
+    apply plugin: 'io.spring.dependency-management'
+
+    group 'org.ooooo'
+    version '1.0.0'
+
+    repositories {
+        maven {url 'https://maven.aliyun.com/repository/public'}
+        mavenCentral()
+    }
+
+    tasks.withType(JavaCompile) {
+        options.encoding = "UTF-8"
+        options.compilerArgs << "-Xlint:-unchecked" << "-Xlint:-deprecation" << '-Xlint:-varargs'
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+
+    ext {
+        set('springCloudVersion', "Hoxton.SR6")
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom SpringBootPlugin.BOM_COORDINATES
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        }
+    }
+    dependencies {
+        compileOnly('org.projectlombok:lombok')
+        annotationProcessor('org.projectlombok:lombok')
+        implementation('com.alibaba:fastjson:1.2.67')
+        implementation('commons-io:commons-io:2.7')
+        implementation('org.apache.commons:commons-lang3:3.10')
+        implementation('org.apache.commons:commons-collections4:4.4')
+
+    }
+}

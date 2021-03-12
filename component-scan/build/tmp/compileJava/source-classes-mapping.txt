@@ -1,0 +1,33 @@
+com/ooooo/annotation/XXXService.java
+ com.ooooo.annotation.XXXService
+com/ooooo/ComponentScanApplication.java
+ com.ooooo.ComponentScanApplication
+com/ooooo/config/XXXComponentScanner.java
+ com.ooooo.config.XXXComponentScanner
+com/ooooo/config/XXXBeanDefinitionRegistrar.java
+ com.ooooo.config.XXXBeanDefinitionRegistrar
+com/ooooo/controller/TestController.java
+ com.ooooo.controller.TestController
+com/ooooo/annotation/XXXRequestMapping.java
+ com.ooooo.annotation.XXXRequestMapping
+com/ooooo/test/TestXXXService.java
+ com.ooooo.test.TestXXXService
+com/ooooo/entity/Req.java
+ com.ooooo.entity.Req
+com/ooooo/autoconfigure/DefaultXXXServiceFactory.java
+ com.ooooo.autoconfigure.DefaultXXXServiceFactory
+com/ooooo/autoconfigure/XXXServiceAutoConfiguration.java
+ com.ooooo.autoconfigure.XXXServiceAutoConfiguration
+ com.ooooo.autoconfigure.XXXServiceAutoConfiguration$1
+com/ooooo/autoconfigure/DefaultXXXServiceProperties.java
+ com.ooooo.autoconfigure.DefaultXXXServiceProperties
+com/ooooo/properties/ServiceProperties.java
+ com.ooooo.properties.ServiceProperties
+com/ooooo/entity/Resp.java
+ com.ooooo.entity.Resp
+com/ooooo/factory/ServiceFactory.java
+ com.ooooo.factory.ServiceFactory
+com/ooooo/annotation/XXXComponentScan.java
+ com.ooooo.annotation.XXXComponentScan
+com/ooooo/bean/XXXFactoryBean.java
+ com.ooooo.bean.XXXFactoryBean
