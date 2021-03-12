@@ -2,6 +2,8 @@ package com.ooooo.annotation;
 
 import java.lang.reflect.Method;
 import java.util.Comparator;
+import java.util.HashSet;
+import java.util.Set;
 import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.lang3.ArrayUtils;
 import org.springframework.core.Ordered;
@@ -35,6 +37,13 @@ public class XRequestMappingHandlerMapping extends AbstractHandlerMethodMapping<
 			httpMethod = classXRequestMapping.method();
 		}
 		return new XRequestMappingMethodInfo(path, httpMethod);
+	}
+	
+	@Override
+	protected Set<String> getMappingPathPatterns(XRequestMappingMethodInfo mapping) {
+		HashSet<String> res = new HashSet<>();
+		res.add(mapping.getPath());
+		return res;
 	}
 	
 	@Override
