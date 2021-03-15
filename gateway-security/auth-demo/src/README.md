@@ -1,0 +1,30 @@
+## 请求地址
+
+- 请求授权码：
+
+`curl --location --request GET 'http://localhost:7777/oauth/authorize?state=1&client_id=crh&redirect_uri=http://localhost:7777/oauth/code&response_type=code&scope=read' \
+--header 'Authorization: Basic dXNlcjpwYXNzd29yZA==' `
+
+
+- 请求token
+
+`curl --location --request POST 'http://localhost:7777/oauth/token?grant_type=authorization_code&client_id=crh&code=请求到的code&scope=read&redirect_uri=http://localhost:7777/oauth/code' \
+--header 'Authorization: Basic Y3JoOnNlY3JldA=='`
+
+
+- 刷新token
+
+`curl --location --request POST 'http://localhost:7777/oauth/token?grant_type=refresh_token&client_id=crh&refresh_token=你的RefreshToken\
+--header 'Authorization: Basic Y3JoOnNlY3JldA=='`
+
+
+- 检查token
+
+`curl --location --request GET 'http://localhost:7777/oauth/check_token?token=你的token' \`
+
+
+关键原理：
+
+1. 请求 `/oauth/authorize` 地址，必须经过security的认证，用**Http Basic**, 用户名和密码由 `UserDetailsService` 来实现。
+
+2. 请求 `/oauth/token` 地址，此时也需要进行 **Http Basic** 认证，底层实现有一个特殊的 `org.springframework.security.web.SecurityFilterChain`, 此时用户名和密码用 `ClientDetailsService` 来实现

@@ -1,0 +1,25 @@
+server:
+  port: 8888
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+spring:
+  application:
+    name: gateway-demo
+
+  cloud:
+    gateway:
+      routes:
+        - id: api-demo
+          uri: lb://api-demo
+          predicates:
+            - Path=/api/**
+          filters:
+            - StripPrefix=1
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

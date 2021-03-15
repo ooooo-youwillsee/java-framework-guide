@@ -1,0 +1,8 @@
+dependencies {
+    api('org.springframework.cloud:spring-cloud-starter-gateway')
+    api('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
+    api('org.springframework.cloud:spring-cloud-starter-security')
+    api 'io.projectreactor:reactor-tools'
+//    api('org.springframework.boot:spring-boot-starter-oauth2-client')
+
+}
