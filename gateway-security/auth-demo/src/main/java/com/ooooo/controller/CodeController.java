@@ -1,5 +1,6 @@
 package com.ooooo.controller;
 
+import java.security.Principal;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,7 +17,7 @@ public class CodeController {
 	}
 	
 	@GetMapping("/test")
-	public String test() {
+	public String test(Principal principal) {
 		return "test";
 	}
 }

@@ -28,3 +28,14 @@
 1. 请求 `/oauth/authorize` 地址，必须经过security的认证，用**Http Basic**, 用户名和密码由 `UserDetailsService` 来实现。
 
 2. 请求 `/oauth/token` 地址，此时也需要进行 **Http Basic** 认证，底层实现有一个特殊的 `org.springframework.security.web.SecurityFilterChain`, 此时用户名和密码用 `ClientDetailsService` 来实现
+   
+
+关键类：
+
+1. `org.springframework.security.oauth2.provider.endpoint.TokenEndpoint` 请求token地址
+
+2. `org.springframework.security.oauth2.provider.endpoint.AuthorizationEndpoint` 请求授权码地址
+
+3. `org.springframework.security.oauth2.provider.endpoint.CheckTokenEndpoint` 检查token地址
+
+4、 `org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter` spring security 的配置，可以通过它来配置 `org.springframework.security.authentication.AuthenticationManager`

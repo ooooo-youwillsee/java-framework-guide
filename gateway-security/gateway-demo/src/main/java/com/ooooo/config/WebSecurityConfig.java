@@ -1,15 +1,16 @@
 package com.ooooo.config;
 
+import java.security.KeyPair;
+import java.security.interfaces.RSAPublicKey;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.ProviderManager;
-import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.core.userdetails.MapReactiveUserDetailsService;
-import org.springframework.security.core.userdetails.ReactiveUserDetailsService;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.factory.PasswordEncoderFactories;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.server.SecurityWebFilterChain;
 
 /**
@@ -19,37 +20,38 @@ import org.springframework.security.web.server.SecurityWebFilterChain;
 @EnableWebFluxSecurity
 public class WebSecurityConfig {
 	
-	@Bean
-	public MapReactiveUserDetailsService userDetailsService() {
-		UserDetails user = User.withDefaultPasswordEncoder()
-		                       .username("user")
-		                       .password("password")
-		                       .roles("USER")
-		                       .build();
-		return new MapReactiveUserDetailsService(user);
-	}
+	@Autowired
+	private KeyPair keyPair;
 	
 	@Bean
 	public SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity http) {
 		http
 				.authorizeExchange()
-				.pathMatchers("/**").permitAll()
+				.pathMatchers("/auth/**").permitAll()
+				.pathMatchers("/api/**").hasRole("ADMIN")
 				.anyExchange().authenticated()
 				.and()
-				.httpBasic().and()
+				.httpBasic().disable()
 				.formLogin().disable()
 				.csrf().disable()
-				.oauth2Login()
-				//.oauth2ResourceServer()
-				//.jwt()
+				.oauth2ResourceServer()
+				.jwt()
+				.publicKey((RSAPublicKey) keyPair.getPublic())
+				.and()
+				.authenticationEntryPoint(serverAuthenticationEntryPoint())
+				.accessDeniedHandler(accessDeniedHandler())
 		;
 		
 		return http.build();
 	}
 	
+	@Bean
+	public CustomAccessDeniedHandler accessDeniedHandler() {
+		return new CustomAccessDeniedHandler();
+	}
 	
-	//@Bean
-	//public AuthenticationManager authenticationManager() {
-	//	new ProviderManager(new DaoAuthenticationProvider())
-	//}
+	@Bean
+	public CustomServerAuthenticationEntryPoint serverAuthenticationEntryPoint() {
+		return new CustomServerAuthenticationEntryPoint();
+	}
 }

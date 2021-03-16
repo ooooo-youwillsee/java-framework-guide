@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
@@ -54,7 +55,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 		       .autoApprove("true")
 		       .accessTokenValiditySeconds(600_000_000)
 		       .refreshTokenValiditySeconds(600_000_000)
-		       .redirectUris("http://localhost:7777/oauth/code")
+		       .redirectUris("http://localhost:8888/auth/oauth/code")
 		       .and()
 		;
 	}
