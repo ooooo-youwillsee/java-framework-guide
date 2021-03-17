@@ -27,7 +27,7 @@ public class AuthUserDetail implements UserDetails {
 	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return roles.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList());
+		return null;
 	}
 	
 	@Override

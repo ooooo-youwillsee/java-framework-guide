@@ -1,16 +1,44 @@
 package com.ooooo.config;
 
+import com.nimbusds.jose.jwk.JWKSet;
+import com.nimbusds.jose.jwk.RSAKey;
 import java.math.BigInteger;
 import java.security.KeyFactory;
 import java.security.KeyPair;
-import java.security.KeyPairGenerator;
+import java.security.interfaces.RSAPublicKey;
 import java.security.spec.RSAPrivateKeySpec;
 import java.security.spec.RSAPublicKeySpec;
+import java.util.Map;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.oauth2.provider.endpoint.FrameworkEndpoint;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Configuration
+@FrameworkEndpoint
+class JWKSetEndpoint {
+	
+	
+	KeyPair keyPair;
+	
+	JWKSetEndpoint(KeyPair keyPair) {
+		this.keyPair = keyPair;
+	}
+	
+	@GetMapping("/.well-known/jwks.json")
+	@ResponseBody
+	public Map<String, Object> getKey() {
+		RSAPublicKey publicKey = (RSAPublicKey) this.keyPair.getPublic();
+		RSAKey key = new RSAKey.Builder(publicKey).build();
+		return new JWKSet(key).toJSONObject();
+	}
+	
+}
 
 @Configuration
 class KeyConfig {
+	
 	@Bean
 	KeyPair keyPair() {
 		try {
@@ -22,7 +50,7 @@ class KeyConfig {
 			RSAPrivateKeySpec privateSpec = new RSAPrivateKeySpec(new BigInteger(modulus), new BigInteger(privateExponent));
 			KeyFactory factory = KeyFactory.getInstance("RSA");
 			return new KeyPair(factory.generatePublic(publicSpec), factory.generatePrivate(privateSpec));
-		} catch ( Exception e ) {
+		} catch (Exception e) {
 			throw new IllegalArgumentException(e);
 		}
 	}

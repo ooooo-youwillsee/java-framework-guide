@@ -28,7 +28,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	public void configure(WebSecurity web) throws Exception {
 		web.ignoring()
 		   .antMatchers("/resources/**")
-		 
 		;
 	}
 	
@@ -44,6 +43,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		    .and()
 		    .httpBasic()
 		    .and()
+		    .formLogin().disable()
+		    .csrf().disable()
 		;
 	}
 	

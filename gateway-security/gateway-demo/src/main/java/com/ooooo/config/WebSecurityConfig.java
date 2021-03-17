@@ -9,8 +9,6 @@ import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.core.userdetails.MapReactiveUserDetailsService;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.crypto.factory.PasswordEncoderFactories;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.server.SecurityWebFilterChain;
 
 /**
@@ -24,16 +22,27 @@ public class WebSecurityConfig {
 	private KeyPair keyPair;
 	
 	@Bean
+	// 由于httpBasic().disable()，默认没有用到
+	public MapReactiveUserDetailsService userDetailsService() {
+		UserDetails user = User.withDefaultPasswordEncoder()
+		                       .username("user")
+		                       .password("password")
+		                       .roles("USER")
+		                       .build();
+		return new MapReactiveUserDetailsService(user);
+	}
+	
+	@Bean
 	public SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity http) {
 		http
 				.authorizeExchange()
 				.pathMatchers("/auth/**").permitAll()
-				.pathMatchers("/api/**").hasRole("ADMIN")
+				.pathMatchers("/api/**").hasAuthority("SCOPE_api")
 				.anyExchange().authenticated()
 				.and()
 				.httpBasic().disable()
-				.formLogin().disable()
 				.csrf().disable()
+				.formLogin().disable()
 				.oauth2ResourceServer()
 				.jwt()
 				.publicKey((RSAPublicKey) keyPair.getPublic())
