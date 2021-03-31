@@ -24,7 +24,6 @@ import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenCo
  */
 @Configuration
 @EnableAuthorizationServer
-@SuppressWarnings("FieldCanBeLocal")
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 	
 	private final UserDetailsService userDetailsService;
@@ -75,8 +74,8 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
 		endpoints.authenticationManager(authenticationManager)
 		         .accessTokenConverter(jwtAccessTokenConverter())
-		// 对于授权码模式不需要userDetailsService
-		//.userDetailsService(userDetailsService)
+		         // 对于授权码模式不需要userDetailsService, 但是刷新token需要
+		         .userDetailsService(userDetailsService)
 		;
 	}
 	

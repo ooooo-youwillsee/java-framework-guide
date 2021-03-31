@@ -9,7 +9,7 @@ create table if not exists oauth_client_details
     authorities             varchar(255),
     access_token_validity   int,
     refresh_token_validity  int,
-    additional_information  varchar(255) default '',
+    additional_information  varchar(255) default NULL,
     autoapprove             varchar(255) default 'true'
 );
 

@@ -1,10 +1,21 @@
 rootProject.name = 'java-framework-guide'
 
 include 'spring-simple-listener'
+
 include 'spring-mvc-requestmapping'
+
 include 'spring-bugs-report'
+
 include 'component-scan'
+
 include 'gateway-security:api-demo'
+include 'gateway-security:client-demo'
 include 'gateway-security:eureka-demo'
 include 'gateway-security:gateway-demo'
 include 'gateway-security:auth-demo'
+
+include 'rpcfx:rpcfx-core'
+include 'rpcfx:rpcfx-demo-api'
+include 'rpcfx:rpcfx-demo-consumer'
+include 'rpcfx:rpcfx-demo-provider'
+

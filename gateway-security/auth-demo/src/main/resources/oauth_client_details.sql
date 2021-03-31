@@ -1,2 +1,5 @@
 insert into oauth_client_details
-values ('crh', '{noop}secret', '', 'api,test', 'authorization_code,refresh_token', 'http://localhost:8888/auth/oauth/code', '', 1800000, 1800000, '', 'true');
+values ('xxx', '{noop}secret', '', 'api,test', 'authorization_code,refresh_token', 'http://127.0.0.1:8986/code', '', 1800000, 1800000, NULL, 'true');
+
+insert into oauth_client_details
+values ('yyy', '{noop}secret', '', 'api,test', 'authorization_code,refresh_token', 'http://localhost:8888/auth/oauth/code', '', 1800000, 1800000, NULL, 'true');
