@@ -27,7 +27,7 @@
 
 1. 请求 `/oauth/authorize` 地址，必须经过security的认证，用**Http Basic**, 用户名和密码由 `UserDetailsService` 来实现。
 
-2. 请求 `/oauth/token` 地址，此时也需要进行 **Http Basic** 认证，底层实现有一个特殊的 `org.springframework.security.web.SecurityFilterChain`, 此时用户名和密码用 `ClientDetailsService` 来实现
+2. 请求 `/oauth/token` 地址，此时也需要进行 **Http Basic** 认证，底层实现有一个特殊的 `org.springframework.security.web.SecurityFilterChain`, 此时用户名和密码用 `ClientDetailsService` 来实现， 对应源码位置 `org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerSecurityConfiguration#configure(org.springframework.security.config.annotation.web.builders.HttpSecurity)` 的 `requestMatchers()`
    
 
 关键类：
