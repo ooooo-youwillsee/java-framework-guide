@@ -4,6 +4,8 @@ dependencies {
     api('org.springframework.cloud:spring-cloud-starter-security')
     api('org.springframework.security:spring-security-oauth2-resource-server')
     api('org.springframework.security:spring-security-oauth2-jose')
+    // 限流 redis
+    api('org.springframework.boot:spring-boot-starter-data-redis-reactive')
 
     api('io.projectreactor:reactor-tools')
 }

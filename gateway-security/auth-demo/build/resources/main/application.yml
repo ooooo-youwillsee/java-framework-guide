@@ -17,6 +17,6 @@ management:
       exposure:
         include: '*'
 
-logging:
-  level:
-    root: debug
+#logging:
+#  level:
+#    root: debug

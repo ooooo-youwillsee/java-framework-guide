@@ -11,24 +11,32 @@ spring:
 
   cloud:
     gateway:
+      # 只有匹配到下面的路由才会生效。
+      defaultFilters:
+        - name: RequestRateLimiter
+          args:
+            redis-rate-limiter.replenishRate: 1    # 每秒生成令牌数量
+            redis-rate-limiter.burstCapacity: 60   # 总的容量的大小
+            redis-rate-limiter.requestedTokens: 60 # 一个请求需要多少个令牌
+        - StripPrefix=1
       routes:
         - id: api-demo
           uri: lb://api-demo
           predicates:
             - Path=/api/**
-          filters:
-            - StripPrefix=1
         - id: auth-demo
           uri: lb://auth-demo
           predicates:
             - Path=/auth/**
-          filters:
-            - StripPrefix=1
+  redis:
+    host: 127.0.0.1
+    port: 6379
+
 management:
   endpoints:
     web:
       exposure:
         include: '*'
-#logging:
-#  level:
-#    root: debug
+logging:
+  level:
+    root: debug

@@ -39,7 +39,7 @@ public class WebSecurityConfig {
 				.pathMatchers("/**").permitAll()
 				//.pathMatchers("/auth/**").permitAll()
 				//.pathMatchers("/api/**").hasAuthority("SCOPE_api")
-				.anyExchange().authenticated()
+				//.anyExchange().authenticated()
 				.and()
 				.httpBasic().disable()
 				.csrf().disable()

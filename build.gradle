@@ -2,7 +2,7 @@ import org.springframework.boot.gradle.plugin.SpringBootPlugin
 
 plugins {
     id 'io.spring.dependency-management' version '1.0.9.RELEASE' apply false
-    id 'org.springframework.boot' version '2.3.2.RELEASE' apply false
+    id 'org.springframework.boot' version '2.3.8.RELEASE' apply false
     id 'idea'
     id 'eclipse'
 }
@@ -31,7 +31,7 @@ allprojects {
     }
 
     ext {
-        set('springCloudVersion', "Hoxton.SR6")
+        set('springCloudVersion', "Hoxton.SR10")
     }
 
     dependencyManagement {
