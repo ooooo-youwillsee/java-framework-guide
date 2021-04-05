@@ -19,3 +19,6 @@ include 'rpcfx:rpcfx-demo-api'
 include 'rpcfx:rpcfx-demo-consumer'
 include 'rpcfx:rpcfx-demo-provider'
 
+include 'netty:netty-client'
+include 'netty:netty-server'
+

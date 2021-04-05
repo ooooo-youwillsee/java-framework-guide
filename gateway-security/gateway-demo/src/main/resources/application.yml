@@ -13,11 +13,11 @@ spring:
     gateway:
       # 只有匹配到下面的路由才会生效。
       defaultFilters:
-        - name: RequestRateLimiter
-          args:
-            redis-rate-limiter.replenishRate: 1    # 每秒生成令牌数量
-            redis-rate-limiter.burstCapacity: 60   # 总的容量的大小
-            redis-rate-limiter.requestedTokens: 60 # 一个请求需要多少个令牌
+#        - name: RequestRateLimiter
+#          args:
+#            redis-rate-limiter.replenishRate: 1    # 每秒生成令牌数量
+#            redis-rate-limiter.burstCapacity: 60   # 总的容量的大小
+#            redis-rate-limiter.requestedTokens: 60 # 一个请求需要多少个令牌
         - StripPrefix=1
       routes:
         - id: api-demo
