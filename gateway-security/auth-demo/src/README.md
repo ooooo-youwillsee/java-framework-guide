@@ -39,3 +39,8 @@
 3. `org.springframework.security.oauth2.provider.endpoint.CheckTokenEndpoint` 检查token地址
 
 4、 `org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter` spring security 的配置，可以通过它来配置 `org.springframework.security.authentication.AuthenticationManager`
+
+
+##
+
+`jwt` 默认使用 `SHA256withRSA` 算法， 源码位置：`org.springframework.security.jwt.crypto.sign.RsaSigner`
