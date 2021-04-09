@@ -1,7 +1,7 @@
 package com.ooooo.config;
 
-import com.ooooo.annotation.XXXService;
-import com.ooooo.bean.XXXFactoryBean;
+import com.ooooo.annotation.APIService;
+import com.ooooo.bean.APIFactoryBean;
 import java.util.LinkedHashSet;
 import java.util.Set;
 import org.springframework.beans.factory.annotation.AnnotatedBeanDefinition;
@@ -23,12 +23,12 @@ import org.springframework.util.Assert;
  * <p>
  * method for scan
  */
-public class XXXComponentScanner extends ClassPathBeanDefinitionScanner {
+public class APIServiceComponentScanner extends ClassPathBeanDefinitionScanner {
 	
 	private final BeanNameGenerator beanNameGenerator = AnnotationBeanNameGenerator.INSTANCE;
 	public Class<?> serviceFactory;
 	
-	public XXXComponentScanner(BeanDefinitionRegistry registry, Class<?> serviceFactory) {
+	public APIServiceComponentScanner(BeanDefinitionRegistry registry, Class<?> serviceFactory) {
 		super(registry, true);
 		setIncludeAnnotationConfig(false);
 		this.serviceFactory = serviceFactory;
@@ -36,7 +36,7 @@ public class XXXComponentScanner extends ClassPathBeanDefinitionScanner {
 	
 	@Override
 	protected void registerDefaultFilters() {
-		addIncludeFilter(new AnnotationTypeFilter(XXXService.class));
+		addIncludeFilter(new AnnotationTypeFilter(APIService.class));
 	}
 	
 	protected Set<BeanDefinitionHolder> doScan(String... basePackages) {
@@ -54,7 +54,7 @@ public class XXXComponentScanner extends ClassPathBeanDefinitionScanner {
 					String interfaceClassName = candidate.getBeanClassName();
 					candidate.getPropertyValues().add("interfaceClazz", interfaceClassName);
 					candidate.getPropertyValues().add("serviceFactory", new RuntimeBeanReference(serviceFactory));
-					candidate.setBeanClassName(XXXFactoryBean.class.getName());
+					candidate.setBeanClassName(APIFactoryBean.class.getName());
 					
 					BeanDefinitionHolder definitionHolder = new BeanDefinitionHolder(candidate, beanName);
 					beanDefinitions.add(definitionHolder);
@@ -68,7 +68,7 @@ public class XXXComponentScanner extends ClassPathBeanDefinitionScanner {
 	protected boolean isCandidateComponent(AnnotatedBeanDefinition beanDefinition) {
 		AnnotationMetadata metadata = beanDefinition.getMetadata();
 		Set<String> annotationTypes = metadata.getAnnotationTypes();
-		return annotationTypes.contains(XXXService.class.getName());
+		return annotationTypes.contains(APIService.class.getName());
 	}
 	
 	

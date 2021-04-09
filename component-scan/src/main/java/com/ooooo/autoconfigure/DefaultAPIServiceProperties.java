@@ -6,7 +6,7 @@ import com.ooooo.properties.ServiceProperties;
  * @author leizhijie
  * @since 2021/2/22 15:16
  */
-public class DefaultXXXServiceProperties implements ServiceProperties {
+public class DefaultAPIServiceProperties implements ServiceProperties {
 	
 	@Override
 	public String getIp() {

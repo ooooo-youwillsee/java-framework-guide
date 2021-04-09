@@ -12,7 +12,7 @@ import org.springframework.beans.factory.InitializingBean;
  * convert interface to FactoryBean
  */
 @Setter
-public class XXXFactoryBean<T> implements FactoryBean<T>, InitializingBean {
+public class APIFactoryBean<T> implements FactoryBean<T>, InitializingBean {
 	
 	public ServiceFactory serviceFactory;
 	public Class<T> interfaceClazz;

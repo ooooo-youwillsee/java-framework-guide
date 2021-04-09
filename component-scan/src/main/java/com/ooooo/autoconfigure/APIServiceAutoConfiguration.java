@@ -16,12 +16,12 @@ import org.springframework.web.client.RestTemplate;
  * @since 2021/2/22 17:06
  */
 @Configuration
-public class XXXServiceAutoConfiguration {
+public class APIServiceAutoConfiguration {
 	
 	@Bean
 	@ConditionalOnMissingBean
-	public DefaultXXXServiceProperties defaultXXXServiceProperties() {
-		return new DefaultXXXServiceProperties();
+	public DefaultAPIServiceProperties defaultXXXServiceProperties() {
+		return new DefaultAPIServiceProperties();
 	}
 	
 	@Bean
@@ -55,7 +55,7 @@ public class XXXServiceAutoConfiguration {
 	
 	@Bean
 	@ConditionalOnMissingBean
-	public DefaultXXXServiceFactory defaultXXXServiceFactory() {
-		return new DefaultXXXServiceFactory(defaultXXXServiceProperties(), xxxRestTemplate());
+	public APIServiceFactory defaultXXXServiceFactory() {
+		return new APIServiceFactory(defaultXXXServiceProperties(), xxxRestTemplate());
 	}
 }

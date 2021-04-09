@@ -1,6 +1,6 @@
 package com.ooooo.autoconfigure;
 
-import com.ooooo.annotation.XXXRequestMapping;
+import com.ooooo.annotation.APIMapping;
 import com.ooooo.factory.ServiceFactory;
 import com.ooooo.properties.ServiceProperties;
 import java.lang.reflect.InvocationHandler;
@@ -21,13 +21,13 @@ import org.springframework.web.util.UriComponentsBuilder;
  * @author leizhijie
  * @since 2021/2/22 15:07 simple use jdk proxy
  */
-public class DefaultXXXServiceFactory implements ServiceFactory, InvocationHandler {
+public class APIServiceFactory implements ServiceFactory, InvocationHandler {
 	
 	private final ConcurrentHashMap<Class<?>, Object> cache;
 	private final ServiceProperties serviceProperties;
 	private final RestTemplate template;
 	
-	public DefaultXXXServiceFactory(ServiceProperties serviceProperties, RestTemplate template) {
+	public APIServiceFactory(ServiceProperties serviceProperties, RestTemplate template) {
 		cache = new ConcurrentHashMap<>(32);
 		this.serviceProperties = serviceProperties;
 		this.template = template;
@@ -68,7 +68,7 @@ public class DefaultXXXServiceFactory implements ServiceFactory, InvocationHandl
 	}
 	
 	private String resolveUrl(Method method) {
-		XXXRequestMapping annotation = AnnotationUtils.getAnnotation(method, XXXRequestMapping.class);
+		APIMapping annotation = AnnotationUtils.getAnnotation(method, APIMapping.class);
 		if (annotation == null) {
 			throw new IllegalArgumentException("'@XXXRequestMapping' anonation isn't present ");
 		}
@@ -76,7 +76,7 @@ public class DefaultXXXServiceFactory implements ServiceFactory, InvocationHandl
 	}
 	
 	private HttpMethod resolveMethod(Method method) {
-		XXXRequestMapping annotation = AnnotationUtils.getAnnotation(method, XXXRequestMapping.class);
+		APIMapping annotation = AnnotationUtils.getAnnotation(method, APIMapping.class);
 		if (annotation == null) {
 			throw new IllegalArgumentException("'@XXXRequestMapping' anonation isn't present ");
 		}

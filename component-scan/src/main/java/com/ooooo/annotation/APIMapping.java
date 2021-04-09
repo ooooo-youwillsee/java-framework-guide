@@ -16,7 +16,7 @@ import org.springframework.http.HttpMethod;
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 @Inherited
-public @interface XXXRequestMapping {
+public @interface APIMapping {
 	
 	String value();
 	
