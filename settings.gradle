@@ -6,6 +6,8 @@ include 'spring-mvc-requestmapping'
 
 include 'spring-bugs-report'
 
+include 'spring-redis'
+
 include 'component-scan'
 
 include 'gateway-security:api-demo'
@@ -21,4 +23,6 @@ include 'rpcfx:rpcfx-demo-provider'
 
 include 'netty:netty-client'
 include 'netty:netty-server'
+
+
 

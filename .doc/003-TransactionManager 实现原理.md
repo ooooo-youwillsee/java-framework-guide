@@ -33,3 +33,6 @@
 
 1. commit 操作前：`org.springframework.transaction.support.AbstractPlatformTransactionManager#prepareForCommit`
 
+2. 当前事务状态： `TransactionAspectSupport#currentTransactionStatus()` ， 通过方法 `setRollbackOnly()` 强制回滚事务
+   
+3. 当前事务信息： `TransactionAspectSupport#currentTransactionInfo()` 
