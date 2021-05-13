@@ -4,6 +4,8 @@ include 'spring-simple-listener'
 
 include 'spring-mvc-requestmapping'
 
+include 'spring-mvc-argument-resolver'
+
 include 'spring-bugs-report'
 
 include 'spring-redis'
