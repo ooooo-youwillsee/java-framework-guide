@@ -9,6 +9,8 @@ import com.ooooo.entity.ReqHeader;
 import com.ooooo.entity.User;
 import java.util.Date;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.http.MediaType;
@@ -24,16 +26,19 @@ import org.springframework.util.Assert;
 @AutoConfigureMockMvc
 public class UserControllerTests extends SpringMvcArgumentResolverApplicationTests {
 	
+	private static final Logger LOGGER = LoggerFactory.getLogger(UserControllerTests.class);
 	@Autowired
 	private MockMvc mockMvc;
 	
 	@Test
 	public void user() throws Exception {
+		String requestJson = JSON.toJSONString(createReq());
+		LOGGER.info("requestJson: {}", requestJson);
 		MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.post("/user")
 		                                                            .accept(MediaType.APPLICATION_JSON)
 		                                                            .contentType(MediaType.APPLICATION_JSON)
-		                                                            .content(JSON.toJSONString(createReq())))
-		                             .andReturn();
+		                                                            .content(requestJson))
+		                                                            .andReturn();
 		String res = mvcResult.getResponse().getContentAsString();
 		Assert.notNull(res, "message cann't is null");
 	}

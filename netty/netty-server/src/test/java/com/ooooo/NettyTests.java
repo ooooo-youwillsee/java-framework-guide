@@ -119,7 +119,7 @@ public class NettyTests {
 		EmbeddedChannel channel = new EmbeddedChannel();
 		channel.pipeline()
 		       //.addLast(new LengthFieldBasedFrameDecoder(Integer.MAX_VALUE, header.length, 2, 0, header.length + 2)) // header.length + 2 等价于 header.length， 不会管长度域的长度
-		       .addLast(new LengthFieldBasedFrameDecoder(Integer.MAX_VALUE, header.length, 2, 0, header.length))
+		       .addLast(new LengthFieldBasedFrameDecoder(Integer.MAX_VALUE, header.length, 2, 0, header.length)) // 读取到的字节是 header + body
 		       .addLast(new ByteToMessageDecoder() {
 			       @Override
 			       protected void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) throws Exception {
