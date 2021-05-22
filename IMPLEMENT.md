@@ -41,3 +41,7 @@
 ### 7. component-scan
 
 1. 实现了注解 `@APIServiceComponentScan`
+
+### 8. experimental-code
+
+1. `LambdaUtils` 类解析 lambda 函数的属性

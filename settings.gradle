@@ -12,6 +12,8 @@ include 'spring-redis'
 
 include 'component-scan'
 
+include 'experimental-code'
+
 include 'gateway-security:api-demo'
 include 'gateway-security:client-demo'
 include 'gateway-security:eureka-demo'
