@@ -1,6 +1,9 @@
 server:
   port: 8986
-
+  servlet:
+    session:
+      cookie:
+        name: OAUTH2CLIENTSESSION
 spring:
   application:
     name: api-demo
@@ -20,8 +23,21 @@ security:
       client-secret: secret
       access-token-uri: http://127.0.0.1:7777/oauth/token
       user-authorization-uri: http://127.0.0.1:7777/oauth/authorize
+      scope: api
+    #      clientAuthenticationScheme: form
     resource:
       jwt:
-#        key-uri: http://127.0.0.1:7777/oauth/token_key
-        key-uri: http://127.0.0.1:7777/.well-known/jwks
+        key-uri: http://127.0.0.1:7777/oauth/token_key
 
+---
+spring:
+  profiles: client1
+
+server:
+  port: 7788
+
+---
+spring:
+  profiles: client2
+server:
+  port: 8986

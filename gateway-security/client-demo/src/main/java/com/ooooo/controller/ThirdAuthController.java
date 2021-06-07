@@ -9,11 +9,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
+ *
+ * 第三方接入示例
  * @author leizhijie
  * @since 2021/3/31 16:30
  */
 @RestController
-public class TestController {
+public class ThirdAuthController {
 	
 	@Autowired
 	private OAuth2Service oAuth2Service;

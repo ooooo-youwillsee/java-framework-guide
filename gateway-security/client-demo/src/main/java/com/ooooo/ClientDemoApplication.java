@@ -9,7 +9,6 @@ import org.springframework.boot.autoconfigure.security.oauth2.client.EnableOAuth
  * @since 2021/3/12 18:31
  */
 @SpringBootApplication
-@EnableOAuth2Sso
 public class ClientDemoApplication {
 	
 	public static void main(String[] args) {

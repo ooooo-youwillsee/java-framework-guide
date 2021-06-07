@@ -47,7 +47,7 @@ public class OAuth2Service {
 		tokenRequest.setClient_id("xxx");
 		tokenRequest.setClient_secret("secret");
 		//tokenRequest.setRedirect_uri(calculateCurrentUri(request));
-		tokenRequest.setRedirect_uri("http://127.0.0.1:8986/code");
+		tokenRequest.setRedirect_uri("http://127.0.0.1:8986/login");
 		tokenRequest.setScope("api");
 		tokenRequest.setUsername("user");
 		tokenRequest.setPassword("password");

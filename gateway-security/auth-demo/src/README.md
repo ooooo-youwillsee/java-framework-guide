@@ -2,19 +2,19 @@
 
 - 请求授权码：
 
-`curl --location --request GET 'http://localhost:7777/oauth/authorize?state=1&client_id=crh&redirect_uri=http://localhost:7777/oauth/code&response_type=code&scope=read' \
+`curl --location --request GET 'http://localhost:7777/oauth/authorize?state=1&client_id=xxx&redirect_uri=http://localhost:7777/oauth/code&response_type=code&scope=read' \
 --header 'Authorization: Basic dXNlcjpwYXNzd29yZA==' `
 
 
 - 请求token
 
-`curl --location --request POST 'http://localhost:7777/oauth/token?grant_type=authorization_code&client_id=crh&code=请求到的code&scope=read&redirect_uri=http://localhost:7777/oauth/code' \
+`curl --location --request POST 'http://localhost:7777/oauth/token?grant_type=authorization_code&client_id=xxx&code=请求到的code&scope=read&redirect_uri=http://localhost:7777/oauth/code' \
 --header 'Authorization: Basic Y3JoOnNlY3JldA=='`
 
 
 - 刷新token
 
-`curl --location --request POST 'http://localhost:7777/oauth/token?grant_type=refresh_token&client_id=crh&refresh_token=你的RefreshToken\
+`curl --location --request POST 'http://localhost:7777/oauth/token?grant_type=refresh_token&client_id=xxx&refresh_token=你的RefreshToken\
 --header 'Authorization: Basic Y3JoOnNlY3JldA=='`
 
 
