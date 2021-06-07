@@ -20,48 +20,48 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 @EnableWebSecurity(debug = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-	
+
 	@Autowired
 	private UserDetailsService userDetailsService;
-	
+
 	@Override
 	public void configure(WebSecurity web) throws Exception {
 		web.ignoring()
-		   .antMatchers("/resources/**")
+						.antMatchers("/resources/**")
 		;
 	}
-	
+
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-		    .antMatchers("/oauth/**").permitAll()
-		    //.antMatchers("/oauth/code")
-		    //.antMatchers("/oauth/token")
-		    //.antMatchers("/oauth/authorize")
-		    //.antMatchers("/oauth/check_token")
-		    .anyRequest().authenticated()
-		    .and()
-		    .httpBasic()
-		    .and()
-		    .formLogin().disable()
-		    .csrf().disable()
+						.antMatchers("/oauth/**").permitAll()
+						.antMatchers("/login").permitAll()
+						.antMatchers("/.well-known/").permitAll()
+						.anyRequest().authenticated()
+						.and()
+						.httpBasic().disable()
+						.formLogin()
+						.loginPage("/login")
+						.loginProcessingUrl("/login")
+						.and()
+						.csrf().disable()
 		;
 	}
-	
-	
+
+
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(userDetailsService)
 		;
 	}
-	
-	
+
+
 	@Bean
 	@Override
 	public AuthenticationManager authenticationManagerBean() throws Exception {
 		return super.authenticationManagerBean();
 	}
-	
+
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 		return PasswordEncoderFactories.createDelegatingPasswordEncoder();
