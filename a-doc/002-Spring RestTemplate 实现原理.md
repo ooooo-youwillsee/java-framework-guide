@@ -65,3 +65,65 @@ public <T> T execute(String url, HttpMethod method, @Nullable RequestCallback re
 4. `errorHandler.hasError(response)` 判断是否有错误，默认情况下响应码为 `4xx` 和 `5xx` 作为错误， 可以用 `restTemplate.setErrorHandler` 来设置，如果有错误，就抛出异常。
    
 5. `responseExtractor.extractData(response)` 对结果进行处理， 默认实现为 `ResponseEntityResponseExtractor` (利用 `messageConverters` 对 `ResponseType` 进行转换)。
+
+
+## 代码示例
+
+### 1. post form 请求示例
+
+```
+@Test
+public void postForm() {
+    MultiValueMap<String, Object> body = new LinkedMultiValueMap<>();
+    body.add("id", "111");
+    body.add("name", "postForm");
+    HttpHeaders httpHeaders = new HttpHeaders();
+    httpHeaders.add(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_FORM_URLENCODED_VALUE);
+    HttpEntity<MultiValueMap<String, Object>> entity = new HttpEntity<>(body, httpHeaders);
+    ResponseEntity<TestController.Resp> responseEntity = restTemplate.exchange("http://127.0.0.1:7090/postForm", HttpMethod.POST, entity, TestController.Resp.class);
+    HttpStatus statusCode = responseEntity.getStatusCode();
+    Assertions.assertEquals(statusCode, HttpStatus.OK);
+}
+```
+
+
+### 2. post Json请求示例
+
+```
+@Test
+public void postJson() {
+    MultiValueMap<String, Object> body = new LinkedMultiValueMap<>();
+    body.add("id", "111");
+    body.add("name", "postJson");
+    HttpHeaders httpHeaders = new HttpHeaders();
+    httpHeaders.add(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE);
+    HttpEntity<String> entity = new HttpEntity<>(JSON.toJSONString(body.toSingleValueMap()), httpHeaders);
+    ResponseEntity<TestController.Resp> responseEntity = restTemplate.exchange("http://127.0.0.1:7090/postJson", HttpMethod.POST, entity, TestController.Resp.class);
+    HttpStatus statusCode = responseEntity.getStatusCode();
+    Assertions.assertEquals(statusCode, HttpStatus.OK);
+}
+```
+
+### 3. post file请求示例
+
+```
+@Test
+public void postFile() throws IOException {
+    File tempFile = File.createTempFile("postFile", ".txt");
+    IOUtils.write("testing for post file", new FileOutputStream(tempFile), StandardCharsets.UTF_8);
+
+    HttpHeaders fileHeader = new HttpHeaders();
+    fileHeader.add(HttpHeaders.CONTENT_DISPOSITION, "form-data; name=file; filename=postFile.txt");
+    fileHeader.add(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_OCTET_STREAM_VALUE);
+    HttpEntity<InputStreamResource> file = new HttpEntity<>(new InputStreamResource(new FileInputStream(tempFile)), fileHeader);
+
+    MultiValueMap<String, Object> body = new LinkedMultiValueMap<>();
+    body.add("file", file);
+    HttpHeaders httpHeaders = new HttpHeaders();
+    httpHeaders.add(HttpHeaders.CONTENT_TYPE, MediaType.MULTIPART_FORM_DATA_VALUE);
+    HttpEntity<MultiValueMap<String, Object>> entity = new HttpEntity<>(body, httpHeaders);
+    ResponseEntity<TestController.Resp> responseEntity = restTemplate.exchange("http://127.0.0.1:7090/postFile", HttpMethod.POST, entity, TestController.Resp.class);
+    HttpStatus statusCode = responseEntity.getStatusCode();
+    Assertions.assertEquals(statusCode, HttpStatus.OK);
+}
+```
