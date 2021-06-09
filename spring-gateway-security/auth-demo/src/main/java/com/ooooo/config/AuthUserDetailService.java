@@ -32,7 +32,6 @@ public class AuthUserDetailService implements UserDetailsService {
 		String password = MapUtils.getString(m, "password");
 		List<String> roles = Arrays.stream(MapUtils.getString(m, "roles").split(",")).collect(Collectors.toList());
 		boolean enabled = "1".equals(MapUtils.getString(m, "enabled"));
-		AuthUserDetail userDetail = new AuthUserDetail(username, password, roles, enabled);
-		return userDetail;
+		return new AuthUserDetail(username, password, roles, enabled);
 	}
 }

@@ -14,11 +14,11 @@ include 'component-scan'
 
 include 'experimental-code'
 
-include 'gateway-security:api-demo'
-include 'gateway-security:client-demo'
-include 'gateway-security:eureka-demo'
-include 'gateway-security:gateway-demo'
-include 'gateway-security:auth-demo'
+include 'spring-gateway-security:api-demo'
+include 'spring-gateway-security:client-demo'
+include 'spring-gateway-security:eureka-demo'
+include 'spring-gateway-security:gateway-demo'
+include 'spring-gateway-security:auth-demo'
 
 //include 'rpcfx:rpcfx-core'
 //include 'rpcfx:rpcfx-demo-api'

@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
+ * 用于测试sso
  * @author leizhijie
  * @since 2021/6/7 18:08
  */
