@@ -2,41 +2,41 @@
 <body>
 <h2 class="page-header">用户名密码登录</h2>
 <div class="row">
-  <div class="col-md-6">
+    <div class="col-md-6">
 
-    <div class="panel panel-default">
-      <div class="panel-body">
+        <div class="panel panel-default">
+            <div class="panel-body">
 
-        <form action="/login" method="post" class="form-horizontal">
-          <div class="form-group">
-            <label for="username" class="col-sm-3 control-label">Username</label>
+                <form action="http://127.0.0.1:8888/auth/login" method="post" class="form-horizontal">
+                    <div class="form-group">
+                        <label for="username" class="col-sm-3 control-label">Username</label>
 
-            <div class="col-sm-9">
-              <input type="text" id="username" name="username" value="" placeholder="Type username"
-                     class="form-control"/>
+                        <div class="col-sm-9">
+                            <input type="text" id="username" name="username" value="" placeholder="Type username"
+                                   class="form-control"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password" class="col-sm-3 control-label">Password</label>
+
+                        <div class="col-sm-9">
+                            <input type="password" name="password" id="password" value="" placeholder="Type password"
+                                   class="form-control"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-9">
+                            <input type="submit" value="Login" class="btn btn-primary"/>
+                        </div>
+                    </div>
+                </form>
+
             </div>
-          </div>
+        </div>
 
-          <div class="form-group">
-            <label for="password" class="col-sm-3 control-label">Password</label>
-
-            <div class="col-sm-9">
-              <input type="password" name="password" id="password" value="" placeholder="Type password"
-                     class="form-control"/>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <div class="col-sm-9">
-              <input type="submit" value="Login" class="btn btn-primary"/>
-            </div>
-          </div>
-        </form>
-
-      </div>
     </div>
-
-  </div>
 </div>
 </body>
 </html>

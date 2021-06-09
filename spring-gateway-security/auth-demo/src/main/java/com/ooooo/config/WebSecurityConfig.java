@@ -20,7 +20,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 @EnableWebSecurity(debug = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
-	
+
 	@Autowired
 	private UserDetailsService userDetailsService;
 
@@ -33,34 +33,35 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-		    .antMatchers("/oauth/**").permitAll()
-		    .antMatchers("/loginPage").permitAll()
-		    .anyRequest().authenticated()
-		    .and()
-		    .httpBasic()
-		    .and()
-		    .formLogin()
-		    .loginPage("/loginPage")
-		    .loginProcessingUrl("/login")
-		    .and()
-		    .csrf().disable()
+						.antMatchers("/error").permitAll()
+						.antMatchers("/oauth/**").permitAll()
+						.antMatchers("/loginPage").permitAll()
+						.anyRequest().authenticated()
+						.and()
+						.httpBasic()
+						.and()
+						.formLogin()
+						.loginPage("http://127.0.0.1:8888/auth/loginPage")
+						.loginProcessingUrl("/login")
+						.and()
+						.csrf().disable()
 		;
 	}
-	
-	
+
+
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(userDetailsService)
 		;
 	}
-	
-	
+
+
 	@Bean
 	@Override
 	public AuthenticationManager authenticationManagerBean() throws Exception {
 		return super.authenticationManagerBean();
 	}
-	
+
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 		return PasswordEncoderFactories.createDelegatingPasswordEncoder();

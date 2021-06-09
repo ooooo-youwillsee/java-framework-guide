@@ -13,21 +13,23 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
-
-
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
 
 security:
   oauth2:
     client:
       client-id: xxx
       client-secret: secret
-      access-token-uri: http://127.0.0.1:7777/oauth/token
-      user-authorization-uri: http://127.0.0.1:7777/oauth/authorize
+      access-token-uri: http://127.0.0.1:8888/auth/oauth/token
+      user-authorization-uri: http://127.0.0.1:8888/auth/oauth/authorize
       scope: api
     #      clientAuthenticationScheme: form
     resource:
       jwt:
-        key-uri: http://127.0.0.1:7777/oauth/token_key
+        key-uri: http://127.0.0.1:8888/auth/oauth/token_key
 
 ---
 spring:
