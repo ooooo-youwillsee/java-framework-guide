@@ -2,15 +2,16 @@ package com.ooooo.protobuf;
 
 import com.alibaba.fastjson.JSON;
 import com.google.protobuf.Descriptors.FieldDescriptor;
+import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.util.StopWatch;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.Map;
 import java.util.Map.Entry;
-import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.util.StopWatch;
 
 /**
  * @author leizhijie
@@ -22,7 +23,7 @@ public class AddressBookTests {
 	private static final Logger LOGGER = LoggerFactory.getLogger(AddressBookTests.class);
 	
 	/**
-	 * 测试getAllFields, 这个方法可以用来反射
+	 * 测试getAllFields, 这个方法可以用来反射， 通过key.getName()方法获取字段的名称，调用field。invoke来设置值
 	 */
 	@Test
 	public void testGetAllFields() {
@@ -41,15 +42,14 @@ public class AddressBookTests {
 			FieldDescriptor key = entry.getKey();
 			Object value = entry.getValue();
 			
-			//  key.getIndex()  这个key 是第几个
-			LOGGER.info("{}, {}, {}, {},{},{}", key.getName(), key.getIndex(), key.getContainingType(), key.getJavaType(), key.getJsonName(), value.toString());
+			//  key.getIndex()  这个key 是第几个,
+			LOGGER.info("\nname: {}, key: {}, containingType: {}, javaType: {}, jsonName: {}, value: {}", key.getName(), key.getIndex(), key.getContainingType(), key.getJavaType(), key.getJsonName(), value.toString());
 		}
 	}
 	
 	
 	/**
 	 * 这里是比较了 json 和 protobuf 的序列化速度， 在实际使用中，要考虑传输的字节大小
-	 * @throws Exception
 	 */
 	@Test
 	public void testProtobufVSJson() throws Exception {
