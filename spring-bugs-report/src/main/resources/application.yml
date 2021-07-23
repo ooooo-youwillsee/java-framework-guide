@@ -1,0 +1,7 @@
+server:
+  port: 8021
+
+
+test:
+  id: 1234
+  name: tom
