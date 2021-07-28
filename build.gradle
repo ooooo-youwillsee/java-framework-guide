@@ -1,5 +1,6 @@
 import org.springframework.boot.gradle.plugin.SpringBootPlugin
 
+
 plugins {
     id 'io.spring.dependency-management' version '1.0.9.RELEASE' apply false
     id 'org.springframework.boot' version '2.3.8.RELEASE' apply false
@@ -17,7 +18,7 @@ allprojects {
     version '1.0.0'
 
     repositories {
-        maven {url 'https://maven.aliyun.com/repository/public'}
+        maven { url 'https://maven.aliyun.com/repository/public' }
         mavenCentral()
     }
 
@@ -32,12 +33,22 @@ allprojects {
 
     ext {
         set('springCloudVersion', "Hoxton.SR10")
+        set('grpcVersion', '1.39.0')
+        set('protocVersion', '3.17.2')
     }
+
 
     dependencyManagement {
         imports {
             mavenBom SpringBootPlugin.BOM_COORDINATES
             mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        }
+        dependencies {
+            dependency "io.grpc:grpc-protobuf:${grpcVersion}"
+            dependency "io.grpc:grpc-stub:${grpcVersion}"
+            dependency "io.grpc:grpc-netty-shaded:${grpcVersion}"
+            dependency "io.grpc:grpc-core:${grpcVersion}" // spring 依赖管理中定义了，需要重新声明
+            dependency "io.grpc:grpc-api:${grpcVersion}" // spring 依赖管理中定义了，需要重新声明
         }
     }
     dependencies {
