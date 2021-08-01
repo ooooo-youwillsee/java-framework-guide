@@ -1,3 +1,0 @@
-dependencies {
-    api 'io.netty:netty-all:4.1.61.Final'
-}

@@ -20,13 +20,4 @@ include 'spring-gateway-security:eureka-demo'
 include 'spring-gateway-security:gateway-demo'
 include 'spring-gateway-security:auth-demo'
 
-//include 'rpcfx:rpcfx-core'
-//include 'rpcfx:rpcfx-demo-api'
-//include 'rpcfx:rpcfx-demo-consumer'
-//include 'rpcfx:rpcfx-demo-provider'
-
-include 'netty:netty-client'
-include 'netty:netty-server'
-
-
 

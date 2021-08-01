@@ -1,4 +1,4 @@
-package com.ooooo;
+package com.ooooo.netty;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
@@ -8,9 +8,10 @@ import io.netty.handler.codec.ByteToMessageDecoder;
 import io.netty.handler.codec.FixedLengthFrameDecoder;
 import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
 import io.netty.handler.codec.LineBasedFrameDecoder;
+import org.junit.jupiter.api.Test;
+
 import java.nio.charset.StandardCharsets;
 import java.util.List;
-import org.junit.jupiter.api.Test;
 
 /**
  * @author leizhijie
