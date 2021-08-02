@@ -101,7 +101,7 @@ public class NettyTests {
 	
 	/**
 	 * 测试 LengthFieldBasedFrameDecoder (变长)
-	 *
+	 *  这个解码器，用的地方不多
 	 * @note lengthAdjustment
 	 * <br>
 	 * lengthFieldLength中的大小 + lengthAdjustment 等于最终读的字节数大小
