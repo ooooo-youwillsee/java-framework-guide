@@ -4,11 +4,14 @@ import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
+import io.netty.handler.timeout.IdleStateEvent;
+import io.netty.handler.timeout.IdleStateHandler;
 import lombok.SneakyThrows;
 
 import java.net.InetSocketAddress;
-import java.util.Random;
+import java.util.concurrent.TimeUnit;
 
 /**
  * simple heartbeat client
@@ -17,6 +20,7 @@ import java.util.Random;
  */
 public class HeartbeatClient {
 
+	public static final long heartbeat_time = 2;
 
 	@SneakyThrows
 	public static void main(String[] args) {
@@ -30,20 +34,34 @@ public class HeartbeatClient {
 								@Override
 								protected void initChannel(Channel ch) throws Exception {
 									ChannelPipeline pipeline = ch.pipeline();
+									pipeline.addLast(new IdleStateHandler(heartbeat_time, 0, 0, TimeUnit.SECONDS));
+									pipeline.addLast(new StringDecoder());
+									pipeline.addLast(new ClientHandler());
 									pipeline.addLast(new StringEncoder());
 								}
 							});
 
 			ChannelFuture channelFuture = bootstrap.connect(new InetSocketAddress(HeartbeatServer.port)).sync();
 			Channel channel = channelFuture.channel();
-
-			while (channel.isActive()) {
-				Random random = new Random();
-				Thread.sleep(random.nextInt(10) * 1000);
-				channel.writeAndFlush("heartbeat");
-			}
+			channel.closeFuture().sync();
 		} finally {
 			eventLoopGroup.shutdownGracefully();
+		}
+	}
+
+	private static class ClientHandler extends ChannelDuplexHandler {
+
+		@Override
+		public void userEventTriggered(ChannelHandlerContext ctx, Object evt) throws Exception {
+			if (evt instanceof IdleStateEvent) {
+				System.out.println("preparing send heartbeat");
+				ctx.channel().writeAndFlush("heartbeat!!!");
+			}
+		}
+
+		@Override
+		public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+			System.out.println("receiver server data: '" + msg + "'");
 		}
 	}
 }
