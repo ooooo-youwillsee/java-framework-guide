@@ -1,4 +1,0 @@
-singleServerConfig:
-  address: redis://127.0.0.1:6379
-# 直接指定一个类
-codec: !<org.redisson.codec.JsonJacksonCodec> {}

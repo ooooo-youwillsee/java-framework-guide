@@ -1,23 +1,24 @@
 rootProject.name = 'java-framework-guide'
 
-include 'spring-simple-listener'
-
-include 'spring-mvc-requestmapping'
-
-include 'spring-mvc-argument-resolver'
-
 include 'spring-bugs-report'
-
-include 'spring-redis'
-
-include 'component-scan'
 
 include 'experimental-code'
 
-include 'spring-gateway-security:api-demo'
-include 'spring-gateway-security:client-demo'
-include 'spring-gateway-security:eureka-demo'
-include 'spring-gateway-security:gateway-demo'
-include 'spring-gateway-security:auth-demo'
+// spring extension examples
+include 'spring-extension-examples:service-component-scan'
+include 'spring-extension-examples:spring-mvc-argumentResolver'
+include 'spring-extension-examples:spring-simple-listener'
+include 'spring-extension-examples:spring-boot-service-component-scan'
 
 
+// spring boot examples
+include 'spring-boot-examples:spring-boot-redis'
+
+
+// spring cloud examples
+include 'spring-cloud-examples:spring-cloud-feign'
+include 'spring-cloud-examples:spring-cloud-eureka'
+include 'spring-cloud-examples:spring-cloud-authorize-client'
+include 'spring-cloud-examples:spring-cloud-authorize-server'
+include 'spring-cloud-examples:spring-cloud-gateway'
+include 'spring-cloud-examples:spring-cloud-simple-api'
