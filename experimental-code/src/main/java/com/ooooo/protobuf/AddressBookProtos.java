@@ -34,8 +34,8 @@ public final class AddressBookProtos {
       getDescriptor() {
     return descriptor;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
+  private static final com.google.protobuf.Descriptors.FileDescriptor
+          descriptor;
   static {
     java.lang.String[] descriptorData = {
       "\n\021AddressBook.proto\022\021experimental_code\"\263" +
