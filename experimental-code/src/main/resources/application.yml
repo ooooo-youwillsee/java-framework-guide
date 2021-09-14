@@ -1,2 +1,12 @@
 server:
   port: 7090
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+    jmx:
+      exposure:
+        include: '*'
