@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: demo-spring-cloud-apollo
+
+server:
+  port: 0
+
+app:
+  id: ${spring.application.name}
+apollo:
+  bootstrap:
+    enabled: true
+    namespaces: TEST1.demo-namespace1.yml
+  meta: http://centos1:8080

@@ -18,6 +18,7 @@ include 'spring-boot-examples:spring-boot-redis'
 // spring cloud examples
 include 'spring-cloud-examples:spring-cloud-feign'
 include 'spring-cloud-examples:spring-cloud-eureka'
+include 'spring-cloud-examples:spring-cloud-apollo'
 include 'spring-cloud-examples:spring-cloud-authorize-client'
 include 'spring-cloud-examples:spring-cloud-authorize-server'
 include 'spring-cloud-examples:spring-cloud-gateway'

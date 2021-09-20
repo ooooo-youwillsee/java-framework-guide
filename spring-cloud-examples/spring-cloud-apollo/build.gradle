@@ -1,0 +1,4 @@
+dependencies {
+    api('org.springframework.boot:spring-boot-starter-web')
+    api('com.ctrip.framework.apollo:apollo-client:1.5.0')
+}
