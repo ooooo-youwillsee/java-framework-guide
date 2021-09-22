@@ -1,0 +1,7 @@
+dependencies {
+    api('org.springframework.boot:spring-boot-starter-web')
+    api('org.springframework.boot:spring-boot-starter-jdbc')
+    api('org.apache.dubbo:dubbo-spring-boot-starter:2.7.8')
+    api('io.seata:seata-all:1.4.2')
+    api('mysql:mysql-connector-java:8.0.11')
+}
