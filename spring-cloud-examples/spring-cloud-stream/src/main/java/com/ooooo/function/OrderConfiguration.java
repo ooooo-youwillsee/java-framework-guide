@@ -1,11 +1,14 @@
 package com.ooooo.function;
 
 import com.alibaba.fastjson.JSON;
+import com.ooooo.config.DisableSpringCloudStreamConfiguration;
 import com.ooooo.entity.Order;
-import lombok.Getter;
+import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.EnvironmentAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.env.Environment;
 
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -19,16 +22,18 @@ import java.util.function.Supplier;
  */
 @Slf4j
 @Configuration
-public class OrderConfiguration {
+public class OrderConfiguration implements EnvironmentAware {
 
-	@Getter
 	private final BlockingQueue<Order> orderQueue = new LinkedBlockingQueue<>();
+
+	@Setter
+	private Environment environment;
 
 	/**
 	 * push order info to stream
 	 */
 	@Bean
-	public Supplier<Order> generateOrder() {
+	Supplier<Order> generateOrder() {
 		return () -> {
 			try {
 				Order order = orderQueue.take();
@@ -46,9 +51,19 @@ public class OrderConfiguration {
 	 * pull order info from stream
 	 */
 	@Bean
-	public Consumer<Order> insertOrder() {
+	Consumer<Order> insertOrder() {
 		return order -> {
 			log.info("insert order: {}", JSON.toJSONString(order));
 		};
 	}
+
+
+	public void putMessage(Order order) {
+		if (DisableSpringCloudStreamConfiguration.disabled(environment)) {
+			log.info("spring cloud stream is disabled, not send messaage: {}", JSON.toJSONString(order));
+		} else {
+			orderQueue.offer(order);
+		}
+	}
+
 }

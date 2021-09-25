@@ -1,0 +1,42 @@
+spring:
+  profiles:
+    #    active: kafka
+    active: rocketmq
+  cloud:
+    stream:
+      function:
+        definition: generateOrder;insertOrder
+      bindings:
+        generateOrder-out-0:
+          destination: order-test
+          binder: test
+        insertOrder-in-0:
+          destination: order-test
+          group: order-test-group
+          binder: test
+
+
+
+---
+spring:
+  profiles: kafka
+
+  cloud:
+    stream:
+      binders:
+        test:
+          type: kafka
+  kafka:
+    bootstrap-servers: centos1:9092
+---
+spring:
+  profiles: rocketmq
+
+  cloud:
+    stream:
+      binders:
+        test:
+          type: rocketmq
+      rocketmq:
+        binder:
+          name-server: centos1:9876

@@ -29,7 +29,7 @@ public class StreamServerApplication {
 			order.setUserId(String.valueOf(i));
 			order.setPayDate(new Date());
 
-			orderConfiguration.getOrderQueue().offer(order);
+			orderConfiguration.putMessage(order);
 		}
 	}
 
