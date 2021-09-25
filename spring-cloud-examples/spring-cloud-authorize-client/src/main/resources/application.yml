@@ -6,7 +6,7 @@ server:
         name: OAUTH2CLIENTSESSION
 spring:
   application:
-    name: api-demo
+    name: demo-spring-cloud-authorize-client
 
 
 eureka:

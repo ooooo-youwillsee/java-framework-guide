@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author ooooo
  * @date 2021/08/28 10:01
  */
-@FeignClient(name = "api-demo")
+@FeignClient(name = "demo-spring-cloud-simple-api")
 public interface APIFeignClient {
 
 	@GetMapping("/test")

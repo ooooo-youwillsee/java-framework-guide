@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: auth-demo
+    name: demo-spring-cloud-authorize-server
   thymeleaf:
     prefix: classpath:/templates/ # 不加，使用默认配置也行
     suffix: .html # 不加，使用默认配置也行

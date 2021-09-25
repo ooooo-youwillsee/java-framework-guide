@@ -25,12 +25,12 @@ spring:
 #            redis-rate-limiter.requestedTokens: 60 # 一个请求需要多少个令牌
         - StripPrefix=1
       routes:
-        - id: api-demo
-          uri: lb://api-demo
+        - id: demo-spring-cloud-simple-api
+          uri: lb://demo-spring-cloud-simple-api
           predicates:
             - Path=/api/**
         - id: auth-demo
-          uri: lb://auth-demo
+          uri: lb://demo-spring-cloud-authorize-server
           predicates:
             - Path=/auth/**
   redis:

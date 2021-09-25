@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: demo-spring-cloud
+    name: demo-spring-cloud-stream
   profiles:
     #    active: kafka
     active: rocketmq

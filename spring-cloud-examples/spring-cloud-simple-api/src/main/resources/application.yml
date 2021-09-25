@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: api-demo
+    name: demo-spring-cloud-simple-api
 
 
 eureka:
