@@ -1,0 +1,20 @@
+server:
+  port: 0
+spring:
+  application:
+    name: demo-spring-cloud-dubbo-consumer
+  cloud:
+    nacos:
+      server-addr: centos1:8848
+      username: nacos
+      password: nacos
+
+dubbo:
+  protocols:
+    dubbo:
+      name: dubbo
+      port: -1
+  scan:
+    base-packages: com.ooooo
+  consumer:
+    check: false

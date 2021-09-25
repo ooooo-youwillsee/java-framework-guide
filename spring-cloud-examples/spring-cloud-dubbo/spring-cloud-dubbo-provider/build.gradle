@@ -1,0 +1,8 @@
+dependencies {
+    api(project(":spring-cloud-examples:spring-cloud-dubbo:spring-cloud-dubbo-api"))
+
+    api('org.springframework.boot:spring-boot-starter-web')
+    api('com.alibaba.cloud:spring-cloud-starter-dubbo')
+    api('com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery')
+
+}
