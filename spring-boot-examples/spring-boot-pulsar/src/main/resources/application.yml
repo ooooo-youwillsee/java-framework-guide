@@ -1,0 +1,12 @@
+server:
+  port: 0
+
+spring:
+  application:
+    name: demo-spring-boot-pulsar
+
+pulsar:
+  serviceUrl: pulsar://centos1:6650
+
+
+

@@ -1,0 +1,4 @@
+dependencies {
+    api('org.springframework.boot:spring-boot-starter-web')
+    api('org.apache.pulsar:pulsar-client-all:2.8.1')
+}
