@@ -20,6 +20,7 @@ include 'spring-boot-examples:spring-boot-pulsar'
 // spring cloud examples
 include 'spring-cloud-examples:spring-cloud-feign'
 include 'spring-cloud-examples:spring-cloud-eureka'
+include 'spring-cloud-examples:spring-cloud-consul'
 include 'spring-cloud-examples:spring-cloud-apollo'
 include 'spring-cloud-examples:spring-cloud-seata'
 include 'spring-cloud-examples:spring-cloud-stream'
