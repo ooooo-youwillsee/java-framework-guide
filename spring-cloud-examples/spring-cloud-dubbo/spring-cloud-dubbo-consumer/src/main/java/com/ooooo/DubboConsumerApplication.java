@@ -6,6 +6,7 @@ import org.apache.dubbo.config.annotation.DubboReference;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Bean;
 
 /**
@@ -13,6 +14,7 @@ import org.springframework.context.annotation.Bean;
  * @since 2021/3/12 18:31
  */
 @Slf4j
+@EnableDiscoveryClient
 @SpringBootApplication
 public class DubboConsumerApplication {
 
