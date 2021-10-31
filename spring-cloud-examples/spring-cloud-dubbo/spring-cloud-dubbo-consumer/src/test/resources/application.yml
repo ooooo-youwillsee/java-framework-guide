@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: demo-spring-cloud-dubbo-consumer
+dubbo:
+  protocols:
+    dubbo:
+      name: dubbo
+      port: -1
+  registry:
+    address: N/A
+  #    address: 224.5.6.7:2222
+  scan:
+    base-packages: com.ooooo
+  consumer:
+    check: false

@@ -27,7 +27,7 @@ public class DubboConsumerApplication {
 
 	@Bean
 	public ApplicationRunner testApplicationRunner() {
-		return (args) -> {
+		return __ -> {
 			String username = userService.getUsernameById(1L);
 			log.info("username: {}", username);
 		};

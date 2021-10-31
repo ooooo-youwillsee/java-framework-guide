@@ -39,7 +39,7 @@ public class PulsarTestBootstrap {
 		return __ -> {
 			Producer<byte[]> producer = pulsarClient.newProducer().topic(TEST_TOPIC).create();
 
-			for (int i = 0; i < 10; i++) {
+			for (int i = 0; i < 100; i++) {
 
 				String key = "test key" + i;
 				String message = "test message" + i;
