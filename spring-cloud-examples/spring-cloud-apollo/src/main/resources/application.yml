@@ -8,7 +8,8 @@ server:
 app:
   id: ${spring.application.name}
 apollo:
+  cluster: local
+  meta: http://centos1:8080
   bootstrap:
     enabled: true
     namespaces: TEST1.demo-namespace1.yml
-  meta: http://centos1:8080
