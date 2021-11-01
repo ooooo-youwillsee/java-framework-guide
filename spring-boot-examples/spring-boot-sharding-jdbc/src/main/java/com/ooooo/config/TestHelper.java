@@ -1,12 +1,11 @@
 package com.ooooo.config;
 
+import com.ooooo.mapper.AddressMapper;
 import com.ooooo.mapper.OrderItemMapper;
 import com.ooooo.mapper.OrderMapper;
 import com.ooooo.mapper.UserMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.ApplicationRunner;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 /**
@@ -16,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Slf4j
 @Configuration
-public class TestConfiguration {
+public class TestHelper {
 
 	@Autowired
 	private UserMapper userMapper;
@@ -27,15 +26,23 @@ public class TestConfiguration {
 	@Autowired
 	private OrderItemMapper orderItemMapper;
 
+	@Autowired
+	private AddressMapper addressMapper;
 
-	@Bean
-	public ApplicationRunner createTablesApplicationRunner() {
-		return __ -> {
-			userMapper.createTable();
-			orderMapper.createTable();
-			orderItemMapper.createTable();
 
-			log.info("createTablesApplicationRunner success!!!");
-		};
+	public void createTablesAndTruncateTable() {
+		userMapper.createTable();
+		orderMapper.createTable();
+		orderItemMapper.createTable();
+		addressMapper.createTable();
+
+		log.info("createTables success!!!");
+
+		userMapper.truncateTable();
+		orderMapper.truncateTable();
+		orderItemMapper.truncateTable();
+		addressMapper.truncateTable();
+
+		log.info("truncateTables success!!!");
 	}
 }

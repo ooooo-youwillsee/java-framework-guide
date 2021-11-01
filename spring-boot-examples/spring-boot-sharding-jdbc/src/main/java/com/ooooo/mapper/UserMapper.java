@@ -13,13 +13,13 @@ public interface UserMapper extends BaseMapper<User> {
 
 	String CREATE_TABLE_USER = "CREATE TABLE IF NOT EXISTS t_user\n" +
 					"(\n" +
-					"    user_id   INT NOT NULL AUTO_INCREMENT,\n" +
+					"    user_id   BIGINT NOT NULL AUTO_INCREMENT,\n" +
 					"    user_name VARCHAR(200),\n" +
 					"    pwd       VARCHAR(200),\n" +
 					"    PRIMARY KEY (user_id)\n" +
 					")";
 
-	String DROP_TABLE_USER = "TRUNCATE TABLE t_order";
+	String TRUNCATE_TABLE_USER = "TRUNCATE TABLE t_order";
 
 	// ===================================
 
@@ -27,8 +27,8 @@ public interface UserMapper extends BaseMapper<User> {
 	@Update(CREATE_TABLE_USER)
 	void createTable();
 
-	@Update(DROP_TABLE_USER)
-	void dropTable();
+	@Update(TRUNCATE_TABLE_USER)
+	void truncateTable();
 
 
 }

@@ -9,10 +9,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @since 2021/3/12 18:31
  */
 @MapperScan(basePackages = "com.ooooo")
-//@SpringBootApplication(exclude = {
-//				JtaAutoConfiguration.class,
-//				DataSourceAutoConfiguration.class
-//})
 @SpringBootApplication
 public class ShardingJDBCServerApplication {
 

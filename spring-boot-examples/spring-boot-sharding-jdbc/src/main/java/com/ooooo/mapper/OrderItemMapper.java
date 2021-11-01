@@ -20,7 +20,7 @@ public interface OrderItemMapper extends BaseMapper<OrderItem> {
 					"    PRIMARY KEY (order_item_id)\n" +
 					")";
 
-	String DROP_TABLE_USER = "TRUNCATE TABLE t_order_item";
+	String TRUNCATE_TABLE_USER = "TRUNCATE TABLE t_order_item";
 
 	// ===================================
 
@@ -28,8 +28,8 @@ public interface OrderItemMapper extends BaseMapper<OrderItem> {
 	@Update(CREATE_TABLE_USER)
 	void createTable();
 
-	@Update(DROP_TABLE_USER)
-	void dropTable();
+	@Update(TRUNCATE_TABLE_USER)
+	void truncateTable();
 
 
 }

@@ -36,7 +36,7 @@ public class OrderItem implements Serializable {
 
     private Long orderId;
 
-    private Integer userId;
+    private Long userId;
 
     private String status;
 

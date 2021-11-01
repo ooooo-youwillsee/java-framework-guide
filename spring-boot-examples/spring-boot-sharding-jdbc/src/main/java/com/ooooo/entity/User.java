@@ -19,7 +19,9 @@ package com.ooooo.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
@@ -27,12 +29,14 @@ import java.io.Serializable;
 @Getter
 @Setter
 @TableName("t_user")
+@AllArgsConstructor
+@NoArgsConstructor
 public class User implements Serializable {
 
     private static final long serialVersionUID = 263434701950670170L;
 
     @TableId
-    private Integer userId;
+    private Long userId;
 
     private String userName;
 

@@ -18,7 +18,7 @@ public interface AddressMapper extends BaseMapper<Address> {
 					"    PRIMARY KEY (address_id)\n" +
 					");";
 
-	String DROP_TABLE_USER = "TRUNCATE TABLE t_address";
+	String TRUNCATE_TABLE_USER = "TRUNCATE TABLE t_address";
 
 	// ===================================
 
@@ -26,8 +26,8 @@ public interface AddressMapper extends BaseMapper<Address> {
 	@Update(CREATE_TABLE_USER)
 	void createTable();
 
-	@Update(DROP_TABLE_USER)
-	void dropTable();
+	@Update(TRUNCATE_TABLE_USER)
+	void truncateTable();
 
 
 }

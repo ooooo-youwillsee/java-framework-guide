@@ -19,7 +19,9 @@ package com.ooooo.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
@@ -27,6 +29,8 @@ import java.io.Serializable;
 @Getter
 @Setter
 @TableName("t_order")
+@NoArgsConstructor
+@AllArgsConstructor
 public class Order implements Serializable {
 
     private static final long serialVersionUID = 661434701950670670L;
@@ -34,7 +38,7 @@ public class Order implements Serializable {
     @TableId
     private Long orderId;
 
-    private Integer userId;
+    private Long userId;
 
     private Long addressId;
 
