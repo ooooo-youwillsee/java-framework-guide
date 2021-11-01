@@ -1,8 +1,8 @@
 package com.ooooo.repository;
 
 import com.ooooo.RedisApplicationTests;
-import com.ooooo.dao.UserRedisRepository;
 import com.ooooo.entity.User;
+import com.ooooo.mapper.UserRedisRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

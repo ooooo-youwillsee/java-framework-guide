@@ -24,3 +24,5 @@ hs_err_pid*
 
 **/build/**
 */target
+/java-framework-guide.ipr
+/java-framework-guide.iws

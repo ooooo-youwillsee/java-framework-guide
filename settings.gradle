@@ -15,6 +15,7 @@ include 'spring-extension-examples:spring-boot-service-component-scan'
 // spring boot examples
 include 'spring-boot-examples:spring-boot-redis'
 include 'spring-boot-examples:spring-boot-pulsar'
+include 'spring-boot-examples:spring-boot-sharding-jdbc'
 
 
 // spring cloud examples

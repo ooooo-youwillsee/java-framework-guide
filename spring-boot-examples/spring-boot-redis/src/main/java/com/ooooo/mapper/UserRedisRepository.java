@@ -1,4 +1,4 @@
-package com.ooooo.dao;
+package com.ooooo.mapper;
 
 import com.ooooo.entity.User;
 import org.springframework.data.repository.CrudRepository;

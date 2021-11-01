@@ -8,17 +8,26 @@ plugins {
     id 'eclipse'
 }
 
+idea {
+    module {
+        downloadJavadoc = true
+        downloadSources = true
+    }
+}
 
 allprojects {
     apply plugin: 'java'
     apply plugin: 'java-library'
     apply plugin: 'io.spring.dependency-management'
 
-    group 'org.ooooo'
+    group 'com.ooooo'
     version '1.0.0'
 
     repositories {
+//        maven { url 'https://maven.aliyun.com/repository/google'}
+//        maven { url 'https://maven.aliyun.com/repository/jcenter'}
         maven { url 'https://maven.aliyun.com/repository/public' }
+//        maven { url "https://jitpack.io"}
         mavenCentral()
     }
 
@@ -33,6 +42,7 @@ allprojects {
 
     ext {
         set('springCloudVersion', "Hoxton.SR10")
+        set('springCloudAlibabaVersion', "2.2.6.RELEASE")
         set('grpcVersion', '1.39.0')
         set('protocVersion', '3.17.2')
     }
@@ -42,24 +52,35 @@ allprojects {
         imports {
             mavenBom SpringBootPlugin.BOM_COORDINATES
             mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
-            mavenBom "com.alibaba.cloud:spring-cloud-alibaba-dependencies:2.2.6.RELEASE"
+            mavenBom "com.alibaba.cloud:spring-cloud-alibaba-dependencies:${springCloudAlibabaVersion}"
         }
         dependencies {
+            // grpc
             dependency "io.grpc:grpc-protobuf:${grpcVersion}"
             dependency "io.grpc:grpc-stub:${grpcVersion}"
             dependency "io.grpc:grpc-netty-shaded:${grpcVersion}"
             dependency "io.grpc:grpc-core:${grpcVersion}" // spring 依赖管理中定义了，需要重新声明
             dependency "io.grpc:grpc-api:${grpcVersion}" // spring 依赖管理中定义了，需要重新声明
+
+            // mybatis-plus
+            dependency 'com.baomidou:mybatis-plus-boot-starter:3.4.2'
+
+            // sharding-jdbc
+            dependency 'org.apache.shardingsphere:shardingsphere-jdbc-core-spring-boot-starter:5.0.0-RC1-SNAPSHOT'
+            dependency 'org.apache.shardingsphere:shardingsphere-cluster-mode-repository-zookeeper-curator:5.0.0-RC1-SNAPSHOT'
         }
     }
     dependencies {
-        compileOnly('org.projectlombok:lombok')
+        compileOnly('org.projectlombok:lombok:1.18.22')
         annotationProcessor('org.projectlombok:lombok')
+        testCompileOnly('org.projectlombok:lombok')
+        testAnnotationProcessor('org.projectlombok:lombok')
+
         implementation('com.alibaba:fastjson:1.2.67')
         implementation('commons-io:commons-io:2.7')
         implementation('org.apache.commons:commons-lang3:3.10')
         implementation('org.apache.commons:commons-collections4:4.4')
-        testImplementation('org.springframework.boot:spring-boot-starter-test')
 
+        testImplementation('org.springframework.boot:spring-boot-starter-test')
     }
 }
