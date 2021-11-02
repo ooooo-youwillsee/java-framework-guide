@@ -18,13 +18,13 @@ import org.springframework.test.context.ActiveProfiles;
 
 /**
  * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
- * @date 2021/11/03 06:24
+ * @date 2021/11/02 06:04
  * @since 1.0.0
  */
 @Slf4j
 @SpringBootTest
 @ActiveProfiles("readwrite-splitting")
-public class ShardingDatabasesTablesTest {
+public class ReadWriteSplittingTest {
 
 	@Autowired
 	private TestHelper testHelper;

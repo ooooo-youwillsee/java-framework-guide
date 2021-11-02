@@ -1,0 +1,38 @@
+spring:
+  shardingsphere:
+    props:
+      sql-show: true
+    datasource:
+      names: write-ds,read-ds-0
+      write-ds:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://centos1:3307/demo_read_write_ds?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=UTF-8
+        password: root
+        type: com.zaxxer.hikari.HikariDataSource
+        username: root
+      read-ds-0:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://centos1:3308/demo_read_write_ds?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=UTF-8
+        password: root
+        type: com.zaxxer.hikari.HikariDataSource
+        username: root
+    #    mode:
+    #      overwrite: true
+    #      repository:
+    #        props:
+    #          namespace: demo_spring_boot_pr_ds
+    #          server-lists: localhost:2181
+    #        type: ZooKeeper
+    #      type: Cluster
+    rules:
+      readwrite-splitting:
+        data-sources:
+          pr_ds:
+            load-balancer-name: round_robin
+            read-data-source-names: read-ds-0
+            write-data-source-name: write-ds
+        load-balancers:
+          round_robin:
+            type: ROUND_ROBIN
+
+

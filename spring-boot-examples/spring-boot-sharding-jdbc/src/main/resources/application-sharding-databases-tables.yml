@@ -1,10 +1,4 @@
-server:
-  port: 0
-
 spring:
-  application:
-    name: demo-spring-boot-sharding-jdbc
-
   shardingsphere:
     props:
       sql-show: true

@@ -5,4 +5,5 @@ spring:
   application:
     name: demo-spring-boot-sharding-jdbc
   profiles:
-    active: sharding-databases-tables
+    #active: sharding-databases-tables
+    active: readwrite-splitting
