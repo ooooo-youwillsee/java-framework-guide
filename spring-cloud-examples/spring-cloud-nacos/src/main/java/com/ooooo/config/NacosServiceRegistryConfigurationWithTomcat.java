@@ -1,11 +1,13 @@
 package com.ooooo.config;
 
+import com.alibaba.cloud.nacos.ConditionalOnNacosDiscoveryEnabled;
 import com.alibaba.cloud.nacos.registry.NacosAutoServiceRegistration;
 import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.boot.web.context.WebServerInitializedEvent;
+import org.springframework.cloud.client.ConditionalOnDiscoveryEnabled;
 import org.springframework.cloud.client.serviceregistry.AbstractAutoServiceRegistration;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
@@ -16,13 +18,16 @@ import org.springframework.core.env.Environment;
  * <p>
  * see WebServerStartStopLifecycle
  *
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @see WebServerInitializedEvent
  * @see AbstractAutoServiceRegistration#onApplicationEvent(WebServerInitializedEvent) //
  * @see NacosAutoServiceRegistration#register()
  */
 @Configuration
+@ConditionalOnDiscoveryEnabled
+@ConditionalOnNacosDiscoveryEnabled
 @ConditionalOnWebApplication
-@ConditionalOnClass(NacosAutoServiceRegistration.class)
+@ConditionalOnBean(NacosAutoServiceRegistration.class)
 public class NacosServiceRegistryConfigurationWithTomcat {
 	
 	@Autowired(required = false)
