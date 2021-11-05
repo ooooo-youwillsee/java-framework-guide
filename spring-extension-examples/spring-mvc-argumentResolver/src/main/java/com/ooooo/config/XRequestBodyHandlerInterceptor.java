@@ -1,7 +1,7 @@
 package com.ooooo.config;
 
 import com.ooooo.annotation.XRequestBody;
-import com.ooooo.entity.Req;
+import com.ooooo.dao.entity.Req;
 import java.util.Arrays;
 import java.util.Map.Entry;
 import javax.servlet.http.HttpServletRequest;

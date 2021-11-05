@@ -2,8 +2,8 @@ package com.ooooo;
 
 import com.alibaba.fastjson.JSON;
 import com.ooooo.annotation.APIServiceComponentScan;
-import com.ooooo.entity.Req;
-import com.ooooo.entity.Resp;
+import com.ooooo.dao.entity.Req;
+import com.ooooo.dao.entity.Resp;
 import com.ooooo.test.TestAPIService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;

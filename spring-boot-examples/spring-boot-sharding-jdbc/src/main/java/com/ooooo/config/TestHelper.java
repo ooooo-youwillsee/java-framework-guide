@@ -1,9 +1,9 @@
 package com.ooooo.config;
 
-import com.ooooo.mapper.AddressMapper;
-import com.ooooo.mapper.OrderItemMapper;
-import com.ooooo.mapper.OrderMapper;
-import com.ooooo.mapper.UserMapper;
+import com.ooooo.dao.mapper.AddressMapper;
+import com.ooooo.dao.mapper.OrderItemMapper;
+import com.ooooo.dao.mapper.OrderMapper;
+import com.ooooo.dao.mapper.UserMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;

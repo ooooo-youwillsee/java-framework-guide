@@ -2,9 +2,9 @@ package com.ooooo.test;
 
 import com.alibaba.fastjson.JSON;
 import com.ooooo.annotation.SimpleListener;
-import com.ooooo.entity.Message;
-import com.ooooo.entity.Order;
-import com.ooooo.entity.User;
+import com.ooooo.dao.entity.Message;
+import com.ooooo.dao.entity.Order;
+import com.ooooo.dao.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Configuration;
 

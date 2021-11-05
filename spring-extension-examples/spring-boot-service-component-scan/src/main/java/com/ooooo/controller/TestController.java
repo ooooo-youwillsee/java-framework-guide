@@ -1,7 +1,7 @@
 package com.ooooo.controller;
 
-import com.ooooo.entity.Req;
-import com.ooooo.entity.Resp;
+import com.ooooo.dao.entity.Req;
+import com.ooooo.dao.entity.Resp;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

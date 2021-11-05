@@ -1,6 +1,6 @@
 package com.ooooo.annotation;
 
-import com.ooooo.entity.Message;
+import com.ooooo.dao.entity.Message;
 import java.util.LinkedList;
 import java.util.List;
 import org.springframework.core.ResolvableType;

@@ -1,14 +1,13 @@
 package com.ooooo.repository;
 
 import com.ooooo.RedisApplicationTests;
-import com.ooooo.entity.User;
-import com.ooooo.mapper.UserRedisRepository;
+import com.ooooo.dao.entity.User;
+import com.ooooo.dao.mapper.UserRedisRepository;
+import java.util.Collections;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.Collections;
 
 /**
  * @author leizhijie

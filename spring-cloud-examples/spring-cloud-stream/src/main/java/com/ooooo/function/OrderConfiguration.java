@@ -2,18 +2,17 @@ package com.ooooo.function;
 
 import com.alibaba.fastjson.JSON;
 import com.ooooo.config.DisableSpringCloudStreamConfiguration;
-import com.ooooo.entity.Order;
+import com.ooooo.dao.entity.Order;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.function.Consumer;
+import java.util.function.Supplier;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.EnvironmentAware;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
-
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.function.Consumer;
-import java.util.function.Supplier;
 
 /**
  * @author ooooo

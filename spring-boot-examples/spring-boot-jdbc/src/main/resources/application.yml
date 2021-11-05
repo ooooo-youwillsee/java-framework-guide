@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: demo-spring-boot-jdbc
+
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:h2:mem:test;DB_CLOSE_DELAY=1000
+
+dev:
+  sql-log:
+    enabled: true

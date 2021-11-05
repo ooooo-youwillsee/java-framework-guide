@@ -2,8 +2,8 @@ package com.ooooo.test;
 
 import com.ooooo.annotation.APIMapping;
 import com.ooooo.annotation.APIService;
-import com.ooooo.entity.Req;
-import com.ooooo.entity.Resp;
+import com.ooooo.dao.entity.Req;
+import com.ooooo.dao.entity.Resp;
 import org.springframework.http.HttpMethod;
 
 /**

@@ -2,8 +2,8 @@ package com.ooooo.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.ooooo.annotation.XRequestBody;
-import com.ooooo.entity.Resp;
-import com.ooooo.entity.User;
+import com.ooooo.dao.entity.Resp;
+import com.ooooo.dao.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.web.bind.annotation.PostMapping;

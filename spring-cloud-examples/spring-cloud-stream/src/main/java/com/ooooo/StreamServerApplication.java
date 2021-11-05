@@ -1,13 +1,12 @@
 package com.ooooo;
 
-import com.ooooo.entity.Order;
+import com.ooooo.dao.entity.Order;
 import com.ooooo.function.OrderConfiguration;
+import java.util.Date;
 import lombok.SneakyThrows;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
-
-import java.util.Date;
 
 /**
  * @author leizhijie

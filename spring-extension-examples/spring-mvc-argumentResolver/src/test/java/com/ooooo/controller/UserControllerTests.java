@@ -3,10 +3,10 @@ package com.ooooo.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.ooooo.SpringMvcArgumentResolverApplicationTests;
-import com.ooooo.entity.Req;
-import com.ooooo.entity.ReqBody;
-import com.ooooo.entity.ReqHeader;
-import com.ooooo.entity.User;
+import com.ooooo.dao.entity.Req;
+import com.ooooo.dao.entity.ReqBody;
+import com.ooooo.dao.entity.ReqHeader;
+import com.ooooo.dao.entity.User;
 import java.util.Date;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;

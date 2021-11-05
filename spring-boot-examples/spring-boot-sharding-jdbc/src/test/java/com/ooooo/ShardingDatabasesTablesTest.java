@@ -1,14 +1,14 @@
 package com.ooooo;
 
 import com.ooooo.config.TestHelper;
-import com.ooooo.entity.Address;
-import com.ooooo.entity.Order;
-import com.ooooo.entity.OrderItem;
-import com.ooooo.entity.User;
-import com.ooooo.mapper.AddressMapper;
-import com.ooooo.mapper.OrderItemMapper;
-import com.ooooo.mapper.OrderMapper;
-import com.ooooo.mapper.UserMapper;
+import com.ooooo.dao.entity.Address;
+import com.ooooo.dao.entity.Order;
+import com.ooooo.dao.entity.OrderItem;
+import com.ooooo.dao.entity.User;
+import com.ooooo.dao.mapper.AddressMapper;
+import com.ooooo.dao.mapper.OrderItemMapper;
+import com.ooooo.dao.mapper.OrderMapper;
+import com.ooooo.dao.mapper.UserMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

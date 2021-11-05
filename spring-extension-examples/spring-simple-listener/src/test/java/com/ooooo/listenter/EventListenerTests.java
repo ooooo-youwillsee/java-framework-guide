@@ -2,9 +2,9 @@ package com.ooooo.listenter;
 
 import com.ooooo.SpringSimpleListenerApplicationTests;
 import com.ooooo.annotation.SimpleMulticaster;
-import com.ooooo.entity.Message;
-import com.ooooo.entity.Order;
-import com.ooooo.entity.User;
+import com.ooooo.dao.entity.Message;
+import com.ooooo.dao.entity.Order;
+import com.ooooo.dao.entity.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 

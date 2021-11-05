@@ -1,6 +1,5 @@
 package com.ooooo.annotation;
 
-import com.ooooo.entity.Message;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import org.springframework.core.ResolvableType;
