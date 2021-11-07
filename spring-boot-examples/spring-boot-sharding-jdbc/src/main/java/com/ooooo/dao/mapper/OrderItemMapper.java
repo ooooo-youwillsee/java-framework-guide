@@ -15,7 +15,7 @@ public interface OrderItemMapper extends BaseMapper<OrderItem> {
 					"(\n" +
 					"    order_item_id BIGINT AUTO_INCREMENT,\n" +
 					"    order_id      BIGINT,\n" +
-					"    user_id       INT NOT NULL,\n" +
+					"    user_id       BIGINT NOT NULL,\n" +
 					"    status        VARCHAR(50),\n" +
 					"    PRIMARY KEY (order_item_id)\n" +
 					")";

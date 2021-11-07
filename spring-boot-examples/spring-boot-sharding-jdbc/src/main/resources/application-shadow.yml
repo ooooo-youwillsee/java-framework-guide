@@ -1,0 +1,62 @@
+spring:
+  shardingsphere:
+    props:
+      sql-show: true
+    datasource:
+      name: ds,shadow-ds
+      ds:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://centos1:3306/demo_ds?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=UTF-8
+        username: root
+        password: root
+        type: com.zaxxer.hikari.HikariDataSource
+      shadow-ds:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://centos1:3306/demo_shadow_ds?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=UTF-8
+        username: root
+        password: root
+        type: com.zaxxer.hikari.HikariDataSource
+    #    mode:
+    #      overwrite: true
+    #      repository:
+    #        props:
+    #          namespace: demo_spring_boot_ds_shadow
+    #          server-lists: localhost:2181
+    #        type: ZooKeeper
+    #      type: Cluster
+    rules:
+      shadow:
+        enable: true
+        data-sources:
+          shadow-data-source:
+            shadow-data-source-name: shadow-ds
+            source-data-source-name: ds
+        shadow-algorithms:
+          # 这个算法会解析注释
+          simple-note-algorithm:
+            props:
+              foo: bar
+              shadow: true
+            type: SIMPLE_NOTE
+          user-id-delete-match-algorithm:
+            props:
+              column: user_type
+              operation: delete
+              value: 1
+            type: COLUMN_VALUE_MATCH
+          user-id-insert-match-algorithm:
+            props:
+              column: user_type
+              operation: insert
+              value: 1
+            type: COLUMN_VALUE_MATCH
+          user-id-select-match-algorithm:
+            props:
+              column: user_type
+              operation: select
+              value: 1
+            type: COLUMN_VALUE_MATCH
+        tables:
+          t_shadow_user:
+            data-source-names: shadow-data-source
+            shadow-algorithm-names: user-id-insert-match-algorithm,user-id-delete-match-algorithm,user-id-select-match-algorithm,simple-note-algorithm

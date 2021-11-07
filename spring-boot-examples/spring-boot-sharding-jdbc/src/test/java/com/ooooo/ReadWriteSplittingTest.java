@@ -1,6 +1,5 @@
 package com.ooooo;
 
-import com.ooooo.config.TestHelper;
 import com.ooooo.dao.entity.Address;
 import com.ooooo.dao.entity.Order;
 import com.ooooo.dao.entity.OrderItem;
@@ -27,9 +26,6 @@ import org.springframework.test.context.ActiveProfiles;
 public class ReadWriteSplittingTest {
 
 	@Autowired
-	private TestHelper testHelper;
-
-	@Autowired
 	private AddressMapper addressMapper;
 
 	@Autowired
@@ -47,7 +43,7 @@ public class ReadWriteSplittingTest {
 
 	@BeforeEach
 	public void beforeEach() {
-		testHelper.createTablesAndTruncateTable();
+		log.info("需要提前创建表, 搭建主从");
 	}
 
 
@@ -103,10 +99,6 @@ public class ReadWriteSplittingTest {
 	}
 
 
-	/**
-	 * table[t_user] was not configured in sharding-jdbc.
-	 * Sharding-jdbc select a random table when inserting user into table.
-	 */
 	@Test
 	public void insertUser() {
 		User user = new User();
@@ -117,11 +109,6 @@ public class ReadWriteSplittingTest {
 	}
 
 
-	/**
-	 * table[t_address] was a broadcast-table
-	 * <p>
-	 * Sharding-jdbc will insert two datasource both
-	 */
 	@Test
 	public void selectAddress() {
 		Address address = new Address();

@@ -1,6 +1,5 @@
 package com.ooooo;
 
-import com.ooooo.config.TestHelper;
 import com.ooooo.dao.entity.Address;
 import com.ooooo.dao.entity.Order;
 import com.ooooo.dao.entity.OrderItem;
@@ -27,9 +26,6 @@ import org.springframework.test.context.ActiveProfiles;
 public class ShardingDatabasesTablesTest {
 
 	@Autowired
-	private TestHelper testHelper;
-
-	@Autowired
 	private AddressMapper addressMapper;
 
 	@Autowired
@@ -47,7 +43,19 @@ public class ShardingDatabasesTablesTest {
 
 	@BeforeEach
 	public void beforeEach() {
-		testHelper.createTablesAndTruncateTable();
+		userMapper.createTable();
+		orderMapper.createTable();
+		orderItemMapper.createTable();
+		addressMapper.createTable();
+
+		log.info("createTables success!!!");
+
+		userMapper.truncateTable();
+		orderMapper.truncateTable();
+		orderItemMapper.truncateTable();
+		addressMapper.truncateTable();
+
+		log.info("truncateTables success!!!");
 	}
 
 

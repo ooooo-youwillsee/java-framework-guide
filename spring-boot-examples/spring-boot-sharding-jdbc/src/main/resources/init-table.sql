@@ -3,7 +3,7 @@
 CREATE TABLE IF NOT EXISTS t_order
 (
     order_id   BIGINT AUTO_INCREMENT,
-    user_id    INT    NOT NULL,
+    user_id    BIGINT NOT NULL,
     address_id BIGINT NOT NULL,
     status     VARCHAR(50),
     PRIMARY KEY (order_id)
@@ -28,7 +28,16 @@ CREATE TABLE IF NOT EXISTS t_address
 
 CREATE TABLE IF NOT EXISTS t_user
 (
-    user_id   INT NOT NULL AUTO_INCREMENT,
+    user_id   BIGINT NOT NULL AUTO_INCREMENT,
+    user_name VARCHAR(200),
+    pwd       VARCHAR(200),
+    PRIMARY KEY (user_id)
+);
+
+CREATE TABLE IF NOT EXISTS t_shadow_user
+(
+    user_id   BIGINT NOT NULL AUTO_INCREMENT,
+    user_type INT(11),
     user_name VARCHAR(200),
     pwd       VARCHAR(200),
     PRIMARY KEY (user_id)

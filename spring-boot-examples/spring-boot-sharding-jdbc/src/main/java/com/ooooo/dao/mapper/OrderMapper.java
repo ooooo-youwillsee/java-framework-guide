@@ -14,7 +14,7 @@ public interface OrderMapper extends BaseMapper<Order> {
 	String CREATE_TABLE_USER = "CREATE TABLE IF NOT EXISTS t_order\n" +
 					"(\n" +
 					"    order_id   BIGINT AUTO_INCREMENT,\n" +
-					"    user_id    INT    NOT NULL,\n" +
+					"    user_id    BIGINT    NOT NULL,\n" +
 					"    address_id BIGINT NOT NULL,\n" +
 					"    status     VARCHAR(50),\n" +
 					"    PRIMARY KEY (order_id)\n" +
