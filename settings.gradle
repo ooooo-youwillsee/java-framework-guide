@@ -17,6 +17,7 @@ include 'spring-boot-examples:spring-boot-redis'
 include 'spring-boot-examples:spring-boot-pulsar'
 include 'spring-boot-examples:spring-boot-sharding-jdbc'
 include 'spring-boot-examples:spring-boot-jdbc'
+include 'spring-boot-examples:spring-boot-test'
 
 
 // spring cloud examples
