@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.commons.lang3.ArrayUtils;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.AnnotatedElementUtils;
-import org.springframework.core.annotation.AnnotationUtils;
 import org.springframework.http.HttpMethod;
 import org.springframework.web.servlet.handler.AbstractHandlerMethodMapping;
 
@@ -28,7 +27,6 @@ public class XRequestMappingHandlerMapping extends AbstractHandlerMethodMapping<
 	
 	@Override
 	protected XRequestMappingMethodInfo getMappingForMethod(Method method, Class<?> handlerType) {
-		AnnotationUtils.getAnnotation(method, XRequestMapping.class);
 		XRequestMapping classXRequestMapping = AnnotatedElementUtils.findMergedAnnotation(handlerType, XRequestMapping.class);
 		XRequestMapping methodXRequestMapping = AnnotatedElementUtils.findMergedAnnotation(method, XRequestMapping.class);
 		String path = classXRequestMapping.value() + methodXRequestMapping.value();

@@ -18,6 +18,7 @@ include 'spring-boot-examples:spring-boot-pulsar'
 include 'spring-boot-examples:spring-boot-sharding-jdbc'
 include 'spring-boot-examples:spring-boot-jdbc'
 include 'spring-boot-examples:spring-boot-test'
+include 'spring-boot-examples:spring-boot-webmvc'
 
 
 // spring cloud examples
