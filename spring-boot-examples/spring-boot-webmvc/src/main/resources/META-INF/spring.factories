@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.ooooo.autoconfigure.env.EnvironmentAutoConfiguration
+org.springframework.boot.SpringApplicationRunListener=\
+com.ooooo.autoconfigure.env.dev.DevEnvironmentSpringApplicationRunListener

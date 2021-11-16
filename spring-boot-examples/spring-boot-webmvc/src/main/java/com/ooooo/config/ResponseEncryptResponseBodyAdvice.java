@@ -1,7 +1,7 @@
 package com.ooooo.config;
 
 import com.alibaba.fastjson.JSON;
-import com.ooooo.controller.TestController.Result;
+import com.ooooo.controller.TestController.EncryptedResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
@@ -35,7 +35,7 @@ public class ResponseEncryptResponseBodyAdvice implements ResponseBodyAdvice<Obj
 	@Override
 	public Object beforeBodyWrite(Object body, MethodParameter returnType, MediaType selectedContentType, Class<? extends HttpMessageConverter<?>> selectedConverterType, ServerHttpRequest request, ServerHttpResponse response) {
 		
-		if (body instanceof Result) {
+		if (body instanceof EncryptedResult) {
 			String content = JSON.toJSONString(body);
 			String encryptContent = null;
 			try {
@@ -46,7 +46,7 @@ public class ResponseEncryptResponseBodyAdvice implements ResponseBodyAdvice<Obj
 				encryptContent = content;
 			}
 			
-			body = new Result<>(encryptContent);
+			body = new EncryptedResult<>(encryptContent);
 		}
 		
 		return body;

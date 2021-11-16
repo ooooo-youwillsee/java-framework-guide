@@ -2,7 +2,7 @@ package com.ooooo.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
-import com.ooooo.controller.TestController.Result;
+import com.ooooo.controller.TestController.EncryptedResult;
 import java.util.stream.Stream;
 import lombok.SneakyThrows;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -48,7 +48,7 @@ class TestControllerTest {
 		String contentAsString = mvcResult.getResponse().getContentAsString();
 		assertNotNull(contentAsString);
 		
-		Result<String> encryptedResult = JSON.parseObject(contentAsString, new TypeReference<Result<String>>() {});
+		EncryptedResult<String> encryptedResult = JSON.parseObject(contentAsString, new TypeReference<EncryptedResult<String>>() {});
 		assertNotNull(encryptedResult);
 		String encryptedData = encryptedResult.getData();
 		assertNotNull(encryptedData);
@@ -64,7 +64,7 @@ class TestControllerTest {
 			assertNotNull(decryptedContent);
 		}
 		
-		Result<String> decryptedResult = JSON.parseObject(decryptedContent, new TypeReference<Result<String>>() {});
+		EncryptedResult<String> decryptedResult = JSON.parseObject(decryptedContent, new TypeReference<EncryptedResult<String>>() {});
 		assertEquals(name + age, decryptedResult.getData());
 		
 	}
