@@ -5,11 +5,11 @@ include 'spring-bugs-report'
 include 'experimental-code'
 
 // spring extension examples
-include 'spring-extension-examples:service-component-scan'
 include 'spring-extension-examples:spring-mvc-requestMapping'
 include 'spring-extension-examples:spring-mvc-argumentResolver'
 include 'spring-extension-examples:spring-simple-listener'
-include 'spring-extension-examples:spring-boot-service-component-scan'
+include 'spring-extension-examples:spring-boot-api-service:api-service-core'
+include 'spring-extension-examples:spring-boot-api-service:api-service-db'
 
 
 // spring boot examples

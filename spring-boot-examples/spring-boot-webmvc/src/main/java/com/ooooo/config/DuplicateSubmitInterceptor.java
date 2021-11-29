@@ -15,7 +15,7 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import static java.lang.String.valueOf;
 
 /**
- * 三秒内防重复提交
+ * check whether the request is duplicated in interval time
  *
  * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @date 2021/11/22 16:10
@@ -58,7 +58,7 @@ public class DuplicateSubmitInterceptor implements HandlerInterceptor {
 				
 				boolean exist = redisTemplate.hasKey(redisKey);
 				if (exist) {
-					throw new RuntimeException("请勿重新提交");
+					throw new RuntimeException("don't resubmit the request");
 				}
 				redisTemplate.boundValueOps(redisKey).set(valueOf(System.currentTimeMillis()), DEFAULT_LOCK_TIME, TimeUnit.SECONDS);
 			}
