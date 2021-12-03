@@ -1,14 +1,20 @@
 package com.ooooo.service;
 
 import java.util.List;
+import lombok.SneakyThrows;
 import org.assertj.core.util.Lists;
 import org.junit.jupiter.api.Test;
+import org.springframework.aop.framework.Advised;
+import org.springframework.aop.framework.AdvisedSupport;
+import org.springframework.aop.framework.AopProxyUtils;
+import org.springframework.aop.target.SingletonTargetSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.SpyBean;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.spy;
 
 /**
  * @author ooooo
@@ -23,6 +29,9 @@ class SpyBeanTest {
 	@SpyBean
 	private UserService userService;
 	
+	@SpyBean
+	private CglibUserService cglibUserService;
+	
 	@Test
 	void getUsernameList() {
 		doReturn("11111").when(userService).findUsernameById(1L);
@@ -32,4 +41,23 @@ class SpyBeanTest {
 		assertEquals("username: 2", usernameList.get(1));
 	}
 	
+	
+	/**
+	 * @see org.springframework.aop.framework.CglibAopProxy#getProxy(java.lang.ClassLoader)
+	 * @see AopProxyUtils#completeProxiedInterfaces(AdvisedSupport, boolean)
+	 */
+	@SneakyThrows
+	@Test
+	void testCglibProxyUserService() {
+		if (cglibUserService instanceof Advised) {
+			Advised advised = (Advised) cglibUserService;
+			CglibUserService cglibProxyUserService = (CglibUserService) advised.getTargetSource().getTarget();
+			cglibProxyUserService = spy(cglibProxyUserService);
+			advised.setTargetSource(new SingletonTargetSource(cglibProxyUserService));
+			doReturn("1").when(cglibProxyUserService).findUsernameById(1L);
+		}
+		
+		assertEquals("1", cglibUserService.findUsernameById(1L));
+		assertEquals("username: 2", cglibUserService.findUsernameById(2L));
+	}
 }
