@@ -6,6 +6,8 @@ package com.ooooo.service;
  * @since 1.0.0
  */
 public interface UserService {
-
+	
 	String getUsernameById(Long id);
+	
+	String getUsernameByIdExceptionally(Long id);
 }

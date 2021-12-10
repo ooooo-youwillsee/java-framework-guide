@@ -1,5 +1,6 @@
 package com.ooooo.service.impl;
 
+import com.ooooo.exception.APIException;
 import com.ooooo.service.UserService;
 import org.apache.dubbo.config.annotation.DubboService;
 
@@ -10,10 +11,17 @@ import org.apache.dubbo.config.annotation.DubboService;
  */
 @DubboService
 public class UserServiceImpl implements UserService {
-
+	
 	@Override
 	public String getUsernameById(Long id) {
 		return "username" + id;
 	}
-
+	
+	@Override
+	public String getUsernameByIdExceptionally(Long id) {
+		// it throws APIException whicn wasn't checked Exception
+		throw new APIException("-1", "request error");
+	}
+	
+	
 }
