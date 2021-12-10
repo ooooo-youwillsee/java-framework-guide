@@ -1,9 +1,7 @@
 package com.ooooo.core.constants;
 
-import com.cairh.cpe.core.autoconfiure.env.CompositePropertySources;
 import com.ooooo.core.annotation.OnlyForTest;
 import lombok.Getter;
-import org.apache.commons.lang3.StringUtils;
 
 /**
  * @author leizhijie
@@ -42,11 +40,4 @@ public enum ServiceType {
 	
 	public static final String CONFIG_SERVICE_TYPE = "serviceType";
 	
-	public static ServiceType current(CompositePropertySources compositePropertySources) {
-		String type = compositePropertySources.getProperty(CONFIG_SERVICE_TYPE);
-		if (StringUtils.isBlank(type)) {
-			throw new IllegalArgumentException("serviceType isn't config");
-		}
-		return ServiceType.of(type);
-	}
 }

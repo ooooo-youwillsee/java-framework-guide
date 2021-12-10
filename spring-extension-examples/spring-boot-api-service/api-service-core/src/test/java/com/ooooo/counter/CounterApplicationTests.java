@@ -1,4 +1,4 @@
-package com.cairh.xpe.sbc.counter;
+package com.ooooo.counter;
 
 import com.ooooo.core.DefaultResult;
 import com.ooooo.core.Invoker;
@@ -61,7 +61,7 @@ public class CounterApplicationTests {
 			
 			@Override
 			protected Set<String> getPackageNames() {
-				return Collections.singleton("com.cairh.xpe.sbc.counter.proxy");
+				return Collections.singleton("com.ooooo.counter.proxy");
 			}
 			
 			@Override

@@ -1,7 +1,6 @@
 package com.ooooo.core.beans;
 
 import com.ooooo.core.annotation.IAPIService;
-import com.ooooo.core.constants.BeanDefinitionProcessorType;
 import com.ooooo.core.constants.ServiceType;
 import com.ooooo.core.proxy.APIServiceConfig;
 import java.lang.annotation.Annotation;
@@ -14,6 +13,8 @@ import org.springframework.core.Ordered;
 import org.springframework.core.type.AnnotationMetadata;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.util.ClassUtils;
+
+import static com.ooooo.core.constants.BeanDefinitionProcessorType.SERVIC_TYPE;
 
 /**
  * recognize serviceType of beanDefinition
@@ -89,7 +90,7 @@ public abstract class AbstractServiceTypeBeanDefinitionProcessor implements Bean
 	
 	
 	public int getOrder() {
-		return BeanDefinitionProcessorType.SERVIC_TYPE.getOrder();
+		return SERVIC_TYPE.getOrder();
 	}
 	
 }

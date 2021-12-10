@@ -12,7 +12,7 @@ public class HttpProxyTemplateConfig {
 	private String url;
 	
 	/**
-	 * 代理的目标templateId
+	 * proxy the templateId of target
 	 */
 	private String proxyTemplateId;
 }

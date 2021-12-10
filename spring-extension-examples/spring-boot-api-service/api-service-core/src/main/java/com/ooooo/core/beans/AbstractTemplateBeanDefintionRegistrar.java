@@ -1,6 +1,5 @@
 package com.ooooo.core.beans;
 
-import com.cairh.cpe.core.autoconfiure.env.CompositePropertySources;
 import com.ooooo.core.constants.ServiceType;
 import com.ooooo.core.request.ITemplate;
 import com.ooooo.core.request.TemplateProperties;
@@ -10,7 +9,6 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.AnnotatedGenericBeanDefinition;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.event.SmartApplicationListener;
@@ -26,9 +24,6 @@ import org.springframework.context.support.GenericApplicationContext;
  * @since 1.0.0
  */
 public abstract class AbstractTemplateBeanDefintionRegistrar implements InitializingBean, ApplicationContextAware {
-	
-	@Autowired
-	protected CompositePropertySources compositePropertySources;
 	
 	@Getter
 	protected HashMap<String/* templateId */, TemplateProperties> registeredTemplatePropertiesMap = new HashMap<>();

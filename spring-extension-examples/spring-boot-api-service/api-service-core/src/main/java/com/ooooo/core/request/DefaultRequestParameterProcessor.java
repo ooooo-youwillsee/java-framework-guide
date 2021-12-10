@@ -5,7 +5,7 @@ import java.util.Map;
 
 public interface DefaultRequestParameterProcessor extends ServiceTypeAware {
 	
-	default Map<String, Object> getValues(String url, String name) {
+	default Map<String, Object> getValues(AbstractRequestEntity<?> request) {
 		return null;
 	}
 	

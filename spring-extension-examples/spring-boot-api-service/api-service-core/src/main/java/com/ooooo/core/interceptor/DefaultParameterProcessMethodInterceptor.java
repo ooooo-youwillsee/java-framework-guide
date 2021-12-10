@@ -25,14 +25,14 @@ public final class DefaultParameterProcessMethodInterceptor extends APIServiceCo
     
     @Override
     protected Object doInvoke(MethodInvocation invocation, APIServiceConfig serviceConfig) throws Throwable {
-        AbstractRequestEntity<?> requestEntity = (AbstractRequestEntity<?>) APIServiceContext.getAttribute(invocation, REQUEST_ENTITY_KEY);
+        AbstractRequestEntity<?> request = (AbstractRequestEntity<?>) APIServiceContext.getAttribute(invocation, REQUEST_ENTITY_KEY);
         
         Map<String, Object> defaultParams = new HashMap<>();
         objectProvider.ifAvailable(processors -> {
             processors.stream()
                       .filter(processor -> serviceConfig.getServiceType().equals(processor.getServiceType()))
                       .forEach(processor -> {
-                          Map<String, Object> values = processor.getValues(requestEntity.getUrl(), requestEntity.getApiMappingNote());
+                          Map<String, Object> values = processor.getValues(request);
                           if (values != null) {
                               defaultParams.putAll(values);
                           }
@@ -40,7 +40,7 @@ public final class DefaultParameterProcessMethodInterceptor extends APIServiceCo
         });
         
         if (!defaultParams.isEmpty()) {
-            requestEntity.getParams().put(DEFAULT_PARAMS_KEY, defaultParams);
+            request.getParams().put(DEFAULT_PARAMS_KEY, defaultParams);
         }
         return invocation.proceed();
     }

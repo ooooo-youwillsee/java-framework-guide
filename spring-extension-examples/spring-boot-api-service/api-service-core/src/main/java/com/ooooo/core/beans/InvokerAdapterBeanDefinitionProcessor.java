@@ -1,7 +1,6 @@
 package com.ooooo.core.beans;
 
 import com.ooooo.core.Invoker;
-import com.ooooo.core.constants.BeanDefinitionProcessorType;
 import com.ooooo.core.constants.ServiceType;
 import com.ooooo.core.interceptor.InvokerMethodInterceptor;
 import com.ooooo.core.proxy.APIServiceConfig;
@@ -11,6 +10,8 @@ import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.core.Ordered;
+
+import static com.ooooo.core.constants.BeanDefinitionProcessorType.INVOKER_ADAPTER;
 
 /**
  * 指定invokeClass 和对应的serviceType
@@ -41,6 +42,6 @@ public class InvokerAdapterBeanDefinitionProcessor implements BeanDefinitionProc
 	
 	@Override
 	public int getOrder() {
-		return BeanDefinitionProcessorType.INVOKER_ADAPTER.getOrder();
+		return INVOKER_ADAPTER.getOrder();
 	}
 }

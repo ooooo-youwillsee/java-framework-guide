@@ -1,8 +1,8 @@
-package com.cairh.xpe.sbc.counter.proxy;
+package com.ooooo.counter.proxy;
 
-import com.cairh.xpe.sbc.counter.CounterApplicationTests;
-import com.cairh.xpe.sbc.counter.proxy.MultiAnnotationTests.MultiAnnotationBootstrap;
 import com.ooooo.core.annotation.APIServiceComponentScan;
+import com.ooooo.counter.CounterApplicationTests;
+import com.ooooo.counter.proxy.MultiAnnotationTests.MultiAnnotationBootstrap;
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -25,7 +25,7 @@ public class MultiAnnotationTests {
 	@Retention(RetentionPolicy.RUNTIME)
 	@Target({ElementType.TYPE})
 	@Documented
-	@APIServiceComponentScan("com.cairh.xpe.sbc.counter1")
+	@APIServiceComponentScan("com.ooooo.counter1")
 	public @interface EnableTestService1 {
 	}
 	
@@ -33,7 +33,7 @@ public class MultiAnnotationTests {
 	@Retention(RetentionPolicy.RUNTIME)
 	@Target({ElementType.TYPE})
 	@Documented
-	@APIServiceComponentScan("com.cairh.xpe.sbc.counter2")
+	@APIServiceComponentScan("com.ooooo.counter2")
 	public @interface EnableTestService2 {
 	}
 	

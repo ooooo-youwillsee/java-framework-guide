@@ -14,7 +14,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import okhttp3.ConnectionSpec;
 import okhttp3.OkHttpClient;
-import org.jetbrains.annotations.NotNull;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -27,6 +26,8 @@ import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.web.client.ResponseErrorHandler;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
+
+import static com.ooooo.core.constants.CounterConstants.FUNCTION_NAME;
 
 /**
  * <p>create proxyItemplate using http or https</p>
@@ -50,7 +51,6 @@ public class HttpProxyRestTemplateHelper {
         return restTemplateMap.computeIfAbsent(url, __ -> getTemplate(url));
     }
     
-    @NotNull
     private static RestTemplate getTemplate(String url) {
         OkHttpClient client = null;
         if (isHttps(url)) {
@@ -109,7 +109,7 @@ public class HttpProxyRestTemplateHelper {
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.add(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE);
         Map<String, Object> params = request.getParams();
-        params.put("_FUNCTION_NAME", request.getApiMappingNote());
+        params.put(FUNCTION_NAME, request.getApiMappingNote());
         HttpEntity<String> httpEntity = new HttpEntity<>(JSON.toJSONString(params), httpHeaders);
         return httpEntity;
     }

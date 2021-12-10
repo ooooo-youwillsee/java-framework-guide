@@ -10,5 +10,5 @@ public interface ITemplate<R extends AbstractRequestEntity<?>, T extends Abstrac
 	
 	T execute(R request) throws APIException;
 	
-	String getId();
+	TemplateProperties getTemplateProperties();
 }

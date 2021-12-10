@@ -2,21 +2,18 @@ package com.ooooo.core.request;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
-import com.cairh.cpe.core.autoconfiure.env.CompositePropertySources;
 import com.ooooo.core.annotation.APIMapping;
 import com.ooooo.core.annotation.APIService;
 import com.ooooo.core.constants.ServiceType;
 import com.ooooo.core.context.APIServiceContext;
 import com.ooooo.core.exception.APIException;
 import com.ooooo.core.proxy.APIServiceConfig;
-import java.lang.reflect.InvocationTargetException;
+import com.ooooo.core.util.ParamUtil;
 import java.lang.reflect.Method;
-import java.util.HashMap;
 import java.util.Map;
 import lombok.Getter;
 import lombok.Setter;
 import org.aopalliance.intercept.MethodInvocation;
-import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.core.annotation.AnnotationUtils;
@@ -26,7 +23,6 @@ import static com.ooooo.core.constants.CounterConstants.FUNCTION_NAME;
 import static com.ooooo.core.constants.CounterConstants.GENERIC_SERVICE_URL_KEY;
 import static com.ooooo.core.constants.CounterConstants.GENERIC_SERVICE_URL_VALUE;
 import static com.ooooo.core.constants.CounterConstants.REQUEST_ID_KEY;
-import static com.ooooo.core.constants.CounterConstants.SECURITY_ALIAS;
 import static com.ooooo.core.constants.CounterConstants.TEMPLATE_ID_KEY;
 
 /**
@@ -101,20 +97,15 @@ public abstract class AbstractRequestEntity<T> {
 		}
 		
 		// CompositePropertySources
-		if (apiServiceConfig != null) {
-			CompositePropertySources sources = apiServiceConfig.getApplicationContext().getBean(CompositePropertySources.class);
-			
-			//  TEMPLATE_ID_KEY
-			if (StringUtils.isNotBlank(sources.getProperty(TEMPLATE_ID_KEY))) {
-				return sources.getProperty(TEMPLATE_ID_KEY);
-			}
-			
-			// SECURITY_ALIAS
-			String security_alias = sources.getProperty(SECURITY_ALIAS);
-			if (StringUtils.isNotBlank(security_alias)) {
-				return security_alias;
-			}
-		}
+		//if (apiServiceConfig != null) {
+		//	CompositePropertySources sources = apiServiceConfig.getApplicationContext().getBean(CompositePropertySources.class);
+		//
+		//	//  TEMPLATE_ID_KEY
+		//	if (StringUtils.isNotBlank(sources.getProperty(TEMPLATE_ID_KEY))) {
+		//		return sources.getProperty(TEMPLATE_ID_KEY);
+		//	}
+		//
+		//}
 		
 		return null;
 	}
@@ -137,19 +128,7 @@ public abstract class AbstractRequestEntity<T> {
 	}
 	
 	protected Map<String, Object> buildParams() {
-		Map<String, Object> params = new HashMap<>();
-		for (Object arg : invocation.getArguments()) {
-			try {
-				if (arg instanceof IRequest) {
-					params.putAll(((IRequest) arg).getParams());
-				} else {
-					params.putAll(BeanUtils.describe(arg));
-				}
-			} catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
-				throw new APIException("解析参数错误");
-			}
-		}
-		return params;
+		return ParamUtil.toMap(invocation.getArguments());
 	}
 	
 	protected T buildBody() {

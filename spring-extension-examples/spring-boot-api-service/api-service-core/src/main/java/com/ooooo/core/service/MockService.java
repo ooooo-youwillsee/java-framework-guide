@@ -4,7 +4,7 @@ import com.ooooo.core.request.AbstractRequestEntity;
 import com.ooooo.core.request.AbstractResponseEntity;
 
 /**
- * 对请求进行mock
+ * mocke request
  *
  * @author leizhijie
  * @since 2021/8/26 09:54

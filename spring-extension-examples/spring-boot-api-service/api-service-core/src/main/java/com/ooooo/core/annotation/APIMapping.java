@@ -32,7 +32,6 @@ public @interface APIMapping {
 	 * auto 不做任何判断，由对应的invoker来自己处理
 	 *
 	 * @return
-	 * @see com.cairh.cpe.counter.xpe.request.XpeRequestEntity#handleEntity(org.aopalliance.intercept.MethodInvocation, java.util.Map)
 	 */
 	APISeriviceContentTypeEnums contentType() default APISeriviceContentTypeEnums.AUTO;
 }

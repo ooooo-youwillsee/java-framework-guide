@@ -1,18 +1,19 @@
-package com.cairh.xpe.sbc.counter.proxy;
+package com.ooooo.counter.proxy;
 
-import com.cairh.xpe.sbc.counter.CounterApplicationTests;
-import com.cairh.xpe.sbc.counter.CounterApplicationTests.ITestService;
-import com.cairh.xpe.sbc.counter.CounterApplicationTests.TestService;
 import com.ooooo.core.annotation.APIMapping;
 import com.ooooo.core.annotation.APIService;
 import com.ooooo.core.annotation.IAPIService;
-import com.ooooo.core.constants.ServiceType;
 import com.ooooo.core.proxy.APIServiceConfig;
-import org.junit.jupiter.api.Assertions;
+import com.ooooo.counter.CounterApplicationTests;
+import com.ooooo.counter.CounterApplicationTests.ITestService;
+import com.ooooo.counter.CounterApplicationTests.TestService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
+
+import static com.ooooo.core.constants.ServiceType.TEST_SERVICE;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author leizhijie
@@ -27,29 +28,29 @@ public class ProxyTests {
 	@Test
 	public void testApiServiceWithInterface() {
 		HelloService1 bean = context.getBean(HelloService1.class);
-		Assertions.assertEquals(bean.sayHello("123"), "123");
+		assertEquals(bean.sayHello("123"), "123");
 		IAPIService service = bean;
 		APIServiceConfig apiServiceProxyFactoryBean = service.getAPIServiceConfig();
-		Assertions.assertEquals(apiServiceProxyFactoryBean.getServiceType(), ServiceType.TEST_SERVICE);
+		assertEquals(apiServiceProxyFactoryBean.getServiceType(), TEST_SERVICE);
 	}
 	
 	
 	@Test
 	public void testApiServiceWithAnnotation() {
 		HelloService2 bean = context.getBean(HelloService2.class);
-		Assertions.assertEquals(bean.sayHello("123"), "123");
+		assertEquals(bean.sayHello("123"), "123");
 		IAPIService service = (IAPIService) bean;
 		APIServiceConfig proxBean = service.getAPIServiceConfig();
-		Assertions.assertEquals(proxBean.getServiceType(), ServiceType.TEST_SERVICE);
+		assertEquals(proxBean.getServiceType(), TEST_SERVICE);
 	}
 	
 	@Test
 	public void testApiServiceWithPackageName() {
 		HelloService3 bean = context.getBean(HelloService3.class);
-		Assertions.assertEquals(bean.sayHello("123"), "123");
+		assertEquals(bean.sayHello("123"), "123");
 		IAPIService service = (IAPIService) bean;
 		APIServiceConfig proxBean = service.getAPIServiceConfig();
-		Assertions.assertEquals(proxBean.getServiceType(), ServiceType.TEST_SERVICE);
+		assertEquals(proxBean.getServiceType(), TEST_SERVICE);
 	}
 }
 
@@ -57,7 +58,7 @@ public class ProxyTests {
 @APIService
 interface HelloService1 extends ITestService {
 	
-	@APIMapping("HelloService1#sayHello1")
+	@APIMapping("HelloService1#sayHello")
 	String sayHello(String name);
 	
 }
@@ -65,6 +66,7 @@ interface HelloService1 extends ITestService {
 @TestService
 interface HelloService2 {
 	
+	@APIMapping("HelloService2#sayHello")
 	String sayHello(String name);
 	
 }
@@ -72,6 +74,7 @@ interface HelloService2 {
 @APIService
 interface HelloService3 {
 	
+	@APIMapping("HelloService3#sayHello")
 	String sayHello(String name);
 	
 }

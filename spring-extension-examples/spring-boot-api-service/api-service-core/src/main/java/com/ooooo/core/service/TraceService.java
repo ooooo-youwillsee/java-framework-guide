@@ -4,7 +4,7 @@ import com.ooooo.core.proxy.APIServiceConfig;
 import org.aopalliance.intercept.MethodInvocation;
 
 /**
- * 保存trace信息
+ * trace request
  *
  * @author leizhijie
  * @since 2021/8/26 09:33
