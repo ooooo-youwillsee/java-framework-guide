@@ -19,6 +19,8 @@ include 'spring-boot-examples:spring-boot-sharding-jdbc'
 include 'spring-boot-examples:spring-boot-jdbc'
 include 'spring-boot-examples:spring-boot-test'
 include 'spring-boot-examples:spring-boot-webmvc'
+include 'spring-boot-examples:spring-boot-dubbo3:spring-boot-dubbo3-consumer'
+include 'spring-boot-examples:spring-boot-dubbo3:spring-boot-dubbo3-provider'
 
 
 // spring cloud examples

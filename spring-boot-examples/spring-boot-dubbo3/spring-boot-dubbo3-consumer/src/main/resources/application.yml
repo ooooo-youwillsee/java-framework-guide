@@ -1,0 +1,9 @@
+server:
+  port: 0
+spring:
+  application:
+    name: demo-spring-boot-dubbo3-consumer
+
+dubbo:
+  registry:
+    address: zookeeper://centos1:2181

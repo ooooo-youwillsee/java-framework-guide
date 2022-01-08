@@ -3,8 +3,6 @@ package com.ooooo.core.beans;
 import com.ooooo.core.constants.ServiceType;
 import com.ooooo.core.request.ITemplate;
 import com.ooooo.core.request.TemplateProperties;
-import java.util.HashMap;
-import java.util.List;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.factory.InitializingBean;
@@ -13,6 +11,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.event.SmartApplicationListener;
 import org.springframework.context.support.GenericApplicationContext;
+
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * 抽象类， 负责注册template BeanDefinition
@@ -23,14 +24,14 @@ import org.springframework.context.support.GenericApplicationContext;
  * @see SmartApplicationListener
  * @since 1.0.0
  */
-public abstract class AbstractTemplateBeanDefintionRegistrar implements InitializingBean, ApplicationContextAware {
-	
+public abstract class AbstractTemplateBeanDefinitionRegistrar implements InitializingBean, ApplicationContextAware {
+
 	@Getter
 	protected HashMap<String/* templateId */, TemplateProperties> registeredTemplatePropertiesMap = new HashMap<>();
-	
+
 	@Setter
 	protected ApplicationContext applicationContext;
-	
+
 	@Override
 	public void afterPropertiesSet() {
 		registerTemplateBeans();

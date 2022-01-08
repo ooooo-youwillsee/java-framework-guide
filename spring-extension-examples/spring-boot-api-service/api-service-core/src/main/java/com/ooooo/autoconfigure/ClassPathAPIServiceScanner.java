@@ -4,10 +4,6 @@ import com.ooooo.core.annotation.APIService;
 import com.ooooo.core.annotation.IAPIService;
 import com.ooooo.core.beans.BeanDefinitionProcessor;
 import com.ooooo.core.proxy.APIServiceConfig;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Set;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.aopalliance.aop.Advice;
@@ -24,13 +20,18 @@ import org.springframework.core.type.AnnotationMetadata;
 import org.springframework.core.type.filter.AnnotationTypeFilter;
 import org.springframework.util.ClassUtils;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Set;
+
 /**
  * @author leizhijie
  * @since 2021/1/13 09:19
  */
 @Slf4j
 public class ClassPathAPIServiceScanner extends ClassPathBeanDefinitionScanner {
-	
+
 	@Setter
 	private ApplicationContext applicationContext;
 	
@@ -63,8 +64,8 @@ public class ClassPathAPIServiceScanner extends ClassPathBeanDefinitionScanner {
 			finishBeanDefinition(beanDefinition, config);
 		}
 	}
-	
-	protected void processBeanDefiniton(AbstractBeanDefinition beanDefinition, APIServiceConfig config) {
+
+	protected void processBeanDefinition(AbstractBeanDefinition beanDefinition, APIServiceConfig config) {
 		List<BeanDefinitionProcessor> beanDefinitionProcessors = new ArrayList<>(applicationContext.getBeansOfType(BeanDefinitionProcessor.class).values());
 		AnnotationAwareOrderComparator.sort(beanDefinitionProcessors);
 		for (BeanDefinitionProcessor processor : beanDefinitionProcessors) {
@@ -79,7 +80,7 @@ public class ClassPathAPIServiceScanner extends ClassPathBeanDefinitionScanner {
 		beanDefinition.setBeanClassName(beanClassName);
 		
 		beanDefinition.setInstanceSupplier(() -> {
-			ClassPathAPIServiceScanner.this.processBeanDefiniton(beanDefinition, config);
+			ClassPathAPIServiceScanner.this.processBeanDefinition(beanDefinition, config);
 			
 			ProxyFactoryBean proxyBean = new ProxyFactoryBean();
 			proxyBean.addInterface(IAPIService.class);
