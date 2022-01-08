@@ -14,15 +14,12 @@ protobuf {
 
 configurations {
     all {
-        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
-        exclude group: 'ch.qos.logback', module: 'logback-classic'
-        exclude group: 'org.apache.logging.log4j', module: 'log4j-to-slf4j'
+        exclude group: 'org.slf4j', module: 'slf4j-log4j12'
+        exclude group: 'log4j', module: 'log4j'
     }
 }
 
 dependencies {
-    api("org.slf4j:slf4j-api")
-    api('org.slf4j:slf4j-log4j12')
     api('org.springframework.boot:spring-boot-starter-web')
     api('com.google.protobuf:protobuf-java:3.11.0')
     api("org.apache.dubbo:dubbo-spring-boot-starter:${DUBBO_VERSION}")
