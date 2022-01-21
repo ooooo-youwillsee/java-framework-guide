@@ -1,6 +1,8 @@
 package com.ooooo.rest;
 
 import com.alibaba.fastjson.JSON;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,9 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
-
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
 
 /**
  * @author ooooo
@@ -35,8 +34,9 @@ public class TestController {
 	}
 
 	@PostMapping("/postFile")
-	public Resp postFile(@RequestParam("file") MultipartFile file) throws IOException {
-		log.info("postFile: {}, content: '{}'", file.getName(), new String(file.getBytes(), StandardCharsets.UTF_8));
+	public Resp postFile(@RequestParam("file") MultipartFile file, String key1) throws IOException {
+		log.info("postFile, key: {}, value: '{}'", file.getName(), new String(file.getBytes(), StandardCharsets.UTF_8));
+		log.info("postFile, key: {}, value: '{}'", "key1", key1);
 		return new Resp("18", 1);
 	}
 

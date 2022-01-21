@@ -17,7 +17,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.io.InputStreamResource;
-import org.springframework.http.*;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.http.client.ClientHttpResponse;
 import org.springframework.http.client.OkHttp3ClientHttpRequestFactory;
 import org.springframework.http.converter.StringHttpMessageConverter;
@@ -87,6 +92,7 @@ public class RestTemplateTest {
 		
 		MultiValueMap<String, Object> body = new LinkedMultiValueMap<>();
 		body.add("file", file);
+		body.add("key1", "value1");
 		HttpHeaders httpHeaders = new HttpHeaders();
 		httpHeaders.add(HttpHeaders.CONTENT_TYPE, MediaType.MULTIPART_FORM_DATA_VALUE);
 		HttpEntity<MultiValueMap<String, Object>> entity = new HttpEntity<>(body, httpHeaders);
