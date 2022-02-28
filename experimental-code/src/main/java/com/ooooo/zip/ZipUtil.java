@@ -1,6 +1,5 @@
 package com.ooooo.zip;
 
-import java.util.jar.JarEntry;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
@@ -17,7 +16,7 @@ public class ZipUtil {
 
   @SneakyThrows
   public static void toZipEntry(ZipOutputStream zipOutputStream, String entryPath, byte[] data) {
-    JarEntry entry = new JarEntry(entryPath);
+    ZipEntry entry = new ZipEntry(entryPath);
     zipOutputStream.putNextEntry(entry);
     zipOutputStream.write(data);
   }
