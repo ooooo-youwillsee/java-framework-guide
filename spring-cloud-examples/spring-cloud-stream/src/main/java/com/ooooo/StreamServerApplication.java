@@ -2,21 +2,22 @@ package com.ooooo;
 
 import com.ooooo.dao.entity.Order;
 import com.ooooo.function.OrderConfiguration;
-import java.util.Date;
 import lombok.SneakyThrows;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
+import java.util.Date;
+
 /**
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @since 2021/3/12 18:31
  */
 @SpringBootApplication
 public class StreamServerApplication {
 
-	@SneakyThrows
-	public static void main(String[] args) {
+    @SneakyThrows
+    public static void main(String[] args) {
 		ConfigurableApplicationContext context = SpringApplication.run(StreamServerApplication.class, args);
 
 		OrderConfiguration orderConfiguration = context.getBean(OrderConfiguration.class);

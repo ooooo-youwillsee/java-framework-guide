@@ -5,7 +5,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 /**
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @since 2021/4/12 21:48
  */
 @Repository

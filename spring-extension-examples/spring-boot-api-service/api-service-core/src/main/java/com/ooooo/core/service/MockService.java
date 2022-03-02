@@ -6,7 +6,7 @@ import com.ooooo.core.request.AbstractResponseEntity;
 /**
  * mocke request
  *
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @since 2021/8/26 09:54
  */
 public interface MockService {

@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 /**
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @since 2021/3/12 18:31
  */
 @SpringBootApplication

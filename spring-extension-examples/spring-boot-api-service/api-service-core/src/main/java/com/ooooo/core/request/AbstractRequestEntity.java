@@ -9,14 +9,15 @@ import com.ooooo.core.context.APIServiceContext;
 import com.ooooo.core.exception.APIException;
 import com.ooooo.core.proxy.APIServiceConfig;
 import com.ooooo.core.util.ParamUtil;
-import java.lang.reflect.Method;
-import java.util.Map;
 import lombok.Getter;
 import lombok.Setter;
 import org.aopalliance.intercept.MethodInvocation;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.core.annotation.AnnotationUtils;
+
+import java.lang.reflect.Method;
+import java.util.Map;
 
 import static com.ooooo.core.constants.CounterConstants.APISERVICE_CONFIG_KEY;
 import static com.ooooo.core.constants.CounterConstants.FUNCTION_NAME;
@@ -26,7 +27,7 @@ import static com.ooooo.core.constants.CounterConstants.REQUEST_ID_KEY;
 import static com.ooooo.core.constants.CounterConstants.TEMPLATE_ID_KEY;
 
 /**
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @since 2021/8/25 09:58
  */
 public abstract class AbstractRequestEntity<T> {

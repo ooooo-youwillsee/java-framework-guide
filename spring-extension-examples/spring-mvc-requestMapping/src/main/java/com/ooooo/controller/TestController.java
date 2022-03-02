@@ -5,7 +5,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @since 2021/2/24 15:21
  */
 @XRequestMapping("/test")

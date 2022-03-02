@@ -1,8 +1,5 @@
 package com.ooooo.annotation;
 
-import java.lang.reflect.Method;
-import java.util.Map;
-import java.util.Map.Entry;
 import lombok.Setter;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
@@ -12,14 +9,18 @@ import org.springframework.core.Ordered;
 import org.springframework.core.ResolvableType;
 import org.springframework.core.annotation.AnnotatedElementUtils;
 
+import java.lang.reflect.Method;
+import java.util.Map;
+import java.util.Map.Entry;
+
 /**
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @since 2021/2/23 16:01
  */
 @Setter
 public class SimpleListenerBeanPostProcessor implements BeanPostProcessor, Ordered, SimpleMulticasterAware {
-	
-	private SimpleMulticaster simpleMulticaster;
+
+    private SimpleMulticaster simpleMulticaster;
 	
 	public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
 		Class<?> targetType = bean.getClass();

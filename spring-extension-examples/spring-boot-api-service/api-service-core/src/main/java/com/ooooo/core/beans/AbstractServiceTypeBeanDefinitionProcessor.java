@@ -3,9 +3,6 @@ package com.ooooo.core.beans;
 import com.ooooo.core.annotation.IAPIService;
 import com.ooooo.core.constants.ServiceType;
 import com.ooooo.core.proxy.APIServiceConfig;
-import java.lang.annotation.Annotation;
-import java.util.HashSet;
-import java.util.Set;
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.AnnotatedBeanDefinition;
 import org.springframework.beans.factory.config.BeanDefinition;
@@ -14,12 +11,16 @@ import org.springframework.core.type.AnnotationMetadata;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.util.ClassUtils;
 
+import java.lang.annotation.Annotation;
+import java.util.HashSet;
+import java.util.Set;
+
 import static com.ooooo.core.constants.BeanDefinitionProcessorType.SERVIC_TYPE;
 
 /**
  * recognize serviceType of beanDefinition
  *
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @since 2021/3/19 20:11
  */
 public abstract class AbstractServiceTypeBeanDefinitionProcessor implements BeanDefinitionProcessor, Ordered {

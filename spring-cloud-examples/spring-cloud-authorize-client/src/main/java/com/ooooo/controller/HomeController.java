@@ -5,7 +5,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * 用于测试sso
- * @author leizhijie
+ *
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @since 2021/6/7 18:08
  */
 @RestController

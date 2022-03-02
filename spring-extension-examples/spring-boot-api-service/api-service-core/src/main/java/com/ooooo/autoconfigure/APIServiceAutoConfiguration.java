@@ -7,7 +7,6 @@ import com.ooooo.core.interceptor.RequestEntityProcessMethodInterceptor;
 import com.ooooo.core.interceptor.TraceServiceMethodInterceptor;
 import com.ooooo.core.request.IRequestEntityProcessor;
 import com.ooooo.core.service.TraceService;
-import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
@@ -16,10 +15,12 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import java.util.List;
+
 import static com.ooooo.core.interceptor.DebugMethodInterceptor.DEBUG_METHOD_INTERCEPTOR_BEAN_NAME;
 
 /**
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @since 2021/3/12 15:59
  */
 @Configuration

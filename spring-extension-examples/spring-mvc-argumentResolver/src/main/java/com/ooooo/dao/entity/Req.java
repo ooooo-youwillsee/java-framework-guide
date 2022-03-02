@@ -3,7 +3,7 @@ package com.ooooo.dao.entity;
 import lombok.Data;
 
 /**
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @since 2021/2/22 21:49
  */
 @Data

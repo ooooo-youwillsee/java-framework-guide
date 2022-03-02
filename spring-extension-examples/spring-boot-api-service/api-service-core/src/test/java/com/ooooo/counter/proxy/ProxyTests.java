@@ -16,7 +16,7 @@ import static com.ooooo.core.constants.ServiceType.TEST_SERVICE;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @since 2021/3/19 21:16
  */
 @SpringBootTest(classes = CounterApplicationTests.class)

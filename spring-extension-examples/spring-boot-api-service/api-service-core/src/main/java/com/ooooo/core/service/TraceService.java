@@ -6,7 +6,7 @@ import org.aopalliance.intercept.MethodInvocation;
 /**
  * trace request
  *
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @since 2021/8/26 09:33
  */
 public interface TraceService {

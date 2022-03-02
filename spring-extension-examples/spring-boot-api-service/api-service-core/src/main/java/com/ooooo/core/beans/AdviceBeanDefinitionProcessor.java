@@ -4,8 +4,6 @@ import com.ooooo.core.constants.BeanDefinitionProcessorType;
 import com.ooooo.core.interceptor.APIServiceConfigMethodInterceptor;
 import com.ooooo.core.interceptor.DebugMethodInterceptor;
 import com.ooooo.core.proxy.APIServiceConfig;
-import java.util.Collection;
-import java.util.List;
 import lombok.Setter;
 import org.aopalliance.aop.Advice;
 import org.springframework.beans.factory.config.BeanDefinition;
@@ -14,12 +12,15 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.core.Ordered;
 import org.springframework.core.annotation.AnnotationAwareOrderComparator;
 
+import java.util.Collection;
+import java.util.List;
+
 import static com.ooooo.core.interceptor.DebugMethodInterceptor.DEBUG_METHOD_INTERCEPTOR_BEAN_NAME;
 
 /**
  * 最后的处理,添加advice
  *
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @since 2021/3/20 21:54
  */
 public class AdviceBeanDefinitionProcessor implements BeanDefinitionProcessor, Ordered, ApplicationContextAware {

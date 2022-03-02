@@ -11,7 +11,7 @@ import com.ooooo.core.request.IRequestEntityProcessor;
 import lombok.Getter;
 
 /**
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @since 2021/3/19 20:05
  */
 public enum InterceptorType {

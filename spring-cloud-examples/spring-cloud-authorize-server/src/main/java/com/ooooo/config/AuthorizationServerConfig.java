@@ -1,8 +1,5 @@
 package com.ooooo.config;
 
-import java.security.KeyPair;
-import javax.sql.DataSource;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,15 +16,18 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.config.annotation.web.configurers.AuthorizationServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.store.JwtAccessTokenConverter;
 
+import javax.sql.DataSource;
+import java.security.KeyPair;
+
 /**
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @since 2021/3/13 22:43
  */
 @Configuration
 @EnableAuthorizationServer
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
 
-	private final UserDetailsService userDetailsService;
+    private final UserDetailsService userDetailsService;
 	private final AuthenticationManager authenticationManager;
 	private final KeyPair keyPair;
 	private final PasswordEncoder passwordEncoder;

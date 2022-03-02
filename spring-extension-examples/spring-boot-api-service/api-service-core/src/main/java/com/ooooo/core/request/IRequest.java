@@ -5,7 +5,7 @@ import java.util.Map;
 /**
  * 动态参数接口
  *
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @since 2021/4/8 11:12
  */
 public interface IRequest {

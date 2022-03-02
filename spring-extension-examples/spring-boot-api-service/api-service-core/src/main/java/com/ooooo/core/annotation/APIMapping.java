@@ -1,6 +1,7 @@
 package com.ooooo.core.annotation;
 
 import com.ooooo.core.request.ITemplate;
+
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -8,7 +9,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @since 2021/3/8 17:01
  */
 @Retention(RetentionPolicy.RUNTIME)

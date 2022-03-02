@@ -3,12 +3,6 @@ package com.ooooo.core.request;
 import com.alibaba.fastjson.JSON;
 import com.ooooo.core.constants.ServiceType;
 import com.ooooo.core.exception.APIException;
-import java.net.URI;
-import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentMap;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,13 +21,20 @@ import org.springframework.web.client.ResponseErrorHandler;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import java.net.URI;
+import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
+
 import static com.ooooo.core.constants.CounterConstants.FUNCTION_NAME;
 
 /**
  * <p>create proxyItemplate using http or https</p>
  * <p>handle response</p>
  *
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @since 1.0.0
  */
 public class HttpProxyRestTemplateHelper {

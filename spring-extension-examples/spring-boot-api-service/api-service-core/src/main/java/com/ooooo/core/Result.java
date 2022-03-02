@@ -1,7 +1,7 @@
 package com.ooooo.core;
 
 /**
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @since 2021/3/12 16:07
  */
 public interface Result {

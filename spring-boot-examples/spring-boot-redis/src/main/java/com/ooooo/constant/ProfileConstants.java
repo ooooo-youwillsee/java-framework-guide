@@ -1,7 +1,7 @@
 package com.ooooo.constant;
 
 /**
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @since 2021/4/13 20:43
  */
 public class ProfileConstants {

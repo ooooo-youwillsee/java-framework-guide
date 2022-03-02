@@ -3,7 +3,7 @@ package com.ooooo.lambda;
 import lombok.Data;
 
 /**
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @since 2021/5/22 16:02
  */
 @Data

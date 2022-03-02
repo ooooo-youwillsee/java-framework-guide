@@ -1,12 +1,13 @@
 package com.ooooo.annotation;
 
 import com.ooooo.dao.entity.Message;
-import java.util.LinkedList;
-import java.util.List;
 import org.springframework.core.ResolvableType;
 
+import java.util.LinkedList;
+import java.util.List;
+
 /**
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @since 2021/2/23 18:42
  */
 @SuppressWarnings("unchecked")

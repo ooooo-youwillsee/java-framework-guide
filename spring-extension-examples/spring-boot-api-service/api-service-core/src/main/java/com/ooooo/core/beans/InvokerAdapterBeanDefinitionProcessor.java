@@ -16,7 +16,7 @@ import static com.ooooo.core.constants.BeanDefinitionProcessorType.INVOKER_ADAPT
 /**
  * 指定invokeClass 和对应的serviceType
  *
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @since 2021/3/20 09:04
  */
 @AllArgsConstructor

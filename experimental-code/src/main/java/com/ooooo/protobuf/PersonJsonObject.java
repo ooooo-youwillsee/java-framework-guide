@@ -4,7 +4,8 @@ import lombok.Data;
 
 /**
  * Person 类对应的 实体类
- * @author leizhijie
+ *
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @see PersonOrBuilder
  * @since 2021/6/5 12:56
  */

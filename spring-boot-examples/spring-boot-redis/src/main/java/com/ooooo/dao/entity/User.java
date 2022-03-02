@@ -5,7 +5,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
 
 /**
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @see <a href=https://docs.spring.io/spring-data/redis/docs/2.4.7/reference/html/#redis.repositories>redis.repositories</a>
  * @since 2021/4/12 21:49
  */

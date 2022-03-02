@@ -1,11 +1,7 @@
 package com.ooooo.config;
 
-import static com.ooooo.config.XRequestBodyHandlerInterceptor.XREQUEST_PARAM_PREFIX;
-
 import com.alibaba.fastjson.JSON;
 import com.ooooo.annotation.XRequestBody;
-import java.util.List;
-import javax.servlet.http.HttpServletRequest;
 import org.springframework.core.MethodParameter;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -14,15 +10,20 @@ import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.method.support.ModelAndViewContainer;
 import org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor;
 
+import javax.servlet.http.HttpServletRequest;
+import java.util.List;
+
+import static com.ooooo.config.XRequestBodyHandlerInterceptor.XREQUEST_PARAM_PREFIX;
+
 /**
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @since 2021/2/22 21:57
  */
 public class XRequestBodyArgumentResolver extends RequestResponseBodyMethodProcessor {
-	
-	private final ConversionService conversionService;
-	
-	public XRequestBodyArgumentResolver(List<HttpMessageConverter<?>> converters, ConversionService conversionService) {
+
+    private final ConversionService conversionService;
+
+    public XRequestBodyArgumentResolver(List<HttpMessageConverter<?>> converters, ConversionService conversionService) {
 		super(converters);
 		this.conversionService = conversionService;
 	}

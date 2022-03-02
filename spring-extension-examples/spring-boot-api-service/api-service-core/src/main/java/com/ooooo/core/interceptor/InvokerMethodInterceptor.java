@@ -12,7 +12,7 @@ import org.springframework.beans.factory.BeanFactory;
 import org.springframework.core.Ordered;
 
 /**
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @see InvokerAdapterBeanDefinitionProcessor
  * @since 2021/3/19 21:10
  */

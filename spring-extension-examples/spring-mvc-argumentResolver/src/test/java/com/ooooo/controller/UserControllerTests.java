@@ -7,7 +7,6 @@ import com.ooooo.dao.entity.Req;
 import com.ooooo.dao.entity.ReqBody;
 import com.ooooo.dao.entity.ReqHeader;
 import com.ooooo.dao.entity.User;
-import java.util.Date;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,15 +18,17 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.util.Assert;
 
+import java.util.Date;
+
 /**
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @since 2021/2/22 22:08
  */
 @AutoConfigureMockMvc
 public class UserControllerTests extends SpringMvcArgumentResolverApplicationTests {
-	
-	private static final Logger LOGGER = LoggerFactory.getLogger(UserControllerTests.class);
-	@Autowired
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(UserControllerTests.class);
+    @Autowired
 	private MockMvc mockMvc;
 	
 	@Test

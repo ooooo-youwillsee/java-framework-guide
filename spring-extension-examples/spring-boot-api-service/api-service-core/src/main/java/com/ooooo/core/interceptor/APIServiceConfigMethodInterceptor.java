@@ -9,7 +9,7 @@ import org.springframework.aop.framework.AopContext;
 /**
  * 这个拦截器会暴露bean的serviceConfig
  *
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @see APIServiceConfig
  * @since 2021/3/23 14:08
  */

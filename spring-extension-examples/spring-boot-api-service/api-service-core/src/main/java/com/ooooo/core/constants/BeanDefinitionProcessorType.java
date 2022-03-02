@@ -7,7 +7,7 @@ import com.ooooo.core.proxy.APIServiceConfig;
 import lombok.Getter;
 
 /**
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @since 2021/3/20 09:05
  */
 public enum BeanDefinitionProcessorType {

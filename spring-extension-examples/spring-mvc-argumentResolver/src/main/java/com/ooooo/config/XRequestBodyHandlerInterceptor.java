@@ -2,25 +2,26 @@ package com.ooooo.config;
 
 import com.ooooo.annotation.XRequestBody;
 import com.ooooo.dao.entity.Req;
-import java.util.Arrays;
-import java.util.Map.Entry;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import org.springframework.http.HttpInputMessage;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.http.server.ServletServerHttpRequest;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.Arrays;
+import java.util.Map.Entry;
+
 /**
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @since 2021/2/22 22:48
  */
 public class XRequestBodyHandlerInterceptor implements HandlerInterceptor {
-	
-	public static final String XREQUEST_PARAM_PREFIX = "xrequest-";
-	
-	private final MappingJackson2HttpMessageConverter messageConverter;
+
+    public static final String XREQUEST_PARAM_PREFIX = "xrequest-";
+
+    private final MappingJackson2HttpMessageConverter messageConverter;
 	
 	public XRequestBodyHandlerInterceptor(MappingJackson2HttpMessageConverter messageConverter) {
 		this.messageConverter = messageConverter;

@@ -6,14 +6,15 @@ import com.ooooo.core.exception.APIException;
 import com.ooooo.core.proxy.APIServiceConfig;
 import com.ooooo.core.request.AbstractRequestEntity;
 import com.ooooo.core.request.IRequestEntityProcessor;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 import org.aopalliance.intercept.MethodInvocation;
 import org.springframework.core.Ordered;
 
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 /**
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @see AbstractRequestEntity
  * @see InterceptorType
  * @see APIServiceConfigMethodInterceptor

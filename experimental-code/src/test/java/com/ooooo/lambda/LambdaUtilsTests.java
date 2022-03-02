@@ -1,19 +1,20 @@
 package com.ooooo.lambda;
 
-import java.util.function.BiFunction;
-import java.util.function.Function;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.function.BiFunction;
+import java.util.function.Function;
+
 /**
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @since 2021/5/22 16:10
  */
 public class LambdaUtilsTests {
-	
-	
-	private static final Logger LOGGER = LoggerFactory.getLogger(LambdaUtilsTests.class);
+
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(LambdaUtilsTests.class);
 	
 	@Test
 	public void resolveMethod() {

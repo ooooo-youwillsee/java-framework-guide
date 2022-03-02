@@ -19,7 +19,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * 解决没有 web 端口情况下，健康检查失效
  *
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @see ConsulAutoRegistration#createCheck(Integer, HeartbeatProperties, ConsulDiscoveryProperties)
  * @see ConsulAutoServiceRegistration#getRegistration()
  * @see ConsulAutoServiceRegistration#setPortIfNeeded(int)

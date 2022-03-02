@@ -2,16 +2,17 @@ package com.ooooo.controller;
 
 import com.ooooo.service.AccessTokenResponse;
 import com.ooooo.service.OAuth2Service;
-import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
- *
  * 第三方接入示例
- * @author leizhijie
+ *
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @since 2021/3/31 16:30
  */
 @RestController

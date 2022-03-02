@@ -5,7 +5,7 @@ import com.ooooo.core.proxy.APIServiceConfig;
 import org.aopalliance.intercept.MethodInvocation;
 
 /**
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @since 2021/3/18 16:33
  */
 public interface Invoker {

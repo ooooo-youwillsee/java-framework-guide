@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ImportBeanDefinitionRegistrar;
 import org.springframework.core.type.AnnotationMetadata;
 
 /**
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @since 2021/2/24 09:23
  */
 public class SimpleMulticasterImportBeanDefinitionRegistrar implements ImportBeanDefinitionRegistrar {

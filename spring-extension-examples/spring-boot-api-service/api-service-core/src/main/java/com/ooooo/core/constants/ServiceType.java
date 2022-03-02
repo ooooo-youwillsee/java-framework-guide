@@ -4,7 +4,7 @@ import com.ooooo.core.annotation.OnlyForTest;
 import lombok.Getter;
 
 /**
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @since 2021/3/19 20:23
  */
 public enum ServiceType {

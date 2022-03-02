@@ -18,7 +18,7 @@ import java.util.List;
 /**
  * 抽象类， 负责注册template BeanDefinition
  *
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @see ITemplate
  * @see TemplateProperties
  * @see SmartApplicationListener

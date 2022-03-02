@@ -3,7 +3,7 @@ package com.ooooo.core.exception;
 import lombok.Getter;
 
 /**
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @since 2021/3/18 16:33
  */
 public class APIException extends RuntimeException {

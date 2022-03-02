@@ -1,19 +1,20 @@
 package com.ooooo.annotation;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import org.springframework.core.ResolvableType;
 import org.springframework.util.ReflectionUtils;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
 /**
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @since 2021/2/23 17:20
  */
 public class SimpleListenerAdapter implements ISimpleListener<Object> {
-	
-	private final Method method;
-	private final Object bean;
-	private final ResolvableType parameterResolvableType;
+
+    private final Method method;
+    private final Object bean;
+    private final ResolvableType parameterResolvableType;
 	
 	public SimpleListenerAdapter(Method method, Object beanName, ResolvableType paramType) {
 		this.method = method;

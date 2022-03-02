@@ -10,7 +10,7 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.FullyQualifiedAnnotationBeanNameGenerator;
 
 /**
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @since 2021/3/12 16:31
  */
 public class ClassPathAPIServiceScannerConfigurer implements BeanDefinitionRegistryPostProcessor, ApplicationContextAware {

@@ -6,7 +6,7 @@ import org.springframework.beans.factory.config.BeanDefinition;
 /**
  * 对beanDefinition处理
  *
- * @author leizhijie
+ * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @since 2021/3/18 20:51
  */
 public interface BeanDefinitionProcessor {
