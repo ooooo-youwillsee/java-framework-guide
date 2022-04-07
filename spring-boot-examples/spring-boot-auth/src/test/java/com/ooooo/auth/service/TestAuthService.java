@@ -38,9 +38,9 @@ public class TestAuthService implements AuthService {
     authentication.setExpiresAt(DateUtils.addHours(new Date(), 1));
 
     if ("tom".equals(username) && "123".equals(password)) {
-      authentication.setAuthenticated(true);
+      authentication.setExpiresAt(DateUtils.addHours(new Date(), 1));
     } else {
-      authentication.setAuthenticated(false);
+      authentication.setExpiresAt(new Date());
     }
 
     return authentication;

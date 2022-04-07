@@ -66,6 +66,18 @@ public class AccessTokenAuthentication implements Authentication {
     return expiresAt;
   }
 
+  public void setExpiresAt(Date expiresAt) {
+    if (expiresAt == null) {
+      throw new IllegalArgumentException("expiresAt is null");
+    }
+    this.expiresAt = expiresAt;
+    this.authenticated = expiresAt.after(new Date());
+  }
+
+  public void setAuthenticated(boolean authenticated) {
+    throw new IllegalArgumentException("you cann't set the field, you should set field named 'expiresAt'");
+  }
+
   static String[] getAuthorities(Collection<? extends GrantedAuthority> authorities) {
     return authorities.stream().map(GrantedAuthority::getAuthority).toArray(String[]::new);
   }
