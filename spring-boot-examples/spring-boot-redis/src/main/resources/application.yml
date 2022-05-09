@@ -1,11 +1,3 @@
-spring:
-  redis:
-    port: 6379
-    host: centos1
-
-    redisson:
-      file: classpath:redisson-single-redis.yaml
-
 management:
   endpoints:
     web:
@@ -14,3 +6,23 @@ management:
     jmx:
       exposure:
         include: '*'
+
+spring:
+  redis:
+    port: 6379
+    host: centos1
+
+
+---
+# redisson 会优先加载
+spring:
+  profiles: redisson
+
+  redis:
+    redisson:
+      config: |
+        sentinelServersConfig:
+          checkSentinelsList: false
+          masterName: mymaster
+          sentinelAddresses:
+            - redis://172.16.1.104:26379
