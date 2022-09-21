@@ -39,3 +39,9 @@ include 'spring-cloud-examples:spring-cloud-simple-api'
 include 'spring-cloud-examples:spring-cloud-dubbo:spring-cloud-dubbo-api'
 include 'spring-cloud-examples:spring-cloud-dubbo:spring-cloud-dubbo-consumer'
 include 'spring-cloud-examples:spring-cloud-dubbo:spring-cloud-dubbo-provider'
+
+
+// spring-boot-class-loader
+include 'spring-boot-class-loader:module-a'
+include 'spring-boot-class-loader:module-b'
+include 'spring-boot-class-loader:module-main'

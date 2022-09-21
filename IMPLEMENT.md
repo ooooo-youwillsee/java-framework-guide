@@ -12,11 +12,9 @@
 
 ```
 
-
 ## 2. spring-mvc-requestmapping
 
 1. 实现了注解 `@XRequestMapping` 注解，可以接受请求
-
 
 ## 3. spring-redis
 
@@ -28,7 +26,6 @@
 
 1. 实现了注解 `@SimpleListener` 接口，可以接受事件监听
 
-
 ### 5. netty
 
 1. 简单测试 netty 内置的 **LineBasedFrameDecoder**， **FixedLengthFrameDecoder**， **LengthFieldBasedFrameDecoder**
@@ -36,7 +33,7 @@
 ### 6. gateway-security
 
 1. 实现oauth2.0 的授权码模式
-2. spring cloud gateway 添加 redislimiter 
+2. spring cloud gateway 添加 redislimiter
 
 ### 7. component-scan
 
@@ -45,3 +42,7 @@
 ### 8. experimental-code
 
 1. `LambdaUtils` 类解析 lambda 函数的属性
+
+## 9. spring-boot-class-loader
+
+实现一个**自定义的classLoader**, 来解决jar包版本冲突问题

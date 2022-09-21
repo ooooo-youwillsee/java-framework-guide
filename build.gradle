@@ -1,22 +1,19 @@
 import org.springframework.boot.gradle.plugin.SpringBootPlugin
 
-
 plugins {
-    id 'io.spring.dependency-management' version '1.0.9.RELEASE' apply false
-    id 'org.springframework.boot' version '2.3.8.RELEASE' apply false
+    id 'org.springframework.boot' version '2.6.9' apply false
     id 'idea'
 }
 
 idea {
     module {
-        downloadJavadoc = true
-        downloadSources = true
+        downloadJavadoc = false
+        downloadSources = false
     }
 }
 
 allprojects {
     apply plugin: 'java'
-    apply plugin: 'idea'
     apply plugin: 'java-library'
     apply plugin: 'io.spring.dependency-management'
 
@@ -24,10 +21,7 @@ allprojects {
     version '1.0.0'
 
     repositories {
-//        maven { url 'https://maven.aliyun.com/repository/google'}
-//        maven { url 'https://maven.aliyun.com/repository/jcenter'}
         maven { url 'https://maven.aliyun.com/repository/public' }
-//        maven { url "https://jitpack.io"}
         mavenCentral()
     }
 
@@ -41,6 +35,7 @@ allprojects {
     }
 
     ext {
+        set('springBootVersion', "2.3.8.RELEASE")
         set('springCloudVersion', "Hoxton.SR10")
         set('springCloudAlibabaVersion', "2.2.6.RELEASE")
         set('grpcVersion', '1.39.0')
