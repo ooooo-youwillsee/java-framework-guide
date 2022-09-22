@@ -1,12 +1,12 @@
 package com.ooooo.service;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import com.ooooo.ClassLoaderApplication;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>

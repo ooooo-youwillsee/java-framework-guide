@@ -1,6 +1,5 @@
 dependencies {
-    api(project(":spring-boot-class-loader:module-a"))
-    api(project(":spring-boot-class-loader:module-b"))
+    api('org.apache.commons:commons-configuration2:+')
 
     api("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
 

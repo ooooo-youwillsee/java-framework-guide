@@ -46,3 +46,9 @@
 ## 9. spring-boot-class-loader
 
 实现一个**自定义的classLoader**, 来解决jar包版本冲突问题
+
+`module-a` 和 `module-b` 来模拟两个jar，这两个jar包中的类，都会在` module-main` 中调用
+
+## 10. spring-boot-compositePropertySources
+
+实现一个`统一获取配置`的类: `compositePropertySources`

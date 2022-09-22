@@ -1,0 +1,8 @@
+dependencies {
+    api(project(":spring-boot-classloader:module-a"))
+    api(project(":spring-boot-classloader:module-b"))
+
+    api("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
+
+    testImplementation("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
+}

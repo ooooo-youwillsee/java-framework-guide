@@ -1,10 +1,8 @@
 package com.ooooo.controller;
 
-import com.ooooo.autoconfigure.env.CompositePropertySources;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,21 +15,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/test")
 public class TestController {
-	
-	@Autowired
-	private CompositePropertySources compositePropertySources;
-	
-	@GetMapping("/form")
+
+
+  @GetMapping("/form")
 	public EncryptedResult<String> hello(String name, Integer age) {
 		EncryptedResult<String> success = new EncryptedResult<>();
 		success.setData(name + age);
 		return success;
-	}
-	
-	
-	@GetMapping("/getProperty")
-	public Result<String> getProperty(String checkValue) {
-		return new Result<>(compositePropertySources.getProperty(checkValue));
 	}
 	
 	

@@ -41,7 +41,8 @@ include 'spring-cloud-examples:spring-cloud-dubbo:spring-cloud-dubbo-consumer'
 include 'spring-cloud-examples:spring-cloud-dubbo:spring-cloud-dubbo-provider'
 
 
-// spring-boot-class-loader
-include 'spring-boot-class-loader:module-a'
-include 'spring-boot-class-loader:module-b'
-include 'spring-boot-class-loader:module-main'
+include 'spring-boot-classloader:module-a'
+include 'spring-boot-classloader:module-b'
+include 'spring-boot-classloader:module-main'
+
+include 'spring-boot-compositePropertySources'

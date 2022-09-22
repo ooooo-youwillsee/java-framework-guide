@@ -1,12 +1,13 @@
-package com.ooooo.autoconfigure.env;
+package com.ooooo;
 
-import java.util.Collections;
-import java.util.Map;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.EnvironmentAware;
 import org.springframework.core.env.Environment;
 import org.springframework.core.env.PropertySource;
 import org.springframework.lang.NonNull;
+
+import java.util.Collections;
+import java.util.Map;
 
 /**
  * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
@@ -14,8 +15,8 @@ import org.springframework.lang.NonNull;
  */
 @Slf4j
 public abstract class AbstractSimplePropertySource extends PropertySource<Map<String, String>> implements EnvironmentAware {
-	
-	protected Environment environment;
+
+  protected Environment environment;
 	
 	public AbstractSimplePropertySource(String name) {
 		super(name, Collections.emptyMap());
