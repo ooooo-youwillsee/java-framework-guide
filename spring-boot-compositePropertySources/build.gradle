@@ -1,5 +1,5 @@
 dependencies {
-    api('org.apache.commons:commons-configuration2:+')
+    api("org.apache.commons:commons-configuration2:+")
 
     api("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
 

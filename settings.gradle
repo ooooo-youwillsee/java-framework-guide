@@ -1,49 +1,49 @@
-rootProject.name = 'java-framework-guide'
+rootProject.name = "java-framework-guide"
 
-include 'spring-bugs-report'
+include "spring-bugs-report"
 
-include 'experimental-code'
+include "experimental-code"
 
 // spring extension examples
-include 'spring-extension-examples:spring-mvc-requestMapping'
-include 'spring-extension-examples:spring-mvc-argumentResolver'
-include 'spring-extension-examples:spring-simple-listener'
-include 'spring-extension-examples:spring-boot-api-service:api-service-core'
-include 'spring-extension-examples:spring-boot-api-service:api-service-db'
+include "spring-extension-examples:spring-mvc-requestMapping"
+include "spring-extension-examples:spring-mvc-argumentResolver"
+include "spring-extension-examples:spring-simple-listener"
+include "spring-extension-examples:spring-boot-api-service:api-service-core"
+include "spring-extension-examples:spring-boot-api-service:api-service-db"
 
 
-include 'spring-boot-auth'
+include "spring-boot-auth"
 
 // spring boot examples
-include 'spring-boot-examples:spring-boot-redis'
-include 'spring-boot-examples:spring-boot-pulsar'
-include 'spring-boot-examples:spring-boot-sharding-jdbc'
-include 'spring-boot-examples:spring-boot-jdbc'
-include 'spring-boot-examples:spring-boot-test'
-include 'spring-boot-examples:spring-boot-webmvc'
-include 'spring-boot-examples:spring-boot-dubbo3:spring-boot-dubbo3-consumer'
-include 'spring-boot-examples:spring-boot-dubbo3:spring-boot-dubbo3-provider'
+include "spring-boot-examples:spring-boot-redis"
+include "spring-boot-examples:spring-boot-pulsar"
+include "spring-boot-examples:spring-boot-sharding-jdbc"
+include "spring-boot-examples:spring-boot-jdbc"
+include "spring-boot-examples:spring-boot-test"
+include "spring-boot-examples:spring-boot-webmvc"
+include "spring-boot-examples:spring-boot-dubbo3:spring-boot-dubbo3-consumer"
+include "spring-boot-examples:spring-boot-dubbo3:spring-boot-dubbo3-provider"
 
 
 // spring cloud examples
-include 'spring-cloud-examples:spring-cloud-feign'
-include 'spring-cloud-examples:spring-cloud-eureka'
-include 'spring-cloud-examples:spring-cloud-consul'
-include 'spring-cloud-examples:spring-cloud-apollo'
-include 'spring-cloud-examples:spring-cloud-seata'
-include 'spring-cloud-examples:spring-cloud-stream'
-include 'spring-cloud-examples:spring-cloud-nacos'
-include 'spring-cloud-examples:spring-cloud-authorize-client'
-include 'spring-cloud-examples:spring-cloud-authorize-server'
-include 'spring-cloud-examples:spring-cloud-gateway'
-include 'spring-cloud-examples:spring-cloud-simple-api'
-include 'spring-cloud-examples:spring-cloud-dubbo:spring-cloud-dubbo-api'
-include 'spring-cloud-examples:spring-cloud-dubbo:spring-cloud-dubbo-consumer'
-include 'spring-cloud-examples:spring-cloud-dubbo:spring-cloud-dubbo-provider'
+include "spring-cloud-examples:spring-cloud-feign"
+include "spring-cloud-examples:spring-cloud-eureka"
+include "spring-cloud-examples:spring-cloud-consul"
+include "spring-cloud-examples:spring-cloud-apollo"
+include "spring-cloud-examples:spring-cloud-seata"
+include "spring-cloud-examples:spring-cloud-stream"
+include "spring-cloud-examples:spring-cloud-nacos"
+include "spring-cloud-examples:spring-cloud-authorize-client"
+include "spring-cloud-examples:spring-cloud-authorize-server"
+include "spring-cloud-examples:spring-cloud-gateway"
+include "spring-cloud-examples:spring-cloud-simple-api"
+include "spring-cloud-examples:spring-cloud-dubbo:spring-cloud-dubbo-api"
+include "spring-cloud-examples:spring-cloud-dubbo:spring-cloud-dubbo-consumer"
+include "spring-cloud-examples:spring-cloud-dubbo:spring-cloud-dubbo-provider"
 
 
-include 'spring-boot-classloader:module-a'
-include 'spring-boot-classloader:module-b'
-include 'spring-boot-classloader:module-main'
+include "spring-boot-classloader:module-a"
+include "spring-boot-classloader:module-b"
+include "spring-boot-classloader:module-main"
 
-include 'spring-boot-compositePropertySources'
+include "spring-boot-compositePropertySources"

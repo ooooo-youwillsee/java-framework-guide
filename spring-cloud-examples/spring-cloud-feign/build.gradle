@@ -1,7 +1,7 @@
 dependencies {
-    api('org.springframework.boot:spring-boot-starter-web')
-    api('org.springframework.boot:spring-boot-starter-actuator')
-    api('org.springframework.cloud:spring-cloud-starter-openfeign')
-    api('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
-    api('org.springframework.cloud:spring-cloud-starter-netflix-ribbon')
+    api("org.springframework.boot:spring-boot-starter-web")
+    api("org.springframework.boot:spring-boot-starter-actuator")
+    api("org.springframework.cloud:spring-cloud-starter-openfeign")
+    api("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
+    api("org.springframework.cloud:spring-cloud-starter-netflix-ribbon")
 }
