@@ -1,6 +1,0 @@
-dependencies {
-    api('org.springframework.boot:spring-boot-starter-web')
-    api('org.springframework.boot:spring-boot-starter-security')
-
-    api('com.auth0:java-jwt:3.19.0')
-}
