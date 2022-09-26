@@ -1,0 +1,13 @@
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
+    }
+}
+
+dependencies {
+    api("com.github.ben-manes.caffeine:caffeine")
+    api("org.springframework:spring-context-support")
+    api("org.springframework.boot:spring-boot-starter-web")
+
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+}
