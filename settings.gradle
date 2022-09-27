@@ -16,6 +16,8 @@ include "spring-boot-auth"
 
 include "spring-boot-caffeine"
 
+include "spring-boot-lambda"
+
 // spring boot examples
 include "spring-boot-examples:spring-boot-redis"
 include "spring-boot-examples:spring-boot-pulsar"

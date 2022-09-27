@@ -52,3 +52,11 @@
 ## 10. spring-boot-compositePropertySources
 
 实现一个`统一获取配置`的类: `compositePropertySources`
+
+## 11. spring-boot-lambda
+
+lambda 测试
+
+## 12. spring-boot-caffeine
+
+caffeine 测试
