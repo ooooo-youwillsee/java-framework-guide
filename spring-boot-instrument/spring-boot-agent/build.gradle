@@ -1,0 +1,43 @@
+plugins {
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+}
+
+
+ext {
+    set("javaassistVersion", "3.27.0-GA")
+}
+
+sourceSets {
+    main {
+        java {
+            include "**/*"
+        }
+        resources {
+            include "**/*"
+        }
+    }
+}
+
+jar {
+    manifest {
+        attributes(
+                "Agent-Class": "com.ooooo.agent.TestAgent",
+                "Can-Redefine-Classes": true,
+                "Can-Retransform-Classes": true,
+                "Premain-Class": "com.ooooo.agent.TestAgent"
+        )
+    }
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
+    }
+}
+
+dependencies {
+    api("org.javassist:javassist:${javaassistVersion}")
+    api("org.springframework.boot:spring-boot-starter-logging")
+
+    implementation(files("${System.properties['java.home']}/../lib/tools.jar"))
+}

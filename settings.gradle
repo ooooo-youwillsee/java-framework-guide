@@ -18,6 +18,9 @@ include "spring-boot-caffeine"
 
 include "spring-boot-lambda"
 
+include "spring-boot-instrument:spring-boot-agent"
+include "spring-boot-instrument:spring-boot-application"
+
 // spring boot examples
 include "spring-boot-examples:spring-boot-redis"
 include "spring-boot-examples:spring-boot-pulsar"
