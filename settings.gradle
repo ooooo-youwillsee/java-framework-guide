@@ -21,6 +21,8 @@ include "spring-boot-lambda"
 include "spring-boot-instrument:spring-boot-agent"
 include "spring-boot-instrument:spring-boot-application"
 
+include "spring-boot-netty"
+
 // spring boot examples
 include "spring-boot-examples:spring-boot-redis"
 include "spring-boot-examples:spring-boot-pulsar"

@@ -15,7 +15,6 @@ dependencies {
     api("org.springframework.boot:spring-boot-starter-web")
     implementation "com.squareup.okhttp3:okhttp"
     implementation "com.github.ben-manes.caffeine:caffeine"
-    api "io.netty:netty-all:4.1.61.Final"
 
     api("org.springframework.boot:spring-boot-starter-actuator")
 }
