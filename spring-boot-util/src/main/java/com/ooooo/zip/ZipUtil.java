@@ -3,9 +3,10 @@ package com.ooooo.zip;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.SneakyThrows;
-import org.apache.commons.io.IOUtils;
-import org.apache.commons.lang3.tuple.Pair;
+import org.springframework.util.StreamUtils;
 
 /**
  * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
@@ -28,8 +29,20 @@ public class ZipUtil {
       return null;
     }
     String entryName = entry.getName();
-    byte[] bytes = IOUtils.toByteArray(zipInputStream);
+    byte[] bytes = StreamUtils.copyToByteArray(zipInputStream);
     return Pair.of(entryName, bytes);
+  }
+
+  @Data
+  @AllArgsConstructor
+  public static class Pair<K, V> {
+
+    private K key;
+    private V value;
+
+    public static <K, V> Pair<K, V> of(K k, V v) {
+      return new Pair<>(k, v);
+    }
   }
 
 }

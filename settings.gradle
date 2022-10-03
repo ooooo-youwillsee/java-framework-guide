@@ -23,6 +23,8 @@ include "spring-boot-instrument:spring-boot-application"
 
 include "spring-boot-netty"
 
+include "spring-boot-util"
+
 // spring boot examples
 include "spring-boot-examples:spring-boot-redis"
 include "spring-boot-examples:spring-boot-pulsar"

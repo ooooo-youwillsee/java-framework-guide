@@ -8,10 +8,9 @@ import io.netty.handler.codec.ByteToMessageDecoder;
 import io.netty.handler.codec.FixedLengthFrameDecoder;
 import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
 import io.netty.handler.codec.LineBasedFrameDecoder;
-import org.junit.jupiter.api.Test;
-
 import java.nio.charset.StandardCharsets;
 import java.util.List;
+import org.junit.jupiter.api.Test;
 
 /**
  * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>

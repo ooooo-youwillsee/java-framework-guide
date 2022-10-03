@@ -5,7 +5,8 @@ dependencyManagement {
 }
 
 dependencies {
-    api("io.netty:netty-all:4.1.61.Final")
+    api("org.springframework.boot:spring-boot-starter-web")
+    api("com.alibaba:fastjson:1.2.67")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
