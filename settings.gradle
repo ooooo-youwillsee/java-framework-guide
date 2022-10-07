@@ -29,12 +29,13 @@ include "spring-boot-nio"
 
 include "spring-boot-restTemplate"
 
+include "spring-boot-test"
+
 // spring boot examples
 include "spring-boot-examples:spring-boot-redis"
 include "spring-boot-examples:spring-boot-pulsar"
 include "spring-boot-examples:spring-boot-sharding-jdbc"
 include "spring-boot-examples:spring-boot-jdbc"
-include "spring-boot-examples:spring-boot-test"
 include "spring-boot-examples:spring-boot-webmvc"
 include "spring-boot-examples:spring-boot-dubbo3:spring-boot-dubbo3-consumer"
 include "spring-boot-examples:spring-boot-dubbo3:spring-boot-dubbo3-provider"
