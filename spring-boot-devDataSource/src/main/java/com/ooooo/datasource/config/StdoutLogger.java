@@ -1,4 +1,4 @@
-package com.ooooo.dev.datasource;
+package com.ooooo.datasource.config;
 
 /**
  * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>

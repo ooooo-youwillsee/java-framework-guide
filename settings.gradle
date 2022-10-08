@@ -41,11 +41,12 @@ include "spring-boot-classloader:module-a"
 include "spring-boot-classloader:module-b"
 include "spring-boot-classloader:module-main"
 
+include "spring-boot-devDataSource"
+
 // spring boot examples
 include "spring-boot-examples:spring-boot-redis"
 include "spring-boot-examples:spring-boot-pulsar"
 include "spring-boot-examples:spring-boot-sharding-jdbc"
-include "spring-boot-examples:spring-boot-jdbc"
 include "spring-boot-examples:spring-boot-webmvc"
 include "spring-boot-examples:spring-boot-dubbo3:spring-boot-dubbo3-consumer"
 include "spring-boot-examples:spring-boot-dubbo3:spring-boot-dubbo3-provider"

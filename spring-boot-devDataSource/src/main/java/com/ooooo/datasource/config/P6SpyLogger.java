@@ -1,7 +1,7 @@
-package com.ooooo.dev.datasource;
+package com.ooooo.datasource.config;
 
+import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.p6spy.engine.spy.appender.MessageFormattingStrategy;
-import org.apache.commons.lang3.StringUtils;
 
 /**
  * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>

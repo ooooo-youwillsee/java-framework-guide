@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.ooooo.dao.entity;
+package com.ooooo.datasource.dao.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;

@@ -1,4 +1,4 @@
-package com.ooooo;
+package com.ooooo.datasource;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -9,11 +9,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2021/11/5 18:01
  * @since 1.0.0
  */
-@MapperScan("com.ooooo.dao")
+@MapperScan("com.ooooo.**.mapper")
 @SpringBootApplication
-public class JdbcServerApplication {
-	
+public class DevDataSourceApplication {
+
 	public static void main(String[] args) {
-		SpringApplication.run(JdbcServerApplication.class, args);
+		SpringApplication.run(DevDataSourceApplication.class, args);
 	}
 }
