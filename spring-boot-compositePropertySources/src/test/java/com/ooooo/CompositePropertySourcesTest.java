@@ -1,27 +1,21 @@
 package com.ooooo;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import lombok.SneakyThrows;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.context.TestConfiguration;
-import org.springframework.context.annotation.Bean;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.web.context.request.RequestAttributes;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
-
-import static com.ooooo.CompositePropertySourcesTest.TestPropertySourceConfiguration;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @date 2021/11/15 14:12
  * @since 1.0.0
  */
-@AutoConfigureMockMvc
 @SpringBootTest(classes = TestPropertySourceConfiguration.class)
 public class CompositePropertySourcesTest {
 
@@ -59,24 +53,4 @@ public class CompositePropertySourcesTest {
   }
 
 
-  @TestConfiguration
-  @SpringBootApplication
-  public static class TestPropertySourceConfiguration {
-
-    @Bean
-    public AbstractSimplePropertySource testSimplePropertySource() {
-      return new AbstractSimplePropertySource("test") {
-
-        @Override
-        public Object getProperty(String name) {
-          if ("type".equals(name)) {
-            return "type-value";
-          }
-          return null;
-        }
-      };
-    }
-
-
-  }
 }

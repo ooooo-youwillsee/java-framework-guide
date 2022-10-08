@@ -1,7 +1,12 @@
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
+    }
+}
+
 dependencies {
     api("org.apache.commons:commons-configuration2:+")
+    api("org.springframework.boot:spring-boot-starter-web")
 
-    api("org.springframework.boot:spring-boot-starter-web:${springBootVersion}")
-
-    testImplementation("org.springframework.boot:spring-boot-starter-test:${springBootVersion}")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
 }

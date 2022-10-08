@@ -67,7 +67,7 @@ allprojects {
     dependencies {
         compileOnly("org.projectlombok:lombok:1.18.22")
         annotationProcessor("org.projectlombok:lombok")
-        testCompileOnly("org.projectlombok:lombok")
+        testCompileOnly("org.projectlombok:lombok:1.18.22")
         testAnnotationProcessor("org.projectlombok:lombok")
 
 //        implementation("com.alibaba:fastjson:1.2.67")

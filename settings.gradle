@@ -31,6 +31,16 @@ include "spring-boot-restTemplate"
 
 include "spring-boot-test"
 
+include "spring-boot-jmh"
+
+include "spring-boot-compositePropertySources"
+
+include "spring-boot-compositePropertySourcesExt"
+
+include "spring-boot-classloader:module-a"
+include "spring-boot-classloader:module-b"
+include "spring-boot-classloader:module-main"
+
 // spring boot examples
 include "spring-boot-examples:spring-boot-redis"
 include "spring-boot-examples:spring-boot-pulsar"
@@ -58,8 +68,4 @@ include "spring-cloud-examples:spring-cloud-dubbo:spring-cloud-dubbo-consumer"
 include "spring-cloud-examples:spring-cloud-dubbo:spring-cloud-dubbo-provider"
 
 
-include "spring-boot-classloader:module-a"
-include "spring-boot-classloader:module-b"
-include "spring-boot-classloader:module-main"
 
-include "spring-boot-compositePropertySources"
