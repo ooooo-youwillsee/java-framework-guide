@@ -1,0 +1,11 @@
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
+    }
+}
+
+dependencies {
+    api(project(":spring-boot-compositePropertySources"))
+
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+}

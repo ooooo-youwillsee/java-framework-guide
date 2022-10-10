@@ -37,6 +37,8 @@ include "spring-boot-compositePropertySources"
 
 include "spring-boot-compositePropertySourcesExt"
 
+include "spring-boot-compositePropertySourcesExt2"
+
 include "spring-boot-classloader:module-a"
 include "spring-boot-classloader:module-b"
 include "spring-boot-classloader:module-main"
