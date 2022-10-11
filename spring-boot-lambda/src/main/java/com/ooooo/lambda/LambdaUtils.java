@@ -1,12 +1,13 @@
 package com.ooooo.lambda;
 
+import lombok.SneakyThrows;
+
 import java.lang.invoke.SerializedLambda;
 import java.lang.reflect.Method;
-import lombok.SneakyThrows;
 
 /**
  * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
- * @since 2021/5/22 16:03 lamda 函数识别
+ * @since 2021/5/22 16:03 lambda 函数识别
  */
 public class LambdaUtils {
 
