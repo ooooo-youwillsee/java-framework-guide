@@ -33,6 +33,4 @@ public class CompositePropertySourcesBeanDefinitionRegistry implements BeanDefin
   public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
 
   }
-
-
 }

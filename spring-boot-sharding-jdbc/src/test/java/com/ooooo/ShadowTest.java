@@ -3,7 +3,7 @@ package com.ooooo;
 import com.ooooo.dao.entity.ShadowUser;
 import com.ooooo.dao.mapper.ShadowUserMapper;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.shardingsphere.shadow.algorithm.shadow.column.ColumnValueMatchShadowAlgorithm;
+import org.apache.shardingsphere.shadow.api.shadow.column.ColumnShadowAlgorithm;
 import org.apache.shardingsphere.shadow.api.shadow.column.PreciseColumnShadowValue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -11,12 +11,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
-import java.util.Collection;
-
 /**
  * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @date 2021/11/02 06:04
- * @see ColumnValueMatchShadowAlgorithm#isShadow(Collection, PreciseColumnShadowValue)
+ * @see ColumnShadowAlgorithm#isShadow(PreciseColumnShadowValue)
  * @since 1.0.0
  */
 @Slf4j

@@ -59,8 +59,7 @@ allprojects {
             dependency "com.baomidou:mybatis-plus-boot-starter:3.4.2"
 
             // sharding-jdbc
-            dependency "org.apache.shardingsphere:shardingsphere-jdbc-core-spring-boot-starter:5.0.0"
-            dependency "org.apache.shardingsphere:shardingsphere-cluster-mode-repository-zookeeper-curator:5.0.0"
+
         }
     }
 
