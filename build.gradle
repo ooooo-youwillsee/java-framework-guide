@@ -55,11 +55,6 @@ allprojects {
             dependency "io.grpc:grpc-core:${grpcVersion}" // spring 依赖管理中定义了，需要重新声明
             dependency "io.grpc:grpc-api:${grpcVersion}" // spring 依赖管理中定义了，需要重新声明
 
-            // mybatis-plus
-            dependency "com.baomidou:mybatis-plus-boot-starter:3.4.2"
-
-            // sharding-jdbc
-
         }
     }
 
