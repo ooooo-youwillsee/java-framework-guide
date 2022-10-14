@@ -49,6 +49,8 @@ include "spring-boot-sharding-jdbc"
 
 include "spring-boot-pulsar"
 
+include "spring-boot-methodHandler"
+
 // spring boot examples
 include "spring-boot-examples:spring-boot-redis"
 include "spring-boot-examples:spring-boot-pulsar"
