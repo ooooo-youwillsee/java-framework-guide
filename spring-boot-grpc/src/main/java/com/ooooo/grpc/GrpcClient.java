@@ -5,9 +5,8 @@ import com.ooooo.grpc.helloworld.GreeterGrpc.GreeterBlockingStub;
 import com.ooooo.grpc.helloworld.HelloRequest;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
-import lombok.SneakyThrows;
-
 import java.util.concurrent.TimeUnit;
+import lombok.SneakyThrows;
 
 /**
  * @author ooooo

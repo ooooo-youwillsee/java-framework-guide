@@ -3,7 +3,8 @@ plugins {
 }
 
 ext {
-    DUBBO_VERSION = "3.0.5"
+    set("DUBBO_VERSION", "3.0.5")
+    set("protocVersion", "3.17.2")
 }
 
 protobuf {

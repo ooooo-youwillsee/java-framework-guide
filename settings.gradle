@@ -51,9 +51,10 @@ include "spring-boot-pulsar"
 
 include "spring-boot-methodHandler"
 
+include "spring-boot-grpc"
+
 // spring boot examples
 include "spring-boot-examples:spring-boot-redis"
-include "spring-boot-examples:spring-boot-pulsar"
 include "spring-boot-examples:spring-boot-webmvc"
 include "spring-boot-examples:spring-boot-dubbo3:spring-boot-dubbo3-consumer"
 include "spring-boot-examples:spring-boot-dubbo3:spring-boot-dubbo3-provider"

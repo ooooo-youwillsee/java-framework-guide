@@ -1,41 +1,11 @@
-plugins {
-    id "com.google.protobuf" version "0.8.16"
-    id "org.springframework.boot"
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
+    }
 }
-
-
-
 
 dependencies {
-    // grpc
-    implementation "io.grpc:grpc-protobuf"
-    implementation "io.grpc:grpc-stub"
-    runtimeOnly "io.grpc:grpc-netty-shaded"
+    api("com.google.protobuf:protobuf-java:3.11.0")
 
-    api("org.springframework.boot:spring-boot-starter-web")
-    implementation "com.squareup.okhttp3:okhttp"
-    implementation "com.github.ben-manes.caffeine:caffeine"
-
-    api("org.springframework.boot:spring-boot-starter-actuator")
-}
-
-
-protobuf {
-    protoc { artifact = "com.google.protobuf:protoc:${protocVersion}" }
-    plugins {
-        grpc { artifact = "io.grpc:protoc-gen-grpc-java:${grpcVersion}" }
-    }
-    generateProtoTasks {
-        all()*.plugins { grpc {} }
-    }
-}
-
-// Inform IDEs like IntelliJ IDEA, Eclipse or NetBeans about the generated code.
-sourceSets {
-    main {
-        java {
-            srcDirs "build/generated/source/proto/main/grpc"
-            srcDirs "build/generated/source/proto/main/java"
-        }
-    }
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
