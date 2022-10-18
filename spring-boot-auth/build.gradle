@@ -5,6 +5,8 @@ dependencyManagement {
 }
 
 dependencies {
+    api("org.apache.commons:commons-lang3:3.10")
+    api("com.alibaba:fastjson:1.2.67")
     api("com.auth0:java-jwt:3.19.0")
 
     api("org.springframework.boot:spring-boot-starter-web")

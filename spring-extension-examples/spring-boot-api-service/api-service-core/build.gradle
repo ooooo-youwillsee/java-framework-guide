@@ -1,4 +1,11 @@
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
+    }
+}
+
 dependencies {
+    api("org.apache.commons:commons-lang3:3.10")
     implementation("com.squareup.okhttp3:okhttp")
     implementation("org.springframework.boot:spring-boot-starter-web")
     testImplementation("org.springframework.boot:spring-boot-starter-test")

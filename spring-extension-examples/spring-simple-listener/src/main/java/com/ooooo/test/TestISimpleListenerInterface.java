@@ -1,6 +1,5 @@
 package com.ooooo.test;
 
-import com.alibaba.fastjson.JSON;
 import com.ooooo.annotation.ISimpleListener;
 import com.ooooo.dao.entity.Message;
 import com.ooooo.dao.entity.Order;
@@ -23,7 +22,7 @@ public class TestISimpleListenerInterface {
 		
 		@Override
 		public void invoke(Message<User> msg) {
-			log.info("UserMessageISimpleListener : {}", JSON.toJSONString(msg));
+			log.info("UserMessageISimpleListener : {}", msg);
 		}
 	}
 	
@@ -32,7 +31,7 @@ public class TestISimpleListenerInterface {
 		
 		@Override
 		public void invoke(User msg) {
-			log.info("UserISimpleListener : {}", JSON.toJSONString(msg));
+			log.info("UserISimpleListener : {}", msg);
 		}
 	}
 	
@@ -41,7 +40,7 @@ public class TestISimpleListenerInterface {
 		
 		@Override
 		public void invoke(Message<Order> msg) {
-			log.info("OrderMessageISimpleListener : {}", JSON.toJSONString(msg));
+			log.info("OrderMessageISimpleListener : {}", msg);
 		}
 	}
 	
@@ -50,7 +49,7 @@ public class TestISimpleListenerInterface {
 		
 		@Override
 		public void invoke(Order msg) {
-			log.info("OrderISimpleListener : {}", JSON.toJSONString(msg));
+			log.info("OrderISimpleListener : {}", msg);
 		}
 	}
 	
@@ -60,7 +59,7 @@ public class TestISimpleListenerInterface {
 		
 		@Override
 		public void invoke(Object msg) {
-			log.info("NoGenericSimpleListener : {}", JSON.toJSONString(msg));
+			log.info("NoGenericSimpleListener : {}", msg);
 		}
 	}
 }

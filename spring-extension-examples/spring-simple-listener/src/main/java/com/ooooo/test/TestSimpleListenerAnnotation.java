@@ -1,6 +1,5 @@
 package com.ooooo.test;
 
-import com.alibaba.fastjson.JSON;
 import com.ooooo.annotation.SimpleListener;
 import com.ooooo.dao.entity.Message;
 import com.ooooo.dao.entity.Order;
@@ -18,28 +17,28 @@ public class TestSimpleListenerAnnotation {
 	
 	@SimpleListener
 	public void recevieOrderMessage(Message<Order> msg) {
-		log.info("recevieOrderMessage : {}", JSON.toJSONString(msg));
+		log.info("recevieOrderMessage : {}", msg);
 	}
 	
 	@SimpleListener
 	public void recevieUserMessage(Message<User> msg) {
-		log.info("recevieUserMessage : {}", JSON.toJSONString(msg));
+		log.info("recevieUserMessage : {}", msg);
 	}
 	
 	@SimpleListener
 	public void recevieNotGenericMessage(Message msg) {
-		log.info("recevieNotGenericMessage : {}", JSON.toJSONString(msg));
+		log.info("recevieNotGenericMessage : {}", msg);
 	}
 	
 	@SimpleListener
 	public void recevieUser(User msg) {
-		log.info("recevieUser : {}", JSON.toJSONString(msg));
+		log.info("recevieUser : {}", msg);
 		
 	}
 	
 	@SimpleListener
 	public void recevieOrder(Order msg) {
-		log.info("recevieOrder : {}", JSON.toJSONString(msg));
+		log.info("recevieOrder : {}", msg);
 		
 	}
 }

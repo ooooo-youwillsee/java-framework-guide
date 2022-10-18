@@ -53,6 +53,8 @@ include "spring-boot-methodHandler"
 
 include "spring-boot-grpc"
 
+include "spring-boot-annotationProcessor"
+
 // spring boot examples
 include "spring-boot-examples:spring-boot-redis"
 include "spring-boot-examples:spring-boot-webmvc"

@@ -5,6 +5,7 @@ dependencyManagement {
 }
 
 dependencies {
+    api("com.alibaba:fastjson:1.2.67")
     api("com.google.protobuf:protobuf-java:3.11.0")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
