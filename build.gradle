@@ -34,16 +34,6 @@ allprojects {
 
     ext {
         set("springBootVersion", "2.7.4")
-
-
-    }
-
-
-    dependencyManagement {
-        imports {
-//            mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
-//
-        }
     }
 
     dependencies {
@@ -51,12 +41,5 @@ allprojects {
         annotationProcessor("org.projectlombok:lombok")
         testCompileOnly("org.projectlombok:lombok:1.18.22")
         testAnnotationProcessor("org.projectlombok:lombok")
-
-//        implementation("com.alibaba:fastjson:1.2.67")
-//        implementation("commons-io:commons-io:2.7")
-//        implementation("org.apache.commons:commons-lang3:3.10")
-//        implementation("org.apache.commons:commons-collections4:4.4")
-
-//        testImplementation("org.springframework.boot:spring-boot-starter-test")
     }
 }

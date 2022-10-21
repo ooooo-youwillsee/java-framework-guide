@@ -5,9 +5,11 @@ ext {
 dependencyManagement {
     imports {
         mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
     }
 }
 dependencies {
+    api("com.alibaba:fastjson:1.2.67")
     api("org.springframework.boot:spring-boot-starter-web")
     api("org.springframework.boot:spring-boot-starter-actuator")
     implementation "org.springframework.cloud:spring-cloud-starter-consul-discovery"

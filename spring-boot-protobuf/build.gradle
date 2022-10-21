@@ -1,0 +1,35 @@
+plugins {
+    id "com.google.protobuf" version "0.8.18"
+}
+
+ext {
+    set("protocVersion", "3.17.2")
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
+    }
+}
+
+protobuf {
+    protoc { artifact = "com.google.protobuf:protoc:${protocVersion}" }
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs "src/main/proto"
+            srcDirs "build/generated/source/proto/main/grpc"
+            srcDirs "build/generated/source/proto/main/java"
+        }
+    }
+}
+
+
+dependencies {
+    api("com.alibaba:fastjson:1.2.67")
+    api("com.google.protobuf:protobuf-java:3.11.0")
+
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+}
