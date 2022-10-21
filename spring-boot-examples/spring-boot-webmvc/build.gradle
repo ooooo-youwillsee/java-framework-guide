@@ -1,6 +1,14 @@
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
+    }
+}
+
 dependencies {
-    api("org.springframework.boot:spring-boot-starter-web")
+    api("com.alibaba:fastjson:1.2.67")
+    api('commons-codec:commons-codec:1.15')
     api("org.apache.commons:commons-configuration2:+")
+    api("org.springframework.boot:spring-boot-starter-web")
     api("org.springframework.boot:spring-boot-starter-data-redis")
 
 }
