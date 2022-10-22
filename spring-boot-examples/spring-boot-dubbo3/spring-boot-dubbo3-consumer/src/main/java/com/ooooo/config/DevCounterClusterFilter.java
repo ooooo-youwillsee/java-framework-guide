@@ -1,7 +1,10 @@
 package com.ooooo.config;
 
+import static org.apache.dubbo.common.constants.CommonConstants.TAG_KEY;
+
+import java.util.HashMap;
+import java.util.Map;
 import lombok.Setter;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.dubbo.common.extension.Activate;
 import org.apache.dubbo.rpc.Invocation;
 import org.apache.dubbo.rpc.Invoker;
@@ -10,11 +13,7 @@ import org.apache.dubbo.rpc.RpcContext;
 import org.apache.dubbo.rpc.RpcException;
 import org.apache.dubbo.rpc.cluster.filter.ClusterFilter;
 import org.springframework.core.env.Environment;
-
-import java.util.HashMap;
-import java.util.Map;
-
-import static org.apache.dubbo.common.constants.CommonConstants.TAG_KEY;
+import org.springframework.util.StringUtils;
 
 /**
  * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
@@ -38,7 +37,7 @@ public class DevCounterClusterFilter implements ClusterFilter {
     public Result invoke(Invoker<?> invoker, Invocation invocation) throws RpcException {
         String propertyName = "1";
         String dubboTag = dubboTagMappings.get(propertyName);
-        if (StringUtils.isNotBlank(dubboTag)) {
+        if (StringUtils.hasText(dubboTag)) {
             RpcContext.getClientAttachment().setAttachment(TAG_KEY, dubboTag);
         }
         Result result = invoker.invoke(invocation);

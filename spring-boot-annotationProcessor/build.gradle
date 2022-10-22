@@ -5,8 +5,8 @@ dependencyManagement {
 }
 
 dependencies {
-    annotationProcessor project(":spring-boot-annotationProcessor")
-    testAnnotationProcessor project(":spring-boot-annotationProcessor")
+//    annotationProcessor project(":spring-boot-annotationProcessor")
+//    testAnnotationProcessor project(":spring-boot-annotationProcessor")
     implementation(files("${System.properties['java.home']}/../lib/tools.jar"))
 
     testImplementation('com.google.testing.compile:compile-testing:0.19')

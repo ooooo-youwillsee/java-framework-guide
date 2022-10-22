@@ -1,6 +1,5 @@
 package com.ooooo.properties;
 
-import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationRunner;
@@ -25,7 +24,7 @@ public class EnableConfigurationPropertiesBug {
 	@Bean
 	public ApplicationRunner testApplicationRunner() {
 		return (args) -> {
-			log.info(JSON.toJSONString(testHelloProperties));
+			log.info("{}", testHelloProperties);
 		};
 	}
 

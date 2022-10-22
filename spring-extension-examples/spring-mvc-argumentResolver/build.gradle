@@ -7,4 +7,6 @@ dependencyManagement {
 dependencies {
     api("com.alibaba:fastjson:1.2.67")
     api("org.springframework.boot:spring-boot-starter-web")
+
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
