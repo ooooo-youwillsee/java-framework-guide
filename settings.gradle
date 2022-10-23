@@ -53,7 +53,9 @@ include "spring-boot-methodHandler"
 
 include "spring-boot-grpc"
 
-include "spring-boot-annotationProcessor"
+include "demo-java-annotationProcessor"
+
+include "demo-java-threadSafeCache"
 
 // spring boot examples
 include "spring-boot-examples:spring-boot-redis"
