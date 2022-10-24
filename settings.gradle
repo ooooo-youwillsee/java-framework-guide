@@ -6,7 +6,6 @@ include "spring-boot-protobuf"
 
 // spring extension examples
 include "spring-extension-examples:spring-mvc-requestMapping"
-include "spring-extension-examples:spring-mvc-argumentResolver"
 include "spring-extension-examples:spring-simple-listener"
 include "spring-extension-examples:spring-boot-api-service:api-service-core"
 include "spring-extension-examples:spring-boot-api-service:api-service-db"
@@ -56,6 +55,8 @@ include "spring-boot-grpc"
 include "demo-java-annotationProcessor"
 
 include "demo-java-threadSafeCache"
+
+include "demo-spring-boot-argumentResolver"
 
 // spring boot examples
 include "spring-boot-examples:spring-boot-redis"
