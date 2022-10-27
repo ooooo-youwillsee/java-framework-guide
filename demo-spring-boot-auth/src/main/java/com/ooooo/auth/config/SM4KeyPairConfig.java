@@ -12,11 +12,11 @@ import org.springframework.stereotype.Component;
 @Getter
 public class SM4KeyPairConfig {
 
-  private boolean hexString = true;
+  private final boolean hexString = true;
 
-  private String secretKey = "c9740a359a10f7443267792932d34ab8";
+  private final String secretKey = "c9740a359a10f7443267792932d34ab8";
 
-  private String iv = "a2917782e93df1f9e88c6dda24b3e806";
+  private final String iv = "a2917782e93df1f9e88c6dda24b3e806";
 
 
 }

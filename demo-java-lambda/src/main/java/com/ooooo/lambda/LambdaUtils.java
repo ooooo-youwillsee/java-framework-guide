@@ -1,9 +1,8 @@
 package com.ooooo.lambda;
 
-import lombok.SneakyThrows;
-
 import java.lang.invoke.SerializedLambda;
 import java.lang.reflect.Method;
+import lombok.SneakyThrows;
 
 /**
  * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>

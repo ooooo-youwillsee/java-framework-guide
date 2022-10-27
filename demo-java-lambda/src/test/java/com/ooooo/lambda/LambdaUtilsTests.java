@@ -1,13 +1,12 @@
 package com.ooooo.lambda;
 
-import org.junit.jupiter.api.Test;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.function.BiFunction;
 import java.util.function.Function;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>

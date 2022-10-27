@@ -11,11 +11,13 @@ include "spring-extension-examples:spring-boot-api-service:api-service-core"
 include "spring-extension-examples:spring-boot-api-service:api-service-db"
 
 
-include "spring-boot-auth"
+include "demo-spring-boot-auth"
 
-include "spring-boot-caffeine"
+include "demo-spring-boot-caffeine"
 
-include "spring-boot-lambda"
+include "demo-java-lambda"
+
+include "demo-java-myThreadPool"
 
 include "spring-boot-instrument:spring-boot-agent"
 include "spring-boot-instrument:spring-boot-application"
