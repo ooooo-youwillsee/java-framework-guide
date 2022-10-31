@@ -19,6 +19,8 @@ include "demo-java-lambda"
 
 include "demo-java-myThreadPool"
 
+include "demo-java-jcstress"
+
 include "spring-boot-instrument:spring-boot-agent"
 include "spring-boot-instrument:spring-boot-application"
 
