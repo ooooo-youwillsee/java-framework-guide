@@ -21,8 +21,12 @@ include "demo-java-myThreadPool"
 
 include "demo-java-jcstress"
 
-include "spring-boot-instrument:spring-boot-agent"
-include "spring-boot-instrument:spring-boot-application"
+include "demo-java-instrument"
+
+include "demo-java-jmh"
+
+include "demo-java-instrument:demo-java-agent"
+include "demo-java-instrument:demo-springApplication"
 
 include "spring-boot-netty"
 
@@ -34,7 +38,6 @@ include "spring-boot-restTemplate"
 
 include "spring-boot-test"
 
-include "spring-boot-jmh"
 
 include "spring-boot-compositePropertySources"
 

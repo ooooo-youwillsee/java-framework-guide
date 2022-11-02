@@ -12,9 +12,9 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class AgentLoader {
 
-  private static final String TARGET_DISPLAY_NAME = "spring-boot-application";
+  private static final String TARGET_DISPLAY_NAME = "demo-springApplication";
 
-  private static final String AGENT_JAR_FILE = "/Users/ooooo/Code/Self/java-framework-guide/spring-boot-instrument/spring-boot-agent/build/libs/spring-boot-agent-1.0.0-all.jar";
+  private static final String AGENT_JAR_FILE = "/Users/ooooo/Code/Self/java-framework-guide/spring-boot-instrument/demo-java-agent/build/libs/demo-java-agent-1.0.0-all.jar";
 
   public static void main(String[] args) {
     Optional<VirtualMachineDescriptor> vmOpt = VirtualMachine.list()

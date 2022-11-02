@@ -1,7 +1,11 @@
 package com.ooooo.config;
 
+import static com.ooooo.config.XRequestBodyHandlerInterceptor.XREQUEST_PARAM_PREFIX;
+
 import com.alibaba.fastjson.JSON;
 import com.ooooo.annotation.XRequestBody;
+import java.util.List;
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.core.MethodParameter;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -9,11 +13,6 @@ import org.springframework.web.bind.support.WebDataBinderFactory;
 import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.method.support.ModelAndViewContainer;
 import org.springframework.web.servlet.mvc.method.annotation.RequestResponseBodyMethodProcessor;
-
-import javax.servlet.http.HttpServletRequest;
-import java.util.List;
-
-import static com.ooooo.config.XRequestBodyHandlerInterceptor.XREQUEST_PARAM_PREFIX;
 
 /**
  * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
