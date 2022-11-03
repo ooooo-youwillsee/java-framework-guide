@@ -1,4 +1,4 @@
-package com.ooooo.jcstree;
+package com.ooooo.jcstress;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 import org.openjdk.jcstress.annotations.Actor;
