@@ -1,6 +1,8 @@
 package com.ooooo.basic;
 
 import com.ooooo.RedisApplicationTests;
+import java.util.HashMap;
+import java.util.Map;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -8,9 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.BoundValueOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>

@@ -6,7 +6,7 @@ package com.ooooo.constant;
  */
 public class ProfileConstants {
 
-	public static final String PROFILE_LETTUCE = "lettuce";
+  public static final String PROFILE_LETTUCE = "lettuce";
 
-	public static final String PROFILE_REDISSON = "redisson";
+  public static final String PROFILE_REDISSON = "redisson";
 }

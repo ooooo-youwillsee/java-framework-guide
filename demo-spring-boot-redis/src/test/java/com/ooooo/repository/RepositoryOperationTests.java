@@ -3,12 +3,11 @@ package com.ooooo.repository;
 import com.ooooo.RedisApplicationTests;
 import com.ooooo.dao.entity.User;
 import com.ooooo.dao.mapper.UserRedisRepository;
+import java.util.Collections;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.Collections;
 
 /**
  * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
@@ -18,7 +17,7 @@ import java.util.Collections;
  */
 public class RepositoryOperationTests extends RedisApplicationTests {
 
-    private User user;
+	private User user;
 
 	@Autowired
 	private UserRedisRepository userRedisRepository;

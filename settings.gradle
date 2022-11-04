@@ -55,11 +55,11 @@ include "demo-spring-boot-sharding-jdbc"
 
 include "demo-spring-boot-pulsar"
 
-
 include "demo-spring-boot-argumentResolver"
 
+include "demo-spring-boot-redis"
+
 // spring boot examples
-include "spring-boot-examples:spring-boot-redis"
 include "spring-boot-examples:spring-boot-webmvc"
 include "spring-boot-examples:spring-boot-dubbo3:spring-boot-dubbo3-consumer"
 include "spring-boot-examples:spring-boot-dubbo3:spring-boot-dubbo3-provider"

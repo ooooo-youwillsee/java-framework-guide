@@ -13,12 +13,12 @@ import org.springframework.data.redis.core.RedisHash;
 @RedisHash("user")
 public class User {
 
-	@Id
-	private Long id;
+  @Id
+  private Long id;
 
-	private String username;
+  private String username;
 
-	private Integer age;
+  private Integer age;
 
-	private String address;
+  private String address;
 }

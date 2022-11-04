@@ -15,8 +15,8 @@ import org.springframework.context.annotation.Profile;
 @Profile(ProfileConstants.PROFILE_REDISSON)
 public class RedissonConfig {
 
-	@Bean
-	public RedissonConnectionFactory redissonConnectionFactory(RedissonClient redisson) {
-		return new RedissonConnectionFactory(redisson);
-	}
+  @Bean
+  public RedissonConnectionFactory redissonConnectionFactory(RedissonClient redisson) {
+    return new RedissonConnectionFactory(redisson);
+  }
 }
