@@ -1,0 +1,16 @@
+plugins {
+    id 'me.champeau.jmh' version '0.6.8'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
+    }
+}
+
+dependencies {
+    testCompileOnly 'org.openjdk.jmh:jmh-core:1.35'
+    testAnnotationProcessor 'org.openjdk.jmh:jmh-generator-annprocess:1.35'
+
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+}
