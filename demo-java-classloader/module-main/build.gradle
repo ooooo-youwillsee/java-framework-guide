@@ -1,0 +1,14 @@
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
+    }
+}
+
+dependencies {
+    api(project(":demo-java-classloader:module-a"))
+    api(project(":demo-java-classloader:module-b"))
+
+    api("org.springframework.boot:spring-boot-starter-web")
+
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+}

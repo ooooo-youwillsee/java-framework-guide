@@ -1,20 +1,5 @@
 rootProject.name = "java-framework-guide"
 
-include "spring-bugs-report"
-
-include "spring-boot-protobuf"
-
-// spring extension examples
-include "spring-extension-examples:spring-mvc-requestMapping"
-include "spring-extension-examples:spring-simple-listener"
-include "spring-extension-examples:spring-boot-api-service:api-service-core"
-include "spring-extension-examples:spring-boot-api-service:api-service-db"
-
-
-include "demo-spring-boot-auth"
-
-include "demo-spring-boot-caffeine"
-
 include "demo-java-lambda"
 
 include "demo-java-myThreadPool"
@@ -27,43 +12,49 @@ include "demo-java-instrument"
 
 include "demo-java-jmh"
 
+include "demo-java-nio"
+
 include "demo-java-instrument:demo-java-agent"
 include "demo-java-instrument:demo-springApplication"
 
-include "spring-boot-netty"
+include "demo-java-classloader:module-a"
+include "demo-java-classloader:module-b"
+include "demo-java-classloader:module-main"
 
-include "spring-boot-util"
-
-include "spring-boot-nio"
-
-include "spring-boot-restTemplate"
-
-include "spring-boot-test"
-
-
-include "spring-boot-compositePropertySources"
-
-include "spring-boot-compositePropertySourcesExt"
-
-include "spring-boot-compositePropertySourcesExt2"
-
-include "spring-boot-classloader:module-a"
-include "spring-boot-classloader:module-b"
-include "spring-boot-classloader:module-main"
-
-include "spring-boot-devDataSource"
-
-include "spring-boot-sharding-jdbc"
-
-include "spring-boot-pulsar"
-
-include "spring-boot-methodHandler"
-
-include "spring-boot-grpc"
+include "demo-java-methodHandler"
 
 include "demo-java-annotationProcessor"
 
 include "demo-java-threadSafeCache"
+
+include "demo-grpc"
+
+include "demo-netty"
+
+include "demo-protobuf"
+
+include "demo-spring-boot-util"
+
+include "demo-spring-boot-restTemplate"
+
+include "demo-spring-boot-test"
+
+include "demo-spring-boot-auth"
+
+include "demo-spring-boot-caffeine"
+
+include "demo-spring-boot-compositePropertySources"
+
+include "demo-spring-boot-compositePropertySourcesExt"
+
+include "demo-spring-boot-compositePropertySourcesExt2"
+
+include "demo-spring-boot-devDataSource"
+
+include "demo-spring-boot-sharding-jdbc"
+
+include "demo-spring-boot-pulsar"
+
 
 include "demo-spring-boot-argumentResolver"
 
@@ -90,5 +81,9 @@ include "spring-cloud-examples:spring-cloud-dubbo:spring-cloud-dubbo-api"
 include "spring-cloud-examples:spring-cloud-dubbo:spring-cloud-dubbo-consumer"
 include "spring-cloud-examples:spring-cloud-dubbo:spring-cloud-dubbo-provider"
 
-
+// spring extension examples
+include "spring-extension-examples:spring-mvc-requestMapping"
+include "spring-extension-examples:spring-simple-listener"
+include "spring-extension-examples:spring-boot-api-service:api-service-core"
+include "spring-extension-examples:spring-boot-api-service:api-service-db"
 
