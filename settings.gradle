@@ -6,7 +6,7 @@ include "demo-java-myThreadPool"
 
 include "demo-java-jcstress"
 
-include "demo-java-juc"
+include "demo-java-concurrent"
 
 include "demo-java-instrument"
 
