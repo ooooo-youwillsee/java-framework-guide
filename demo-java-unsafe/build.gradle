@@ -1,0 +1,14 @@
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.boot:spring-boot-dependencies:${springBootVersion}"
+    }
+}
+
+
+test {
+    jvmArgs "--add-exports java.base/jdk.internal.misc=ALL-UNNAMED"
+}
+
+dependencies {
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+}

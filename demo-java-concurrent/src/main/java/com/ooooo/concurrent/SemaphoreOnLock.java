@@ -1,4 +1,4 @@
-package com.ooooo.juc;
+package com.ooooo.concurrent;
 
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.locks.Condition;

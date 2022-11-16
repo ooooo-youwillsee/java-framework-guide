@@ -1,4 +1,4 @@
-package com.ooooo.juc;
+package com.ooooo.concurrent;
 
 /**
  * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
