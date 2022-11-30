@@ -16,13 +16,11 @@ spring:
 ---
 # redisson 会优先加载
 spring:
-  profiles: redisson
-
+  config:
+    activate:
+      on-profile: redisson
   redis:
     redisson:
       config: |
-        sentinelServersConfig:
-          checkSentinelsList: false
-          masterName: mymaster
-          sentinelAddresses:
-            - redis://172.16.1.104:26379
+        singleServerConfig:
+          address: redis://172.16.1.104:6379

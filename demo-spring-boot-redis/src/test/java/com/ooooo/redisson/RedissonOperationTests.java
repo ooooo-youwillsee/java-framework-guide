@@ -2,6 +2,7 @@ package com.ooooo.redisson;
 
 import com.ooooo.RedisApplicationTests;
 import com.ooooo.constant.ProfileConstants;
+import java.time.Duration;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.Assertions;
@@ -113,5 +114,12 @@ public class RedissonOperationTests extends RedisApplicationTests {
 
 	}
 
+
+	@Test
+	void multiAndExec() {
+		redisTemplate.multi();
+		redisTemplate.opsForValue().set("1", "2", Duration.ofSeconds(10));
+		redisTemplate.exec();
+	}
 
 }

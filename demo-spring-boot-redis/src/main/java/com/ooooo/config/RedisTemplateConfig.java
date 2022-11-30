@@ -30,6 +30,7 @@ public class RedisTemplateConfig {
     template.setHashKeySerializer(new StringRedisSerializer());
     template.setHashValueSerializer(new FastJsonRedisSerializer<>(Object.class));
     template.setConnectionFactory(redisConnectionFactory);
+    template.setEnableTransactionSupport(true);
     return template;
   }
 
