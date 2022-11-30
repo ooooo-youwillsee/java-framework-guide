@@ -5,7 +5,6 @@ import java.lang.reflect.Method;
 import java.net.URL;
 import java.util.Enumeration;
 import lombok.SneakyThrows;
-import org.springframework.stereotype.Service;
 import org.springframework.util.ReflectionUtils;
 import org.springframework.util.StreamUtils;
 
@@ -13,7 +12,6 @@ import org.springframework.util.StreamUtils;
  * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @since 1.0.0
  */
-@Service
 public class TestService {
 
 

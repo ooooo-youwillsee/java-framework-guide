@@ -2,22 +2,17 @@ package com.ooooo.service;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import com.ooooo.ClassLoaderApplication;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
 
 /**
  * @author <a href="https://github.com/ooooo-youwillsee">ooooo</a>
  * @since 1.0.0
  */
 @Slf4j
-@SpringBootTest(classes = ClassLoaderApplication.class)
 class TestServiceTest {
 
-  @Autowired
-  private TestService testService;
+  private final TestService testService = new TestService();
 
   @Test
   void test1() {
