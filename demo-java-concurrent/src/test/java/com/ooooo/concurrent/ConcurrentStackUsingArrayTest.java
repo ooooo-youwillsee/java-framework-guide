@@ -1,4 +1,4 @@
-package com.ooooo.juc;
+package com.ooooo.concurrent;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
