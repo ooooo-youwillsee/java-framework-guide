@@ -24,26 +24,32 @@ public class MyThreadPoolExecutorImpl1 implements MyThreadPoolExecutor {
   @Override
   public void execute(Runnable runnable) {
     startIfNecessary();
-    blockingQueue.offer(runnable);
+	  blockingQueue.offer(runnable);
   }
-
-  @Override
-  public <T> MyFuture<T> submit(Callable<T> callable) {
-    startIfNecessary();
-    MyRunnableFuture<T> future = new MyRunnableFuture<>(callable);
-    blockingQueue.offer(future);
-    return future;
-  }
-
-
-  private void startIfNecessary() {
-    if (worker == null) {
-      synchronized (this) {
-        if (worker == null) {
-          worker = new Worker();
-          worker.thread.start();
-        }
-      }
+	
+	@Override
+	public <T> MyFuture<T> submit(Callable<T> callable) {
+		MyRunnableFuture<T> future = new MyRunnableFuture<>(callable);
+		execute(future);
+		return future;
+	}
+	
+	@Override
+	public void shutdown() {
+		if (worker != null) {
+			worker.thread.interrupt();
+		}
+	}
+	
+	
+	private void startIfNecessary() {
+		if (worker == null) {
+			synchronized (this) {
+				if (worker == null) {
+					worker = new Worker();
+					worker.thread.start();
+				}
+			}
     }
   }
 
