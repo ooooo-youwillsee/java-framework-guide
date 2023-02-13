@@ -37,4 +37,39 @@ public class ThreadPoolExecutorTest {
 			throw new RuntimeException(e);
 		}
 	}
+	
+	
+	@Test
+	void testExceptionally() {
+		ExecutorService executorService = Executors.newFixedThreadPool(10);
+		
+		// normal execute
+		executorService.submit(() -> {
+			System.out.println("--------1----------");
+			System.out.println("--------2----------");
+		});
+		
+		// it doesn't throw an exception
+		executorService.submit(() -> {
+			System.out.println("--------3----------");
+			int a = 1 / 0;
+			System.out.println("--------4----------");
+		});
+		
+		executorService.submit(() -> {
+			System.out.println("--------5----------");
+			try {
+				int a = 1 / 0;
+			} catch (Exception e) {
+				System.out.println(e);
+			}
+			System.out.println("--------6----------");
+		});
+		
+		try {
+			new CountDownLatch(1).await();
+		} catch (InterruptedException e) {
+			throw new RuntimeException(e);
+		}
+	}
 }
