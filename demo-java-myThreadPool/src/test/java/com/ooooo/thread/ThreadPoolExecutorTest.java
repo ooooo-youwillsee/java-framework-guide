@@ -44,19 +44,19 @@ public class ThreadPoolExecutorTest {
 		ExecutorService executorService = Executors.newFixedThreadPool(10);
 		
 		// normal execute
-		executorService.submit(() -> {
+		executorService.execute(() -> {
 			System.out.println("--------1----------");
 			System.out.println("--------2----------");
 		});
 		
 		// it doesn't throw an exception
-		executorService.submit(() -> {
+		executorService.execute(() -> {
 			System.out.println("--------3----------");
 			int a = 1 / 0;
 			System.out.println("--------4----------");
 		});
 		
-		executorService.submit(() -> {
+		executorService.execute(() -> {
 			System.out.println("--------5----------");
 			try {
 				int a = 1 / 0;

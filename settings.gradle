@@ -29,6 +29,8 @@ include "demo-java-threadSafeCache"
 
 include "demo-java-unsafe"
 
+include "demo-byteBuddy"
+
 include "demo-grpc"
 
 include "demo-netty"
