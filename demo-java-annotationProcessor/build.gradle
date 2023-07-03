@@ -7,8 +7,23 @@ dependencyManagement {
 dependencies {
 //    annotationProcessor project(":demo-java-annotationProcessor")
 //    testAnnotationProcessor project(":demo-java-annotationProcessor")
-    implementation(files("${System.properties['java.home']}/../lib/tools.jar"))
+//    implementation(files("${System.properties['java.home']}/../lib/tools.jar"))
 
     testImplementation('com.google.testing.compile:compile-testing:0.19')
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+}
+
+
+compileJava {
+    options.compilerArgs += ["--add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED",
+                             "--add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED",
+                             "--add-exports=jdk.compiler/com.sun.tools.javac.main=ALL-UNNAMED",
+                             "--add-exports=jdk.compiler/com.sun.tools.javac.model=ALL-UNNAMED",
+                             "--add-exports=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED",
+                             "--add-exports=jdk.compiler/com.sun.tools.javac.processing=ALL-UNNAMED",
+                             "--add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED",
+                             "--add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED",
+                             "--add-exports=jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED",
+                             "--add-exports=jdk.compiler/com.sun.tools.javac.comp=ALL-UNNAMED",
+                             "--add-exports=jdk.compiler/sun.nio.ch=ALL-UNNAMED"]
 }
