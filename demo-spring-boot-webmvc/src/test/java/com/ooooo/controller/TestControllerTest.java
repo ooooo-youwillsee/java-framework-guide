@@ -3,7 +3,6 @@ package com.ooooo.controller;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
 import com.ooooo.controller.TestController.EncryptedResult;
-import java.util.stream.Stream;
 import lombok.SneakyThrows;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
@@ -14,6 +13,8 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
+
+import java.util.stream.Stream;
 
 import static com.ooooo.config.ResponseEncryptResponseBodyAdvice.ENCRYPT_KEY;
 import static com.ooooo.config.ResponseEncryptResponseBodyAdvice.SPLIT_SEPARATOR;

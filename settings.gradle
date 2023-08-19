@@ -63,11 +63,9 @@ include "demo-spring-boot-argumentResolver"
 
 include "demo-spring-boot-redis"
 
-// spring boot examples
-include "spring-boot-examples:spring-boot-webmvc"
-include "spring-boot-examples:spring-boot-dubbo3:spring-boot-dubbo3-consumer"
-include "spring-boot-examples:spring-boot-dubbo3:spring-boot-dubbo3-provider"
+include "demo-spring-boot-webmvc"
 
+include "demo-spring-boot-dubbo3"
 
 // spring cloud examples
 include "spring-cloud-examples:spring-cloud-feign"

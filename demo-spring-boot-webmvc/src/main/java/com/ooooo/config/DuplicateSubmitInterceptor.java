@@ -1,8 +1,5 @@
 package com.ooooo.config;
 
-import java.util.concurrent.TimeUnit;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -11,6 +8,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.concurrent.TimeUnit;
 
 import static java.lang.String.valueOf;
 
@@ -45,8 +46,7 @@ public class DuplicateSubmitInterceptor implements HandlerInterceptor {
 	
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-		if (handler instanceof HandlerMethod) {
-			HandlerMethod method = (HandlerMethod) handler;
+		if (handler instanceof HandlerMethod method) {
 			if (method.getBeanType().isAnnotationPresent(Controller.class) || method.getBeanType().isAnnotationPresent(RestController.class)) {
 				
 				String requestURI = requestURI(request);
