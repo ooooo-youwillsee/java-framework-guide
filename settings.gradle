@@ -65,7 +65,8 @@ include "demo-spring-boot-redis"
 
 include "demo-spring-boot-webmvc"
 
-include "demo-spring-boot-dubbo3"
+include "demo-spring-boot-dubbo3:consumer"
+include "demo-spring-boot-dubbo3:provider"
 
 // spring cloud examples
 include "spring-cloud-examples:spring-cloud-feign"
