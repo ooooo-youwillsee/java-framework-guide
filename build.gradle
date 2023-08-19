@@ -1,5 +1,5 @@
 plugins {
-    id "org.springframework.boot" version "2.7.4" apply false
+    id "org.springframework.boot" version "2.7.14" apply false
     id "idea"
 }
 
@@ -33,7 +33,7 @@ allprojects {
     }
 
     ext {
-        set("springBootVersion", "2.7.4")
+        set("springBootVersion", "2.7.14")
     }
 
     dependencies {
