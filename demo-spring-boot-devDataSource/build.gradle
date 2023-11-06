@@ -10,4 +10,5 @@ dependencies {
     api("com.h2database:h2:+")
     api("p6spy:p6spy:+")
     api("com.baomidou:mybatis-plus-boot-starter:3.4.2")
+    api("org.springframework.boot:spring-boot-starter-jdbc")
 }

@@ -30,5 +30,4 @@ public interface UserMapper extends BaseMapper<User> {
   @Update(TRUNCATE_TABLE_USER)
   void truncateTable();
 
-
 }

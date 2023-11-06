@@ -57,7 +57,7 @@ include "demo-spring-boot-devDataSource"
 
 include "demo-spring-boot-sharding-jdbc"
 
-include "demo-spring-boot-pulsar"
+//include "demo-spring-boot-pulsar"
 
 include "demo-spring-boot-argumentResolver"
 
@@ -71,9 +71,9 @@ include "demo-spring-boot-dubbo3:provider"
 include "demo-spring-boot-async-bug"
 
 // spring cloud examples
-include "spring-cloud-examples:spring-cloud-feign"
-include "spring-cloud-examples:spring-cloud-eureka"
-include "spring-cloud-examples:spring-cloud-consul"
+//include "spring-cloud-examples:spring-cloud-feign"
+//include "spring-cloud-examples:spring-cloud-eureka"
+//include "spring-cloud-examples:spring-cloud-consul"
 include "spring-cloud-examples:spring-cloud-apollo"
 include "spring-cloud-examples:spring-cloud-seata"
 include "spring-cloud-examples:spring-cloud-stream"
